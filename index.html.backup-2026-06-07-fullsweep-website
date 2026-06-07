@@ -1705,10 +1705,10 @@ a.nav-link.is-active { color: var(--hh-accent); }
 <!-- ============================================================
      GALLERY 2B - Achterhuis: keuken 2023 en living
      ============================================================ -->
-<section class="gallery" id="gallery-3" aria-labelledby="gallery-3-heading">
+<section class="gallery" id="gallery-2b" aria-labelledby="gallery-2b-heading">
   <div class="container reveal">
-    <span class="eyebrow">Beelden 3</span>
-    <h2 id="gallery-3-heading">Achterhuis - woonkeuken 2023 en living</h2>
+    <span class="eyebrow">Beelden 2b</span>
+    <h2 id="gallery-2b-heading">Achterhuis - woonkeuken 2023 en living</h2>
     <hr class="divider">
     <p style="max-width:620px;color:var(--c-ink-soft);">Het achterhuis: open woonkeuken uit 2023 en living van 65 m² met houtkachel en openslaande deuren naar het terras.</p>
 
@@ -1841,10 +1841,10 @@ a.nav-link.is-active { color: var(--hh-accent); }
 <!-- ============================================================
      GALLERY 6 - Omgeving en het Scharreveld
      ============================================================ -->
-<section class="gallery" id="gallery-5" aria-labelledby="gallery-5-heading">
+<section class="gallery" id="gallery-6" aria-labelledby="gallery-6-heading">
   <div class="container reveal">
-    <span class="eyebrow">Beelden 5</span>
-    <h2 id="gallery-5-heading">Omgeving en het Scharreveld</h2>
+    <span class="eyebrow">Beelden 6</span>
+    <h2 id="gallery-6-heading">Omgeving en het Scharreveld</h2>
     <hr class="divider">
     <p style="max-width:620px;color:var(--c-ink-soft);">Heide, bos, weiden en de zonsop- en zonsondergangen die de erfgrens dagelijks tekenen.</p>
 
@@ -1885,10 +1885,10 @@ a.nav-link.is-active { color: var(--hh-accent); }
 <!-- ============================================================
      GALLERY 3 - Slaapkamers, badkamers en atelier
      ============================================================ -->
-<section class="gallery" id="gallery-6" aria-labelledby="gallery-6-heading">
+<section class="gallery" id="gallery-3" aria-labelledby="gallery-3-heading">
   <div class="container reveal">
-    <span class="eyebrow">Beelden 6</span>
-    <h2 id="gallery-6-heading">Slaapkamers, badkamers en atelier</h2>
+    <span class="eyebrow">Beelden 3</span>
+    <h2 id="gallery-3-heading">Slaapkamers, badkamers en atelier</h2>
     <hr class="divider">
     <p style="max-width:620px;color:var(--c-ink-soft);">De zeven slaapkamers en twee badkamers, gevolgd door het atelier en de aparte akoestisch behandelde ruimte voor muziek of geconcentreerd werk.</p>
 
@@ -1915,10 +1915,10 @@ a.nav-link.is-active { color: var(--hh-accent); }
 <!-- ============================================================
      GALLERY 5 - Kapschuur, bijgebouwen en garage
      ============================================================ -->
-<section class="gallery" id="gallery-7" aria-labelledby="gallery-7-heading">
+<section class="gallery" id="gallery-5" aria-labelledby="gallery-5-heading">
   <div class="container reveal">
-    <span class="eyebrow">Beelden 7</span>
-    <h2 id="gallery-7-heading">Kapschuur, bijgebouwen en garage</h2>
+    <span class="eyebrow">Beelden 5</span>
+    <h2 id="gallery-5-heading">Kapschuur, bijgebouwen en garage</h2>
     <hr class="divider">
     <p style="max-width:620px;color:var(--c-ink-soft);">Kapschuur uit 1935, houten berging en aangebouwde stenen garage met elektra, water en dakisolatie.</p>
 
@@ -1945,7 +1945,7 @@ a.nav-link.is-active { color: var(--hh-accent); }
     <h2 id="faq-heading">Antwoorden op uw vragen</h2>
     <hr class="divider">
     <div class="accordion" id="faq-accordion">
-      <div class="accordion__item faq__item"><button class="accordion__btn faq__q" type="button" aria-expanded="false">Is het pand juridisch te splitsen in twee zelfstandige wooneenheden?</button><div class="accordion__panel faq__a"><div class="accordion__panel-inner"><p>De huidige indeling maakt feitelijke dubbele bewoning mogelijk, maar juridische splitsing in twee zelfstandige adressen vraagt instemming van de gemeente Midden-Drenthe en toetsing aan het bestemmingsplan. Wij adviseren geïnteresseerde kopers vooraf contact op te nemen met de gemeente over de mogelijkheden voor formele splitsing, mantelzorgwoning of inwoning.</p></div></div></div>
+      <div class="accordion__item faq__item"><button class="accordion__btn faq__q" type="button" aria-expanded="false">Is het pand juridisch te splitsen in twee zelfstandige wooneenheden?</button><div class="accordion__panel faq__a"><div class="accordion__panel-inner"><p>De huidige indeling maakt feitelijke dubbele bewoning mogelijk, maar juridische splitsing in twee zelfstandige adressen vraagt instemming van de gemeente Midden-Drenthe en toetsing aan het bestemmingsplan. Wij adviseren geinteresseerde kopers vooraf contact op te nemen met de gemeente over de mogelijkheden voor formele splitsing, mantelzorgwoning of inwoning.</p></div></div></div>
       <div class="accordion__item faq__item"><button class="accordion__btn faq__q" type="button" aria-expanded="false">Wat is de gemiddelde onderhoudslast van een woonboerderij uit 1937?</button><div class="accordion__panel faq__a"><div class="accordion__panel-inner"><p>Het pand is consequent onderhouden, met buitenschilderwerk in 2021 en 2025 en een vernieuwde keuken in 2023. De onderhoudsbehoefte van een boerderij van bijna negentig jaar oud blijft hoger dan van een nieuwbouwwoning. Houtwerk, voegwerk en pannendak vragen periodieke aandacht. Een bouwkundige keuring vooraf is aan te raden en wordt door de verkoper gefaciliteerd.</p></div></div></div>
       <div class="accordion__item faq__item"><button class="accordion__btn faq__q" type="button" aria-expanded="false">De cv-installatie bestaat uit een eigen ketel plus twee huur-ketels. Hoe zit dat?</button><div class="accordion__panel faq__a"><div class="accordion__panel-inner"><p>De Intergas-ketel uit 2017 is eigendom en wordt bij verkoop overgedragen. De twee aanvullende ketels zijn huurketels van een externe leverancier; de lopende contracten kunnen worden overgenomen of opgezegd, afhankelijk van de wens van de koper. De combinatie is ontstaan vanuit de omvang van het pand en de wens om bij uitval terug te kunnen vallen op meerdere bronnen.</p></div></div></div>
       <div class="accordion__item faq__item"><button class="accordion__btn faq__q" type="button" aria-expanded="false">Hoe betrouwbaar is de eigen waterput?</button><div class="accordion__panel faq__a"><div class="accordion__panel-inner"><p>De waterput voorziet de tuin, de kas en het buitengebruik van water en functioneert al jaren naar tevredenheid. Het putwater wordt niet gebruikt als drinkwater; daarvoor is het pand aangesloten op het reguliere waternet. Bij interesse stellen wij een korte technische beschrijving van de put en de pomp beschikbaar.</p></div></div></div>
@@ -2045,7 +2045,7 @@ a.nav-link.is-active { color: var(--hh-accent); }
     <span class="eyebrow" style="color:rgba(247,243,235,.6);">Brochure</span>
     <h2 id="brochure-heading">De volledige brochure</h2>
     <hr class="divider divider--center">
-    <p>Veertien pagina's brochure met foto's, kenmerken en leefgevoel. Voor wie alle details wil: het volledige Funda-brondossier (38 pagina's) met plattegronden, kadastrale gegevens en energielabel-rapport is apart beschikbaar.</p>
+    <p>Veertien pagina's premium brochure met foto's, kenmerken en leefgevoel. Voor wie alle details wil: het volledige Funda-brondossier (38 pagina's) met plattegronden, kadastrale gegevens en energielabel-rapport is apart beschikbaar.</p>
     <a href="photos/brochure.pdf" class="btn btn--light" download>Download brochure (PDF)</a>
     <p style="margin-top:1.25rem;font-size:.95rem;"><a href="photos/funda-brondossier.pdf" download style="color:rgba(247,243,235,.7);text-decoration:underline;">Funda-brondossier (38 pagina's)</a></p>
   </div>
