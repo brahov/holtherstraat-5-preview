@@ -2427,38 +2427,103 @@ a.nav-link.is-active { color: var(--hh-accent); }
     const el = document.getElementById('locatie-kaart');
     if (!el || typeof window.L === 'undefined') return;
 
-    const LAT = 52.842, LON = 6.601;
-    const accent = getComputedStyle(document.documentElement).getPropertyValue('--accent').trim() || '#8a6a3d';
+    // Verified coordinates (PDOK BAG + OSM Nominatim, juni 2026)
+    const HOLTHER = [52.8240602, 6.5693028];   // Holtherstraat 5, BAG centroide
+    const BEILEN  = [52.8550649, 6.5213108];   // Station Beilen
+    const WBORK   = [52.8492168, 6.6103067];   // Westerbork (centrum/boundary centre)
+
+    // Forest-green palette (overrides eventuele bruine --accent voor de kaart)
+    const FOREST = '#2d4a2a';
+    const FOREST_FILL = '#5a8a52';
 
     const map = L.map(el, {
       scrollWheelZoom: false,
       zoomControl: true
-    }).setView([LAT, LON], 14);
+    }).setView([52.838, 6.575], 12);
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       maxZoom: 19,
-      attribution: '&copy; OpenStreetMap'
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
     }).addTo(map);
 
-    // custom marker
-    const pin = L.divIcon({
-      className: 'hh-map__pin-wrap',
-      html: `<span class="hh-map__pin" style="--pin:${accent}"></span>`,
-      iconSize: [28, 36],
-      iconAnchor: [14, 34]
-    });
-    L.marker([LAT, LON], { icon: pin })
-      .addTo(map)
-      .bindPopup('Holtherstraat 5<br>9435 TD Bruntinge');
+    L.control.scale({ position: 'bottomleft', imperial: false }).addTo(map);
 
-    // Scharreveld nature area (approx centre slightly NW)
-    L.circle([52.848, 6.585], {
-      radius: 900,
-      color: accent,
-      weight: 1.5,
-      fillColor: accent,
-      fillOpacity: 0.12
-    }).addTo(map).bindTooltip('Natuurgebied Het Scharreveld');
+    // Custom pin builder (forest green)
+    function makePin(color) {
+      return L.divIcon({
+        className: 'hh-map__pin-wrap',
+        html: `<span class="hh-map__pin" style="--pin:${color}"></span>`,
+        iconSize: [28, 36],
+        iconAnchor: [14, 34]
+      });
+    }
+
+    const pinMain = makePin(FOREST);
+    const pinSec  = makePin('#3d5a8a'); // slate-blue for secondary POIs
+
+    L.marker(HOLTHER, { icon: pinMain })
+      .addTo(map)
+      .bindPopup('<strong>Holtherstraat 5</strong><br>9435 TD Bruntinge')
+      .bindTooltip('Holtherstraat 5');
+
+    L.marker(BEILEN, { icon: pinSec })
+      .addTo(map)
+      .bindPopup('<strong>Station Beilen</strong><br>directe verbinding Den Haag')
+      .bindTooltip('Station Beilen');
+
+    L.marker(WBORK, { icon: pinSec })
+      .addTo(map)
+      .bindPopup('<strong>Westerbork</strong><br>winkels en voorzieningen, 7 minuten')
+      .bindTooltip('Westerbork (centrum)');
+
+    // Natuurgebied Het Scharreveld - OSM way 810825137 (leisure=nature_reserve)
+    // 29-punts polygon, opgehaald via Overpass API juni 2026
+    const scharreveldPolygon = [
+      [52.841088, 6.554339], [52.839819, 6.554614], [52.839148, 6.554759],
+      [52.838689, 6.556037], [52.837893, 6.554629], [52.837232, 6.554362],
+      [52.837039, 6.555632], [52.836987, 6.555728], [52.835512, 6.555183],
+      [52.835628, 6.556802], [52.836032, 6.556947], [52.835157, 6.562753],
+      [52.839977, 6.564598], [52.840119, 6.564553], [52.841652, 6.565162],
+      [52.841869, 6.563571], [52.842326, 6.562587], [52.843294, 6.562075],
+      [52.843474, 6.561258], [52.842551, 6.560902], [52.842388, 6.560545],
+      [52.842301, 6.560674], [52.842271, 6.560764], [52.840933, 6.560291],
+      [52.841322, 6.558245], [52.840129, 6.557864], [52.840379, 6.555887],
+      [52.841386, 6.556198], [52.841088, 6.554339]
+    ];
+
+    L.polygon(scharreveldPolygon, {
+      color: FOREST,
+      weight: 2,
+      fillColor: FOREST_FILL,
+      fillOpacity: 0.25
+    }).addTo(map)
+      .bindTooltip('Natuurgebied Het Scharreveld', { sticky: true })
+      .bindPopup('<strong>Natuurgebied Het Scharreveld</strong><br>Heide- en bosgebied, beheerd door Het Drentse Landschap');
+
+    // Legenda rechtsboven, semi-transparant
+    const legend = L.control({ position: 'topright' });
+    legend.onAdd = function () {
+      const div = L.DomUtil.create('div', 'hh-map__legend');
+      div.innerHTML = `
+        <div style="background:rgba(255,255,255,0.92);padding:8px 10px;border:1px solid rgba(0,0,0,0.15);border-radius:4px;font:12px/1.4 system-ui,sans-serif;color:#222;box-shadow:0 1px 3px rgba(0,0,0,0.1);">
+          <div style="font-weight:600;margin-bottom:4px;">Legenda</div>
+          <div style="display:flex;align-items:center;gap:6px;margin:2px 0;">
+            <span style="display:inline-block;width:10px;height:10px;background:${FOREST};border-radius:50%;"></span>Holtherstraat 5
+          </div>
+          <div style="display:flex;align-items:center;gap:6px;margin:2px 0;">
+            <span style="display:inline-block;width:10px;height:10px;background:#3d5a8a;border-radius:50%;"></span>Station Beilen / Westerbork
+          </div>
+          <div style="display:flex;align-items:center;gap:6px;margin:2px 0;">
+            <span style="display:inline-block;width:12px;height:10px;background:${FOREST_FILL};opacity:0.5;border:1.5px solid ${FOREST};"></span>Het Scharreveld
+          </div>
+        </div>`;
+      return div;
+    };
+    legend.addTo(map);
+
+    // Fit bounds zodat alle markers + polygon zichtbaar zijn
+    const bounds = L.latLngBounds([HOLTHER, BEILEN, WBORK, ...scharreveldPolygon]);
+    map.fitBounds(bounds, { padding: [30, 30] });
 
     // re-enable scroll-zoom on click, disable on mouseout
     map.on('click', () => map.scrollWheelZoom.enable());
