@@ -949,15 +949,20 @@ body.hh-lb-open { overflow: hidden; }
 /* =========================================================================
    2. LAZY IMAGES - skeleton shimmer
    ========================================================================= */
+/* Default: loaded/visible. Only when actively loading do we show shimmer + dim. */
 img.lazy {
+  min-height: 120px;
+  transition: opacity 400ms var(--hh-ease);
+  opacity: 1;
+  background: none;
+  animation: none;
+}
+img.lazy.is-loading:not(.is-loaded) {
   background: linear-gradient(90deg, #ece7df 0%, #f5f1e9 50%, #ece7df 100%);
   background-size: 200% 100%;
   animation: hh-shimmer 1.4s linear infinite;
-  min-height: 120px;
-  transition: opacity 400ms var(--hh-ease);
-  opacity: 0.6;
+  opacity: 0.9;
 }
-img.lazy.is-loading { opacity: 0.85; }
 img.lazy.is-loaded {
   background: none; animation: none; opacity: 1;
 }
@@ -2234,9 +2239,19 @@ a.nav-link.is-active { color: var(--hh-accent); }
     if (!imgs.length) return;
 
     const load = (img) => {
-      img.src = img.dataset.src;
+      // If src already matches data-src and image is already loaded, mark complete immediately.
+      // This handles the case where HTML has src="..." filled in (eager pre-load) so the
+      // browser already fetched it before JS ran, meaning the 'load' event already fired.
+      const target = img.dataset.src;
+      if (img.complete && img.naturalHeight > 0 && (!target || img.src.endsWith(target))) {
+        img.classList.add('is-loaded');
+        return;
+      }
+      if (target) img.src = target;
       if (img.dataset.srcset) img.srcset = img.dataset.srcset;
       img.addEventListener('load', () => img.classList.add('is-loaded'), { once: true });
+      // Safety net: if load fires before listener attaches, poll once.
+      if (img.complete && img.naturalHeight > 0) img.classList.add('is-loaded');
       img.classList.add('is-loading');
     };
 
