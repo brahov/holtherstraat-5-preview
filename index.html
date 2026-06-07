@@ -1,0 +1,2520 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%232d4a2a'/%3E%3Ctext y='65' x='50' text-anchor='middle' font-family='Georgia' font-size='50' fill='white'%3EH%3C/text%3E%3C/svg%3E">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Karakteristieke woonboerderij uit 1937 in Bruntinge, Drenthe. 543 m² wonen, 5.012 m² perceel, label B. €1.250.000 k.k.">
+<title>Woonboerderij te koop - Holtherstraat 5, Bruntinge</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   Holtherstraat 5 - sales-website
+   Design tokens, typografie en layout
+   ============================================================ */
+
+:root {
+  /* Aardetinten - landelijk, warm, vertrouwd */
+  --c-bg: #f7f3eb; /* warm cream / parchment */
+  --c-bg-alt: #efe9dc; /* iets dieper voor zones */
+  --c-card: #fdfcf8; /* card / panel */
+  --c-ink: #2b2620; /* warme houtskool - body tekst */
+  --c-ink-soft: #5c5347; /* gedempte tekst */
+  --c-forest: #2d4a2a; /* deep forest - primair accent */
+  --c-meadow: #5d7a3a; /* weiland-groen - secundair */
+  --c-clay: #8b3a2f; /* boerderij-rood-bruin - accent */
+  --c-line: #d8cfbd; /* haarlijn dividers */
+  --c-line-soft: #e8e0d0;
+
+  /* Typografie */
+  --f-serif: 'Cormorant Garamond', 'Times New Roman', serif;
+  --f-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  /* Schaal */
+  --max-w: 1200px;
+  --max-w-narrow: 760px;
+  --gutter: clamp(1.25rem, 4vw, 2.5rem);
+
+  /* Motion */
+  --ease: cubic-bezier(.2,.7,.2,1);
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--c-bg);
+  color: var(--c-ink);
+  font-family: var(--f-sans);
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+img { max-width: 100%; display: block; }
+
+a {
+  color: var(--c-forest);
+  text-decoration: none;
+  transition: color .25s var(--ease);
+}
+a:hover { color: var(--c-clay); }
+
+::selection { background: var(--c-meadow); color: var(--c-bg); }
+
+/* ---------- Typografie ---------- */
+h1, h2, h3, h4 {
+  font-family: var(--f-serif);
+  font-weight: 500;
+  color: var(--c-ink);
+  letter-spacing: -.005em;
+  line-height: 1.15;
+  margin: 0 0 .6em;
+}
+h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 500; }
+h2 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 500; }
+h3 { font-size: clamp(1.4rem, 2.2vw, 1.75rem); }
+h4 { font-size: 1.15rem; font-family: var(--f-sans); font-weight: 600; letter-spacing: .02em; text-transform: uppercase; color: var(--c-forest); }
+
+p { margin: 0 0 1.1em; }
+.lead {
+  font-family: var(--f-serif);
+  font-size: clamp(1.3rem, 2.2vw, 1.7rem);
+  line-height: 1.5;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--c-ink);
+}
+
+.eyebrow {
+  font-family: var(--f-sans);
+  font-size: .8rem;
+  font-weight: 500;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--c-meadow);
+  margin: 0 0 1.2rem;
+  display: block;
+}
+
+/* ---------- Layout ---------- */
+.container {
+  width: 100%;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+.container--narrow { max-width: var(--max-w-narrow); }
+
+section {
+  padding: clamp(4rem, 9vw, 7.5rem) 0;
+  position: relative;
+}
+section + section { border-top: 1px solid var(--c-line-soft); }
+
+.divider {
+  width: 60px;
+  height: 1px;
+  background: var(--c-line);
+  margin: 0 0 2rem;
+  border: 0;
+}
+.divider--center { margin-left: auto; margin-right: auto; }
+
+/* ---------- Header ---------- */
+.site-header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 1.2rem 0;
+  background: rgba(247, 243, 235, 0);
+  backdrop-filter: blur(0);
+  transition: background .35s var(--ease), backdrop-filter .35s var(--ease), padding .25s var(--ease);
+}
+.site-header.is-scrolled {
+  background: rgba(247, 243, 235, .92);
+  backdrop-filter: blur(12px);
+  padding: .8rem 0;
+  border-bottom: 1px solid var(--c-line-soft);
+}
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+  color: var(--c-bg);
+  transition: color .35s var(--ease);
+}
+.site-header.is-scrolled .brand { color: var(--c-ink); }
+
+.brand__mark {
+  width: 38px; height: 38px;
+  border: 1px solid currentColor;
+  display: grid; place-items: center;
+  font-family: var(--f-serif);
+  font-size: 1.1rem;
+  font-style: italic;
+  border-radius: 2px;
+}
+.brand__meta {
+  font-family: var(--f-serif);
+  font-size: 1.05rem;
+  line-height: 1.2;
+}
+.brand__meta small {
+  display: block;
+  font-family: var(--f-sans);
+  font-size: .7rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  opacity: .8;
+  font-weight: 400;
+}
+
+.btn {
+  display: inline-block;
+  padding: .9em 1.8em;
+  font-family: var(--f-sans);
+  font-size: .85rem;
+  font-weight: 500;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  border: 1px solid currentColor;
+  background: transparent;
+  color: var(--c-ink);
+  cursor: pointer;
+  transition: all .3s var(--ease);
+}
+.btn:hover { background: var(--c-ink); color: var(--c-bg); }
+
+.btn--primary {
+  background: var(--c-forest);
+  color: var(--c-bg);
+  border-color: var(--c-forest);
+}
+.btn--primary:hover {
+  background: var(--c-clay);
+  border-color: var(--c-clay);
+  color: var(--c-bg);
+}
+
+.btn--light {
+  color: var(--c-bg);
+  border-color: rgba(247,243,235,.6);
+}
+.btn--light:hover { background: var(--c-bg); color: var(--c-ink); }
+
+.site-header.is-scrolled .btn--light {
+  color: var(--c-ink);
+  border-color: var(--c-ink);
+}
+.site-header.is-scrolled .btn--light:hover {
+  background: var(--c-ink); color: var(--c-bg);
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  color: var(--c-bg);
+  overflow: hidden;
+  padding: 0 var(--gutter);
+  background-color: var(--c-ink);
+}
+.hero__media {
+  position: absolute; inset: 0;
+  background-image: url('photos/02.jpg');
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.05);
+  filter: brightness(.85);
+}
+.hero__overlay {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse at center, transparent 30%, rgba(20,16,10,.55) 100%),
+    linear-gradient(180deg, rgba(20,16,10,.25) 0%, rgba(20,16,10,.15) 40%, rgba(20,16,10,.6) 100%);
+}
+.hero__content {
+  position: relative;
+  z-index: 2;
+  max-width: 820px;
+}
+.hero__eyebrow {
+  font-family: var(--f-sans);
+  font-size: .85rem;
+  letter-spacing: .35em;
+  text-transform: uppercase;
+  opacity: .85;
+  margin-bottom: 2rem;
+  display: inline-block;
+  padding-bottom: .8rem;
+  border-bottom: 1px solid rgba(247,243,235,.4);
+}
+.hero h1 {
+  color: var(--c-bg);
+  font-weight: 400;
+  font-style: italic;
+  font-size: clamp(2.8rem, 7vw, 5.2rem);
+  margin-bottom: 1.5rem;
+  text-shadow: 0 2px 30px rgba(0,0,0,.3);
+}
+.hero__sub {
+  font-family: var(--f-serif);
+  font-size: clamp(1.15rem, 2vw, 1.45rem);
+  font-weight: 300;
+  opacity: .92;
+  max-width: 620px;
+  margin: 0 auto 3rem;
+  line-height: 1.5;
+}
+.scroll-indicator {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  color: var(--c-bg);
+  font-size: .7rem;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+  opacity: .75;
+  text-align: center;
+}
+.scroll-indicator::after {
+  content: '';
+  display: block;
+  width: 1px; height: 50px;
+  background: var(--c-bg);
+  margin: 1rem auto 0;
+  animation: scrollPulse 2.4s var(--ease) infinite;
+  transform-origin: top;
+}
+@keyframes scrollPulse {
+  0% { transform: scaleY(0); opacity: 0; }
+  40% { transform: scaleY(1); opacity: 1; }
+  100% { transform: scaleY(1) translateY(50px); opacity: 0; }
+}
+
+/* ---------- Quick facts ---------- */
+.facts {
+  background: var(--c-card);
+  padding: clamp(2.5rem, 5vw, 4rem) 0;
+  border-bottom: 1px solid var(--c-line-soft);
+}
+.facts__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+  align-items: start;
+}
+.fact {
+  text-align: center;
+  position: relative;
+  padding: 0 1rem;
+}
+.fact + .fact::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 15%;
+  width: 1px; height: 70%;
+  background: var(--c-line);
+}
+.fact__label {
+  font-size: .72rem;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--c-ink-soft);
+  margin-bottom: .6rem;
+}
+.fact__value {
+  font-family: var(--f-serif);
+  font-size: clamp(1.4rem, 2.4vw, 1.8rem);
+  color: var(--c-forest);
+  font-weight: 500;
+  line-height: 1.1;
+}
+.fact__value small {
+  font-size: .55em;
+  display: block;
+  color: var(--c-ink-soft);
+  font-weight: 400;
+  margin-top: .2em;
+  letter-spacing: 0;
+}
+
+/* ---------- Intro / lead ---------- */
+.intro { text-align: center; }
+.intro .divider { margin: 0 auto 2rem; }
+
+/* ---------- Gallery (masonry) ---------- */
+.gallery {
+  background: var(--c-bg-alt);
+}
+.gallery__grid {
+  column-count: 3;
+  column-gap: 1rem;
+  margin-top: 3rem;
+}
+@media (max-width: 900px) { .gallery__grid { column-count: 2; } }
+@media (max-width: 560px) { .gallery__grid { column-count: 1; } }
+
+.gallery__item {
+  break-inside: avoid;
+  margin-bottom: 1rem;
+  cursor: zoom-in;
+  overflow: hidden;
+  position: relative;
+  background: var(--c-card);
+  border: 1px solid var(--c-line-soft);
+}
+.gallery__item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform .8s var(--ease), filter .4s var(--ease);
+}
+.gallery__item:hover img {
+  transform: scale(1.04);
+  filter: brightness(1.05);
+}
+.gallery__item::after {
+  content: '+';
+  position: absolute;
+  bottom: 12px; right: 16px;
+  font-family: var(--f-serif);
+  font-size: 1.4rem;
+  color: var(--c-bg);
+  background: rgba(45,74,42,.9);
+  width: 32px; height: 32px;
+  display: grid; place-items: center;
+  border-radius: 50%;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: all .35s var(--ease);
+}
+.gallery__item:hover::after { opacity: 1; transform: translateY(0); }
+
+/* Lightbox */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(20,16,10,.94);
+  z-index: 1000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  opacity: 0;
+  transition: opacity .3s var(--ease);
+}
+.lightbox.is-open { display: flex; opacity: 1; }
+.lightbox img {
+  max-width: 95vw;
+  max-height: 90vh;
+  object-fit: contain;
+  box-shadow: 0 20px 60px rgba(0,0,0,.5);
+}
+.lightbox__close, .lightbox__nav {
+  position: absolute;
+  background: transparent;
+  border: 1px solid rgba(247,243,235,.4);
+  color: var(--c-bg);
+  width: 48px; height: 48px;
+  font-size: 1.4rem;
+  cursor: pointer;
+  display: grid; place-items: center;
+  transition: all .25s var(--ease);
+  font-family: var(--f-serif);
+}
+.lightbox__close:hover, .lightbox__nav:hover {
+  background: var(--c-bg);
+  color: var(--c-ink);
+}
+.lightbox__close { top: 2rem; right: 2rem; }
+.lightbox__nav--prev { left: 2rem; top: 50%; transform: translateY(-50%); }
+.lightbox__nav--next { right: 2rem; top: 50%; transform: translateY(-50%); }
+.lightbox__counter {
+  position: absolute;
+  bottom: 1.5rem; left: 50%;
+  transform: translateX(-50%);
+  color: var(--c-bg);
+  font-size: .85rem;
+  letter-spacing: .15em;
+  opacity: .8;
+}
+
+/* ---------- USPs ---------- */
+.usps__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: clamp(2rem, 4vw, 3.5rem);
+  margin-top: 3rem;
+}
+.usp {
+  text-align: left;
+  padding: 0;
+}
+.usp__num {
+  font-family: var(--f-serif);
+  font-size: 3rem;
+  color: var(--c-meadow);
+  line-height: 1;
+  margin-bottom: 1rem;
+  font-style: italic;
+  font-weight: 400;
+}
+.usp h3 { margin-bottom: 1rem; }
+.usp p { color: var(--c-ink-soft); }
+
+/* ---------- Accordion ---------- */
+.accordion { margin-top: 2.5rem; }
+.accordion__item {
+  border-top: 1px solid var(--c-line);
+}
+.accordion__item:last-child { border-bottom: 1px solid var(--c-line); }
+
+.accordion__btn {
+  width: 100%;
+  background: transparent;
+  border: 0;
+  padding: 1.6rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  cursor: pointer;
+  text-align: left;
+  font-family: var(--f-serif);
+  font-size: clamp(1.1rem, 1.8vw, 1.35rem);
+  color: var(--c-ink);
+  transition: color .25s var(--ease);
+}
+.accordion__btn:hover { color: var(--c-forest); }
+.accordion__btn::after {
+  content: '+';
+  font-size: 1.5rem;
+  color: var(--c-meadow);
+  font-weight: 300;
+  transition: transform .35s var(--ease);
+  flex-shrink: 0;
+}
+.accordion__item.is-open .accordion__btn::after {
+  transform: rotate(45deg);
+}
+.accordion__panel {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .5s var(--ease);
+}
+.accordion__panel-inner {
+  padding: 0 0 1.8rem;
+  color: var(--c-ink-soft);
+  max-width: 720px;
+}
+
+/* ---------- Plattegronden ---------- */
+.floorplans__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+.floorplan {
+  background: var(--c-card);
+  border: 1px solid var(--c-line-soft);
+  padding: 1.5rem;
+  text-align: center;
+}
+.floorplan img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+  cursor: zoom-in;
+}
+.floorplan h4 {
+  margin-bottom: 0;
+  color: var(--c-ink);
+  font-family: var(--f-serif);
+  font-size: 1.15rem;
+  text-transform: none;
+  letter-spacing: 0;
+  font-weight: 600;
+}
+
+/* ---------- Buitenruimte ---------- */
+.outdoor {
+  background: var(--c-forest);
+  color: var(--c-bg);
+}
+.outdoor .eyebrow { color: rgba(247,243,235,.7); }
+.outdoor h2 { color: var(--c-bg); }
+.outdoor .divider { background: rgba(247,243,235,.3); }
+
+.outdoor__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+.outdoor__card {
+  background: rgba(247,243,235,.06);
+  border: 1px solid rgba(247,243,235,.15);
+  padding: 2rem 1.8rem;
+  transition: background .3s var(--ease), transform .3s var(--ease);
+}
+.outdoor__card:hover {
+  background: rgba(247,243,235,.1);
+  transform: translateY(-3px);
+}
+.outdoor__card h3 {
+  color: var(--c-bg);
+  font-style: italic;
+  margin-bottom: .8rem;
+}
+.outdoor__card p {
+  color: rgba(247,243,235,.78);
+  font-size: .95rem;
+  margin: 0;
+}
+
+/* ---------- Duurzaamheid ---------- */
+.sustain { background: var(--c-bg-alt); }
+.sustain__layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: center;
+}
+@media (max-width: 800px) { .sustain__layout { grid-template-columns: 1fr; } }
+
+.sustain__list {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0 0;
+}
+.sustain__list li {
+  padding: 1rem 0 1rem 2rem;
+  border-bottom: 1px solid var(--c-line);
+  position: relative;
+}
+.sustain__list li::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 1.5rem;
+  width: 12px; height: 1px;
+  background: var(--c-meadow);
+}
+.sustain__list li:last-child { border-bottom: 0; }
+
+/* ---------- Ligging / kaart ---------- */
+.location__map {
+  margin-top: 3rem;
+  height: 480px;
+  background: var(--c-line-soft);
+  position: relative;
+  border: 1px solid var(--c-line);
+}
+.location__map iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+  filter: saturate(.8) sepia(.08);
+}
+.location__pois {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+.poi {
+  border-left: 1px solid var(--c-line);
+  padding-left: 1.2rem;
+}
+.poi__distance {
+  font-family: var(--f-serif);
+  font-size: 1.6rem;
+  color: var(--c-clay);
+  display: block;
+  line-height: 1;
+}
+.poi__name {
+  font-size: .9rem;
+  color: var(--c-ink-soft);
+  margin-top: .3rem;
+}
+
+/* ---------- Personas ---------- */
+.personas__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+.persona {
+  padding: 2rem 1.5rem;
+  background: var(--c-card);
+  border: 1px solid var(--c-line-soft);
+  text-align: center;
+  transition: transform .3s var(--ease), box-shadow .3s var(--ease);
+}
+.persona:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 36px rgba(45,38,32,.08);
+}
+.persona__icon {
+  font-family: var(--f-serif);
+  font-style: italic;
+  font-size: 2rem;
+  color: var(--c-meadow);
+  margin-bottom: .8rem;
+}
+.persona h4 {
+  color: var(--c-ink);
+  text-transform: none;
+  letter-spacing: 0;
+  font-family: var(--f-serif);
+  font-weight: 600;
+  font-size: 1.15rem;
+  margin-bottom: .5rem;
+}
+.persona p {
+  font-size: .9rem;
+  color: var(--c-ink-soft);
+  margin: 0;
+}
+
+/* ---------- CTA / Form ---------- */
+.cta { background: var(--c-card); }
+.cta__layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 6vw, 5rem);
+  align-items: start;
+}
+@media (max-width: 820px) { .cta__layout { grid-template-columns: 1fr; } }
+
+.form { display: grid; gap: 1.2rem; }
+.field { display: flex; flex-direction: column; gap: .4rem; }
+.field label {
+  font-size: .75rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--c-ink-soft);
+  font-weight: 500;
+}
+.field input, .field textarea, .field select {
+  font-family: var(--f-sans);
+  font-size: 1rem;
+  padding: .9rem 1rem;
+  border: 1px solid var(--c-line);
+  background: var(--c-bg);
+  color: var(--c-ink);
+  border-radius: 0;
+  transition: border-color .25s var(--ease), background .25s var(--ease);
+}
+.field input:focus, .field textarea:focus, .field select:focus {
+  outline: none;
+  border-color: var(--c-forest);
+  background: var(--c-card);
+}
+.field textarea { resize: vertical; min-height: 110px; }
+.form__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+}
+@media (max-width: 520px) { .form__row { grid-template-columns: 1fr; } }
+
+.form__status {
+  margin-top: 1rem;
+  font-family: var(--f-serif);
+  font-style: italic;
+  color: var(--c-forest);
+  min-height: 1.5em;
+}
+
+/* ---------- Brochure ---------- */
+.brochure {
+  background: var(--c-ink);
+  color: var(--c-bg);
+  text-align: center;
+}
+.brochure h2 { color: var(--c-bg); font-style: italic; font-weight: 400; }
+.brochure p { color: rgba(247,243,235,.75); max-width: 580px; margin: 0 auto 2rem; }
+.brochure .divider { background: rgba(247,243,235,.25); }
+
+/* ---------- Footer ---------- */
+.site-footer {
+  background: var(--c-bg-alt);
+  padding: 4rem 0 2rem;
+  border-top: 1px solid var(--c-line);
+}
+.site-footer__grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+@media (max-width: 720px) { .site-footer__grid { grid-template-columns: 1fr; gap: 2rem; } }
+
+.site-footer h4 {
+  color: var(--c-ink);
+  font-size: .8rem;
+  margin-bottom: 1rem;
+}
+.site-footer p, .site-footer li, .site-footer a {
+  font-size: .9rem;
+  color: var(--c-ink-soft);
+  line-height: 1.7;
+}
+.site-footer ul { list-style: none; padding: 0; margin: 0; }
+
+.site-footer__base {
+  border-top: 1px solid var(--c-line);
+  padding-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: .8rem;
+  color: var(--c-ink-soft);
+}
+
+/* ---------- Reveal-on-scroll ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity .9s var(--ease), transform .9s var(--ease);
+  will-change: opacity, transform;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---------- Accessibility / motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal { opacity: 1; transform: none; }
+}
+
+:focus-visible {
+  outline: 2px solid var(--c-meadow);
+  outline-offset: 3px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+</style>
+
+<style>
+/* =============================================================================
+   Holtherstraat 5 - interactive component styles
+   Only the interactive layer. General typography/layout lives elsewhere.
+   Expects CSS custom properties from the main theme, with fallbacks:
+     --accent (brand accent) --bg (page bg) --fg (text)
+   ============================================================================= */
+
+:root {
+  --hh-accent: var(--accent, #8a6a3d);
+  --hh-bg: var(--bg, #fdfcf9);
+  --hh-fg: var(--fg, #1c1a17);
+  --hh-overlay: rgba(15, 13, 10, 0.92);
+  --hh-radius: 6px;
+  --hh-ease: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* =========================================================================
+   1. LIGHTBOX
+   ========================================================================= */
+.hh-lightbox {
+  position: fixed; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--hh-overlay);
+  opacity: 0;
+  transition: opacity 220ms var(--hh-ease);
+  z-index: 1000;
+}
+.hh-lightbox[hidden] { display: none !important; }
+.hh-lightbox.is-open { opacity: 1; }
+body.hh-lb-open { overflow: hidden; }
+
+.hh-lb__figure {
+  margin: 0;
+  max-width: min(92vw, 1400px);
+  max-height: 88vh;
+  display: flex; flex-direction: column; align-items: center;
+}
+.hh-lb__img {
+  max-width: 100%; max-height: 78vh;
+  object-fit: contain;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+  background: #000;
+}
+.hh-lb__caption {
+  color: #f4efe6;
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  text-align: center;
+  max-width: 60ch;
+}
+.hh-lb__caption[hidden] { display: none; }
+.hh-lb__counter {
+  position: absolute; bottom: 1.2rem; left: 50%; transform: translateX(-50%);
+  color: #c9c2b3; font-size: 0.85rem; letter-spacing: 0.05em;
+}
+.hh-lb__close, .hh-lb__nav {
+  position: absolute;
+  background: transparent; border: 0; color: #f4efe6;
+  cursor: pointer; padding: 0.6rem 0.9rem;
+  font-size: 2rem; line-height: 1;
+  transition: background 150ms var(--hh-ease), transform 150ms var(--hh-ease);
+  border-radius: var(--hh-radius);
+}
+.hh-lb__close:hover, .hh-lb__nav:hover { background: rgba(255,255,255,0.08); }
+.hh-lb__close { top: 1rem; right: 1rem; font-size: 2.4rem; }
+.hh-lb__prev { left: 1rem; top: 50%; transform: translateY(-50%); }
+.hh-lb__next { right: 1rem; top: 50%; transform: translateY(-50%); }
+.hh-lb__close:focus-visible, .hh-lb__nav:focus-visible {
+  outline: 2px solid var(--hh-accent); outline-offset: 2px;
+}
+.hh-lb__sr {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+}
+@media (max-width: 600px) {
+  .hh-lb__prev { left: 0.25rem; } .hh-lb__next { right: 0.25rem; }
+  .hh-lb__close { top: 0.5rem; right: 0.5rem; }
+}
+
+/* =========================================================================
+   2. LAZY IMAGES - skeleton shimmer
+   ========================================================================= */
+img.lazy {
+  background: linear-gradient(90deg, #ece7df 0%, #f5f1e9 50%, #ece7df 100%);
+  background-size: 200% 100%;
+  animation: hh-shimmer 1.4s linear infinite;
+  min-height: 120px;
+  transition: opacity 400ms var(--hh-ease);
+  opacity: 0.6;
+}
+img.lazy.is-loading { opacity: 0.85; }
+img.lazy.is-loaded {
+  background: none; animation: none; opacity: 1;
+}
+@keyframes hh-shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* =========================================================================
+   3. FAQ ACCORDION
+   ========================================================================= */
+.faq__item { border-bottom: 1px solid rgba(0,0,0,0.08); }
+.faq__q {
+  width: 100%; text-align: left;
+  background: transparent; border: 0; padding: 1.1rem 2.5rem 1.1rem 0;
+  font: inherit; color: inherit;
+  cursor: pointer; position: relative;
+  font-weight: 500; font-size: 1.05rem;
+}
+.faq__q::after {
+  content: ''; position: absolute; right: 0.25rem; top: 50%;
+  width: 10px; height: 10px;
+  border-right: 2px solid var(--hh-accent);
+  border-bottom: 2px solid var(--hh-accent);
+  transform: translateY(-70%) rotate(45deg);
+  transition: transform 250ms var(--hh-ease);
+}
+.faq__q[aria-expanded="true"]::after { transform: translateY(-30%) rotate(-135deg); }
+.faq__q:focus-visible { outline: 2px solid var(--hh-accent); outline-offset: 3px; border-radius: 2px; }
+.faq__a {
+  max-height: 0; overflow: hidden;
+  transition: max-height 300ms var(--hh-ease);
+}
+.faq__a > * { padding: 0 0 1.1rem 0; margin: 0; }
+
+/* =========================================================================
+   4. ROOMS / INDELING ACCORDION
+   ========================================================================= */
+.rooms { list-style: none; padding: 0; margin: 0; position: relative; }
+.rooms::before {
+  content: ''; position: absolute; left: 14px; top: 8px; bottom: 8px;
+  width: 2px; background: rgba(138, 106, 61, 0.25);
+}
+.room {
+  position: relative; padding-left: 2.5rem; margin-bottom: 0.5rem;
+}
+.room::before {
+  content: ''; position: absolute; left: 8px; top: 1.35rem;
+  width: 14px; height: 14px; border-radius: 50%;
+  background: var(--hh-bg); border: 2px solid var(--hh-accent);
+  transition: background 200ms var(--hh-ease);
+}
+.room.is-open::before { background: var(--hh-accent); }
+.room__head {
+  width: 100%; text-align: left; background: transparent; border: 0;
+  padding: 1rem 0; font: inherit; color: inherit; cursor: pointer;
+  display: flex; justify-content: space-between; align-items: baseline;
+  gap: 1rem;
+}
+.room__title { font-weight: 600; font-size: 1.1rem; }
+.room__meta { color: var(--hh-accent); font-size: 0.9rem; letter-spacing: 0.05em; }
+.room__head:focus-visible { outline: 2px solid var(--hh-accent); outline-offset: 3px; }
+.room__body {
+  max-height: 0; overflow: hidden;
+  transition: max-height 320ms var(--hh-ease);
+}
+.room__body > * { padding-bottom: 1rem; margin: 0; }
+
+/* =========================================================================
+   5. NAV - active link indicator
+   ========================================================================= */
+a.nav-link {
+  position: relative; transition: color 150ms var(--hh-ease);
+}
+a.nav-link::after {
+  content: ''; position: absolute; left: 0; right: 0; bottom: -4px;
+  height: 1px; background: var(--hh-accent);
+  transform: scaleX(0); transform-origin: left center;
+  transition: transform 250ms var(--hh-ease);
+}
+a.nav-link.is-active::after,
+a.nav-link:hover::after { transform: scaleX(1); }
+a.nav-link.is-active { color: var(--hh-accent); }
+
+/* =========================================================================
+   6. REVEAL ON SCROLL
+   ========================================================================= */
+.reveal {
+  opacity: 0; transform: translateY(20px);
+  transition: opacity 600ms var(--hh-ease), transform 600ms var(--hh-ease);
+  will-change: opacity, transform;
+}
+.reveal.is-visible { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+}
+
+/* =========================================================================
+   7. CONTACT FORM
+   ========================================================================= */
+.contact-form .hh-honey {
+  position: absolute; left: -9999px; width: 1px; height: 1px;
+  opacity: 0; pointer-events: none;
+}
+.contact-form input.has-error,
+.contact-form textarea.has-error {
+  border-color: #b53b2a; box-shadow: 0 0 0 3px rgba(181, 59, 42, 0.15);
+}
+.contact-form .field-error {
+  display: block; color: #b53b2a; font-size: 0.85rem; margin-top: 0.25rem;
+}
+.contact-form__status {
+  margin-top: 1rem; min-height: 1.4em;
+}
+.contact-form__status.is-success {
+  color: #2d6a3e; font-weight: 500;
+  padding: 1rem 1.25rem; background: rgba(45, 106, 62, 0.08);
+  border-left: 3px solid #2d6a3e; border-radius: var(--hh-radius);
+}
+.contact-form.is-submitted button[type="submit"] { opacity: 0.6; pointer-events: none; }
+
+/* =========================================================================
+   8. MAP
+   ========================================================================= */
+.hh-map {
+  width: 100%; height: 420px; border-radius: var(--hh-radius);
+  overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+.hh-map__pin-wrap { background: transparent; border: 0; }
+.hh-map__pin {
+  display: block; width: 24px; height: 24px;
+  background: var(--pin, var(--hh-accent));
+  border: 3px solid #fff;
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg) translate(2px, -2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+.hh-map-actions { display: flex; gap: 1rem; margin-top: 0.75rem; }
+.hh-map-actions a { color: var(--hh-accent); text-decoration: underline; }
+
+/* =========================================================================
+   9. STICKY CTA (mobile)
+   ========================================================================= */
+.sticky-cta {
+  position: fixed; left: 0; right: 0; bottom: 0;
+  padding: 0.75rem 1rem env(safe-area-inset-bottom, 0.75rem);
+  background: rgba(253, 252, 249, 0.96);
+  backdrop-filter: blur(8px);
+  border-top: 1px solid rgba(0,0,0,0.08);
+  transform: translateY(110%);
+  transition: transform 320ms var(--hh-ease);
+  z-index: 900;
+  display: flex; justify-content: center;
+}
+.sticky-cta.is-visible { transform: translateY(0); }
+.sticky-cta .btn {
+  display: inline-block; width: 100%; max-width: 420px;
+  text-align: center; padding: 0.9rem 1.5rem;
+  background: var(--hh-accent); color: #fff;
+  border-radius: var(--hh-radius); text-decoration: none;
+  font-weight: 500; letter-spacing: 0.02em;
+}
+@media (min-width: 900px) {
+  .sticky-cta { display: none; }
+}
+
+/* =========================================================================
+   10. STICKY HEADER (compact on scroll)
+   ========================================================================= */
+.site-header {
+  position: sticky; top: 0; z-index: 800;
+  padding: 1.5rem 0;
+  background: transparent;
+  transition: padding 250ms var(--hh-ease),
+              background-color 250ms var(--hh-ease),
+              box-shadow 250ms var(--hh-ease);
+}
+.site-header.is-compact {
+  padding: 0.6rem 0;
+  background: rgba(253, 252, 249, 0.94);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+}
+
+</style>
+
+
+<!-- SEO -->
+<meta name="keywords" content="woonboerderij te koop Drenthe, landelijk wonen Bruntinge, vrijstaande boerderij Midden-Drenthe, energiezuinige boerderij label B, mantelzorgwoning Drenthe, woonboerderij Holtherstraat, boerderij kopen Westerbork">
+<link rel="canonical" href="https://holtherstraat5.nl/">
+<meta http-equiv="content-language" content="nl">
+<meta name="language" content="Dutch">
+<meta name="author" content="Eigenaar Holtherstraat 5, Bruntinge">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#2d4a2a">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Holtherstraat 5 - Bruntinge">
+<meta property="og:locale" content="nl_NL">
+<meta property="og:url" content="https://holtherstraat5.nl/">
+<meta property="og:title" content="Woonboerderij te koop in Bruntinge - Holtherstraat 5">
+<meta property="og:description" content="Karakteristieke woonboerderij uit 1937 op 5.012 m² in Midden-Drenthe. 543 m² wonen, energielabel B, 11 kamers. Vraagprijs €1.250.000 k.k.">
+<meta property="og:image" content="photos/02.jpg">
+<meta property="og:image:alt" content="Luchtfoto woonboerderij Holtherstraat 5, Bruntinge">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Woonboerderij te koop in Bruntinge - Holtherstraat 5">
+<meta name="twitter:description" content="Karakteristieke woonboerderij uit 1937 op 5.012 m² in Midden-Drenthe. 543 m² wonen, label B. €1.250.000 k.k.">
+<meta name="twitter:image" content="photos/02.jpg">
+
+<!-- Leaflet CSS for map -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SingleFamilyResidence",
+  "name": "Woonboerderij Holtherstraat 5",
+  "description": "Karakteristieke vrijstaande woonboerderij uit 1937 in het buitengebied van Bruntinge (gemeente Midden-Drenthe). 543 m² woonoppervlak op een perceel van 5.012 m², energielabel B. Geschikt voor landelijk wonen, mantelzorgsituatie of dubbele bewoning.",
+  "url": "https://holtherstraat5.nl/",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Holtherstraat 5",
+    "postalCode": "9435 TD",
+    "addressLocality": "Bruntinge",
+    "addressRegion": "NL-DR",
+    "addressCountry": "NL"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 52.842,
+    "longitude": 6.601
+  },
+  "floorSize": {
+    "@type": "QuantitativeValue",
+    "value": 543,
+    "unitCode": "MTK",
+    "unitText": "m²"
+  },
+  "lotSize": {
+    "@type": "QuantitativeValue",
+    "value": 5012,
+    "unitCode": "MTK",
+    "unitText": "m²"
+  },
+  "numberOfRooms": 11,
+  "numberOfBedrooms": 7,
+  "numberOfBathroomsTotal": 2,
+  "yearBuilt": "1937",
+  "energyEfficiencyScalar": "B",
+  "photo": [
+    "https://holtherstraat5.nl/images/exterieur-voorgevel.jpg",
+    "https://holtherstraat5.nl/images/woonkamer.jpg",
+    "https://holtherstraat5.nl/images/keuken.jpg",
+    "https://holtherstraat5.nl/images/tuin-luchtfoto.jpg",
+    "https://holtherstraat5.nl/images/schuur.jpg"
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Woonboerderij Holtherstraat 5, Bruntinge",
+  "description": "Vrijstaande woonboerderij uit 1937, 543 m² wonen op 5.012 m² perceel, energielabel B, in landelijk Bruntinge (Midden-Drenthe).",
+  "image": [
+    "https://holtherstraat5.nl/images/exterieur-voorgevel.jpg",
+    "https://holtherstraat5.nl/images/tuin-luchtfoto.jpg"
+  ],
+  "category": "Vrijstaande woning / woonboerderij",
+  "brand": {
+    "@type": "Thing",
+    "name": "Holtherstraat 5"
+  },
+  "offers": {
+    "@type": "Offer",
+    "url": "https://holtherstraat5.nl/",
+    "priceCurrency": "EUR",
+    "price": "1250000",
+    "priceSpecification": {
+      "@type": "PriceSpecification",
+      "price": "1250000",
+      "priceCurrency": "EUR",
+      "valueAddedTaxIncluded": false
+    },
+    "availability": "https://schema.org/InStock",
+    "itemCondition": "https://schema.org/UsedCondition",
+    "seller": {
+      "@type": "RealEstateAgent",
+      "name": "Makelaarsland",
+      "url": "https://www.makelaarsland.nl/",
+      "identifier": "12285"
+    }
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://holtherstraat5.nl/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Drenthe",
+      "item": "https://holtherstraat5.nl/#regio"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Bruntinge",
+      "item": "https://holtherstraat5.nl/#locatie"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Holtherstraat 5",
+      "item": "https://holtherstraat5.nl/"
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "RealEstateAgent",
+  "name": "Makelaarsland",
+  "url": "https://www.makelaarsland.nl/",
+  "identifier": "12285",
+  "areaServed": {
+    "@type": "Country",
+    "name": "Nederland"
+  },
+  "makesOffer": {
+    "@type": "Offer",
+    "url": "https://www.funda.nl/detail/koop/bruntinge/huis-holtherstraat-5/43347705/",
+    "itemOffered": {
+      "@type": "SingleFamilyResidence",
+      "name": "Woonboerderij Holtherstraat 5, Bruntinge"
+    }
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Wat is de eigendomssituatie van Holtherstraat 5?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "De woonboerderij is volledig eigendom (geen erfpacht). Bij de koop hoort het volledige perceel van 5.012 m²."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is splitsing in twee wooneenheden toegestaan?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "De indeling leent zich voor dubbele bewoning of een mantelzorgsituatie. Formele splitsing in twee zelfstandige wooneenheden vereist toestemming van de gemeente Midden-Drenthe. Wij adviseren dit vooraf met de gemeente te toetsen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hoe energiezuinig is de boerderij?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "De woning heeft energielabel B. Dit is uitzonderlijk goed voor een boerderij uit 1937 en het resultaat van isolatie en duurzame installaties die de afgelopen jaren zijn aangebracht."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is er een waterput aanwezig?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja, op het perceel is een waterput aanwezig die wordt gebruikt voor het besproeien van de tuin. De woning is daarnaast aangesloten op het reguliere drinkwaternet."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Onder welke gemeente valt het object?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Holtherstraat 5 valt onder de gemeente Midden-Drenthe. Westerbork is de dichtstbijzijnde voorzieningenkern."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is de woning geschikt voor mantelzorg?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. Door de royale indeling met 7 slaapkamers en 2 badkamers is een mantelzorgindeling goed mogelijk, waarbij twee generaties zelfstandig naast elkaar kunnen wonen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wat is het bestemmingsplan?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Het perceel heeft de bestemming Wonen volgens het geldende bestemmingsplan van de gemeente Midden-Drenthe. Voor specifieke gebruiksvragen (bijvoorbeeld bedrijf aan huis) adviseren wij de bestemmingsplankaart te raadplegen of contact op te nemen met de gemeente."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wanneer is aanvaarding mogelijk?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Aanvaarding in overleg. De verkopers staan open voor flexibele afspraken die passen bij zowel hun als uw planning."
+      }
+    }
+  ]
+}
+</script>
+</head>
+
+<body>
+
+<!-- ============================================================
+     HEADER
+     ============================================================ -->
+<header class="site-header" id="site-header" role="banner">
+  <div class="container">
+    <a href="#top" class="brand" aria-label="Holtherstraat 5, Bruntinge - terug naar top">
+      <span class="brand__mark" aria-hidden="true">H</span>
+      <span class="brand__meta">
+        <small>Holtherstraat 5</small>
+        Bruntinge
+      </span>
+    </a>
+    <nav aria-label="Hoofdnavigatie" class="header__nav">
+      <a href="#contact" class="btn btn--light">Plan bezichtiging</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<section class="hero" aria-labelledby="hero-heading">
+  <div class="hero__media" role="img" aria-label="Luchtfoto van Holtherstraat 5, Bruntinge - woonboerderij grenzend aan Het Scharreveld"></div>
+  <div class="hero__overlay" aria-hidden="true"></div>
+  <div class="hero__content">
+    <span class="hero__eyebrow">Drenthe - Bruntinge</span>
+    <h1 id="hero-heading">Woonboerderij uit 1937, vijfduizend vierkante meter grond, grenzend aan Het Scharreveld.</h1>
+    <p class="hero__sub">Een gerenoveerde woonboerderij van 543 m² op ruim een halve hectare, met ecologische tuin, kapschuur en garage voor vier auto's, op zeven minuten van station Beilen.</p>
+    <a href="#intro" class="btn btn--light">Ontdek de boerderij</a>
+  </div>
+  <div class="scroll-indicator" aria-hidden="true">Scroll</div>
+</section>
+
+<!-- ============================================================
+     QUICK FACTS
+     ============================================================ -->
+<section class="facts" aria-label="Kerngegevens">
+  <div class="container">
+    <div class="facts__grid">
+      <div class="fact">
+        <div class="fact__label">Vraagprijs</div>
+        <div class="fact__value">€ 1.250.000<small>kosten koper</small></div>
+      </div>
+      <div class="fact">
+        <div class="fact__label">Woonoppervlak</div>
+        <div class="fact__value">543<small>m&sup2;</small></div>
+      </div>
+      <div class="fact">
+        <div class="fact__label">Perceel</div>
+        <div class="fact__value">5.012<small>m&sup2;</small></div>
+      </div>
+      <div class="fact">
+        <div class="fact__label">Slaapkamers</div>
+        <div class="fact__value">7<small>kamers</small></div>
+      </div>
+      <div class="fact">
+        <div class="fact__label">Energielabel</div>
+        <div class="fact__value">B<small>energielabel</small></div>
+      </div>
+      <div class="fact">
+        <div class="fact__label">Bouwjaar</div>
+        <div class="fact__value">1937<small>oorspronkelijk</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     INTRO
+     ============================================================ -->
+<section class="intro" id="intro" aria-labelledby="intro-heading">
+  <div class="container container--narrow reveal">
+    <span class="eyebrow">Introductie</span>
+    <h2 id="intro-heading">Een huis voor twee generaties, een atelier en een tuin die zichzelf voedt</h2>
+    <hr class="divider divider--center">
+    <p class="lead">Aan de rand van Bruntinge, op een perceel van 5.012 m² dat direct overloopt in natuurgebied Het Scharreveld, ligt deze vrijstaande woonboerderij uit 1937.</p>
+    <p>Het pand combineert het karakter van een Drentse keuterij met een doordachte indeling voor hedendaags gezinsleven: 543 m² woonoppervlakte, elf kamers waaronder zeven slaapkamers, twee badkamers, een atelier met akoestische ruimte en een woonkeuken uit 2023. Het hoofdvolume is geschikt voor dubbele bewoning of mantelzorg. Bijgebouwen bestaan uit een stenen garage voor vier auto's, een houten berging en een kapschuur uit 1935. Energielabel B, zestien zonnepanelen en een eigen waterput maken (deels) zelfvoorzienend wonen mogelijk.</p>
+  </div>
+</section>
+
+<!-- ============================================================
+     GALLERY
+     ============================================================ -->
+<section class="gallery" id="gallery" aria-labelledby="gallery-heading">
+  <div class="container reveal">
+    <span class="eyebrow">Beelden</span>
+    <h2 id="gallery-heading">In foto's</h2>
+    <hr class="divider">
+    <p style="max-width:560px;color:var(--c-ink-soft);">Negenennegentig beelden van binnen, buiten en het aangrenzende Scharreveld - klik om te vergroten en door de set te navigeren.</p>
+
+    <div class="gallery__grid" id="gallery-grid" role="list">
+      <a class="gallery__item gallery-item" href="photos/01.jpg" data-caption="Luchtfoto vanuit zuidoost met hoofdwoning, bijgebouw, vijver en het aangrenzende Scharreveld" role="listitem"><img class="lazy" data-src="photos/01.jpg" src="photos/01.jpg" alt="Luchtfoto vanuit zuidoost met hoofdwoning, bijgebouw, vijver en het aangrenzende Scharreveld" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/02.jpg" data-caption="Voorgevel van de boerderij met rood pannendak, sierschoorsteen en zonnige oprit" role="listitem"><img class="lazy" data-src="photos/02.jpg" src="photos/02.jpg" alt="Voorgevel van de boerderij met rood pannendak, sierschoorsteen en zonnige oprit" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/03.jpg" data-caption="Uitzicht vanaf het terras over weiland en bos, met houten tuintafel op de voorgrond" role="listitem"><img class="lazy" data-src="photos/03.jpg" src="photos/03.jpg" alt="Uitzicht vanaf het terras over weiland en bos, met houten tuintafel op de voorgrond" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/04.jpg" data-caption="Zonsopgang vanaf het terras met roze hemel boven mistig weiland" role="listitem"><img class="lazy" data-src="photos/04.jpg" src="photos/04.jpg" alt="Zonsopgang vanaf het terras met roze hemel boven mistig weiland" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/05.jpg" data-caption="De boerderij gezien vanaf de Holtherstraat tussen lentegroene bomen" role="listitem"><img class="lazy" data-src="photos/05.jpg" src="photos/05.jpg" alt="De boerderij gezien vanaf de Holtherstraat tussen lentegroene bomen" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/06.jpg" data-caption="Roze avondhemel met silhouet van takken boven het weiland aan de overkant" role="listitem"><img class="lazy" data-src="photos/06.jpg" src="photos/06.jpg" alt="Roze avondhemel met silhouet van takken boven het weiland aan de overkant" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/07.jpg" data-caption="Voorgevel van de boerderij vanaf de Holtherstraat, achter een lage haag tussen volwassen bomen" role="listitem"><img class="lazy" data-src="photos/07.jpg" src="photos/07.jpg" alt="Voorgevel van de boerderij vanaf de Holtherstraat, achter een lage haag tussen volwassen bomen" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/08.jpg" data-caption="Klinkeroprit en bijgebouw met houten gevel, omzoomd door beplanting" role="listitem"><img class="lazy" data-src="photos/08.jpg" src="photos/08.jpg" alt="Klinkeroprit en bijgebouw met houten gevel, omzoomd door beplanting" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/09.jpg" data-caption="Achtergevel met serre en grote ramen, terras met potten en bloembakken" role="listitem"><img class="lazy" data-src="photos/09.jpg" src="photos/09.jpg" alt="Achtergevel met serre en grote ramen, terras met potten en bloembakken" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/10.jpg" data-caption="Zicht vanuit de tuin naar het weiland, met klinkerterras en tuinstoelen langs de gevel" role="listitem"><img class="lazy" data-src="photos/10.jpg" src="photos/10.jpg" alt="Zicht vanuit de tuin naar het weiland, met klinkerterras en tuinstoelen langs de gevel" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/11.jpg" data-caption="Parkeerplaats naast de schuur met houtopslag en zicht op het achterland" role="listitem"><img class="lazy" data-src="photos/11.jpg" src="photos/11.jpg" alt="Parkeerplaats naast de schuur met houtopslag en zicht op het achterland" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/12.jpg" data-caption="Tweede parkeerplek met houtopslag en uitzicht over het weiland" role="listitem"><img class="lazy" data-src="photos/12.jpg" src="photos/12.jpg" alt="Tweede parkeerplek met houtopslag en uitzicht over het weiland" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/13.jpg" data-caption="Beschut terras met houten eettafel, omzoomd door geschoren hagen" role="listitem"><img class="lazy" data-src="photos/13.jpg" src="photos/13.jpg" alt="Beschut terras met houten eettafel, omzoomd door geschoren hagen" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/14.jpg" data-caption="Boerderijvleugel met groene moestuinbedden langs het pad" role="listitem"><img class="lazy" data-src="photos/14.jpg" src="photos/14.jpg" alt="Boerderijvleugel met groene moestuinbedden langs het pad" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/15.jpg" data-caption="Lichte entree met openslaande tuindeuren en houten trap naar boven" role="listitem"><img class="lazy" data-src="photos/15.jpg" src="photos/15.jpg" alt="Lichte entree met openslaande tuindeuren en houten trap naar boven" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/16.jpg" data-caption="Doorkijk via klassieke openslaande deuren met glas-in-lood naar de gang met houten vloer" role="listitem"><img class="lazy" data-src="photos/16.jpg" src="photos/16.jpg" alt="Doorkijk via klassieke openslaande deuren met glas-in-lood naar de gang met houten vloer" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/17.jpg" data-caption="Multifunctionele ruimte met openslaande deuren, houten vloer, piano en zithoek" role="listitem"><img class="lazy" data-src="photos/17.jpg" src="photos/17.jpg" alt="Multifunctionele ruimte met openslaande deuren, houten vloer, piano en zithoek" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/18.jpg" data-caption="Grote woonruimte met balkenplafond, schuifdeuren naar de keuken en piano in de hoek" role="listitem"><img class="lazy" data-src="photos/18.jpg" src="photos/18.jpg" alt="Grote woonruimte met balkenplafond, schuifdeuren naar de keuken en piano in de hoek" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/19.jpg" data-caption="Eetkamer met grote ramen, houten eettafel en piano onder het balkenplafond" role="listitem"><img class="lazy" data-src="photos/19.jpg" src="photos/19.jpg" alt="Eetkamer met grote ramen, houten eettafel en piano onder het balkenplafond" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/20.jpg" data-caption="Speelse zit- en eethoek met piano, biljart en uitzicht door de boerderijramen" role="listitem"><img class="lazy" data-src="photos/20.jpg" src="photos/20.jpg" alt="Speelse zit- en eethoek met piano, biljart en uitzicht door de boerderijramen" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/21.jpg" data-caption="Sfeervolle eethoek met houten tafel, blauwe fauteuil en weids uitzicht door de ramen" role="listitem"><img class="lazy" data-src="photos/21.jpg" src="photos/21.jpg" alt="Sfeervolle eethoek met houten tafel, blauwe fauteuil en weids uitzicht door de ramen" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/22.jpg" data-caption="Bibliotheek met hoge boekenkast, blauwe fauteuils en sfeervolle leeshoek" role="listitem"><img class="lazy" data-src="photos/22.jpg" src="photos/22.jpg" alt="Bibliotheek met hoge boekenkast, blauwe fauteuils en sfeervolle leeshoek" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/23.jpg" data-caption="Ruime badkamer met ligbad, regendouche en originele houten draagbalk" role="listitem"><img class="lazy" data-src="photos/23.jpg" src="photos/23.jpg" alt="Ruime badkamer met ligbad, regendouche en originele houten draagbalk" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/24.jpg" data-caption="Tweede badkamer met buitendeur, marmeren wastafelmeubel en wit betegelde wanden" role="listitem"><img class="lazy" data-src="photos/24.jpg" src="photos/24.jpg" alt="Tweede badkamer met buitendeur, marmeren wastafelmeubel en wit betegelde wanden" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/25.jpg" data-caption="Badkamer met wastafel, ingebouwde kasten en zicht op originele houten staander" role="listitem"><img class="lazy" data-src="photos/25.jpg" src="photos/25.jpg" alt="Badkamer met wastafel, ingebouwde kasten en zicht op originele houten staander" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/26.jpg" data-caption="Holtherstraat 5 - foto 26" role="listitem"><img class="lazy" data-src="photos/26.jpg" src="photos/26.jpg" alt="Holtherstraat 5 - foto 26" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/27.jpg" data-caption="Holtherstraat 5 - foto 27" role="listitem"><img class="lazy" data-src="photos/27.jpg" src="photos/27.jpg" alt="Holtherstraat 5 - foto 27" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/28.jpg" data-caption="Holtherstraat 5 - foto 28" role="listitem"><img class="lazy" data-src="photos/28.jpg" src="photos/28.jpg" alt="Holtherstraat 5 - foto 28" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/29.jpg" data-caption="Holtherstraat 5 - foto 29" role="listitem"><img class="lazy" data-src="photos/29.jpg" src="photos/29.jpg" alt="Holtherstraat 5 - foto 29" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/30.jpg" data-caption="Holtherstraat 5 - foto 30" role="listitem"><img class="lazy" data-src="photos/30.jpg" src="photos/30.jpg" alt="Holtherstraat 5 - foto 30" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/31.jpg" data-caption="Holtherstraat 5 - foto 31" role="listitem"><img class="lazy" data-src="photos/31.jpg" src="photos/31.jpg" alt="Holtherstraat 5 - foto 31" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/32.jpg" data-caption="Holtherstraat 5 - foto 32" role="listitem"><img class="lazy" data-src="photos/32.jpg" src="photos/32.jpg" alt="Holtherstraat 5 - foto 32" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/33.jpg" data-caption="Holtherstraat 5 - foto 33" role="listitem"><img class="lazy" data-src="photos/33.jpg" src="photos/33.jpg" alt="Holtherstraat 5 - foto 33" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/34.jpg" data-caption="Holtherstraat 5 - foto 34" role="listitem"><img class="lazy" data-src="photos/34.jpg" src="photos/34.jpg" alt="Holtherstraat 5 - foto 34" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/35.jpg" data-caption="Holtherstraat 5 - foto 35" role="listitem"><img class="lazy" data-src="photos/35.jpg" src="photos/35.jpg" alt="Holtherstraat 5 - foto 35" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/36.jpg" data-caption="Holtherstraat 5 - foto 36" role="listitem"><img class="lazy" data-src="photos/36.jpg" src="photos/36.jpg" alt="Holtherstraat 5 - foto 36" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/37.jpg" data-caption="Holtherstraat 5 - foto 37" role="listitem"><img class="lazy" data-src="photos/37.jpg" src="photos/37.jpg" alt="Holtherstraat 5 - foto 37" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/38.jpg" data-caption="Holtherstraat 5 - foto 38" role="listitem"><img class="lazy" data-src="photos/38.jpg" src="photos/38.jpg" alt="Holtherstraat 5 - foto 38" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/39.jpg" data-caption="Holtherstraat 5 - foto 39" role="listitem"><img class="lazy" data-src="photos/39.jpg" src="photos/39.jpg" alt="Holtherstraat 5 - foto 39" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/40.jpg" data-caption="Holtherstraat 5 - foto 40" role="listitem"><img class="lazy" data-src="photos/40.jpg" src="photos/40.jpg" alt="Holtherstraat 5 - foto 40" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/41.jpg" data-caption="Holtherstraat 5 - foto 41" role="listitem"><img class="lazy" data-src="photos/41.jpg" src="photos/41.jpg" alt="Holtherstraat 5 - foto 41" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/42.jpg" data-caption="Holtherstraat 5 - foto 42" role="listitem"><img class="lazy" data-src="photos/42.jpg" src="photos/42.jpg" alt="Holtherstraat 5 - foto 42" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/43.jpg" data-caption="Holtherstraat 5 - foto 43" role="listitem"><img class="lazy" data-src="photos/43.jpg" src="photos/43.jpg" alt="Holtherstraat 5 - foto 43" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/44.jpg" data-caption="Holtherstraat 5 - foto 44" role="listitem"><img class="lazy" data-src="photos/44.jpg" src="photos/44.jpg" alt="Holtherstraat 5 - foto 44" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/45.jpg" data-caption="Holtherstraat 5 - foto 45" role="listitem"><img class="lazy" data-src="photos/45.jpg" src="photos/45.jpg" alt="Holtherstraat 5 - foto 45" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/46.jpg" data-caption="Holtherstraat 5 - foto 46" role="listitem"><img class="lazy" data-src="photos/46.jpg" src="photos/46.jpg" alt="Holtherstraat 5 - foto 46" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/47.jpg" data-caption="Holtherstraat 5 - foto 47" role="listitem"><img class="lazy" data-src="photos/47.jpg" src="photos/47.jpg" alt="Holtherstraat 5 - foto 47" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/48.jpg" data-caption="Holtherstraat 5 - foto 48" role="listitem"><img class="lazy" data-src="photos/48.jpg" src="photos/48.jpg" alt="Holtherstraat 5 - foto 48" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/49.jpg" data-caption="Holtherstraat 5 - foto 49" role="listitem"><img class="lazy" data-src="photos/49.jpg" src="photos/49.jpg" alt="Holtherstraat 5 - foto 49" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/50.jpg" data-caption="Holtherstraat 5 - foto 50" role="listitem"><img class="lazy" data-src="photos/50.jpg" src="photos/50.jpg" alt="Holtherstraat 5 - foto 50" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/51.jpg" data-caption="Holtherstraat 5 - foto 51" role="listitem"><img class="lazy" data-src="photos/51.jpg" src="photos/51.jpg" alt="Holtherstraat 5 - foto 51" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/52.jpg" data-caption="Holtherstraat 5 - foto 52" role="listitem"><img class="lazy" data-src="photos/52.jpg" src="photos/52.jpg" alt="Holtherstraat 5 - foto 52" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/53.jpg" data-caption="Holtherstraat 5 - foto 53" role="listitem"><img class="lazy" data-src="photos/53.jpg" src="photos/53.jpg" alt="Holtherstraat 5 - foto 53" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/54.jpg" data-caption="Holtherstraat 5 - foto 54" role="listitem"><img class="lazy" data-src="photos/54.jpg" src="photos/54.jpg" alt="Holtherstraat 5 - foto 54" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/55.jpg" data-caption="Holtherstraat 5 - foto 55" role="listitem"><img class="lazy" data-src="photos/55.jpg" src="photos/55.jpg" alt="Holtherstraat 5 - foto 55" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/56.jpg" data-caption="Holtherstraat 5 - foto 56" role="listitem"><img class="lazy" data-src="photos/56.jpg" src="photos/56.jpg" alt="Holtherstraat 5 - foto 56" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/57.jpg" data-caption="Holtherstraat 5 - foto 57" role="listitem"><img class="lazy" data-src="photos/57.jpg" src="photos/57.jpg" alt="Holtherstraat 5 - foto 57" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/58.jpg" data-caption="Holtherstraat 5 - foto 58" role="listitem"><img class="lazy" data-src="photos/58.jpg" src="photos/58.jpg" alt="Holtherstraat 5 - foto 58" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/59.jpg" data-caption="Holtherstraat 5 - foto 59" role="listitem"><img class="lazy" data-src="photos/59.jpg" src="photos/59.jpg" alt="Holtherstraat 5 - foto 59" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/60.jpg" data-caption="Holtherstraat 5 - foto 60" role="listitem"><img class="lazy" data-src="photos/60.jpg" src="photos/60.jpg" alt="Holtherstraat 5 - foto 60" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/61.jpg" data-caption="Holtherstraat 5 - foto 61" role="listitem"><img class="lazy" data-src="photos/61.jpg" src="photos/61.jpg" alt="Holtherstraat 5 - foto 61" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/62.jpg" data-caption="Holtherstraat 5 - foto 62" role="listitem"><img class="lazy" data-src="photos/62.jpg" src="photos/62.jpg" alt="Holtherstraat 5 - foto 62" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/63.jpg" data-caption="Holtherstraat 5 - foto 63" role="listitem"><img class="lazy" data-src="photos/63.jpg" src="photos/63.jpg" alt="Holtherstraat 5 - foto 63" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/64.jpg" data-caption="Holtherstraat 5 - foto 64" role="listitem"><img class="lazy" data-src="photos/64.jpg" src="photos/64.jpg" alt="Holtherstraat 5 - foto 64" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/65.jpg" data-caption="Holtherstraat 5 - foto 65" role="listitem"><img class="lazy" data-src="photos/65.jpg" src="photos/65.jpg" alt="Holtherstraat 5 - foto 65" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/66.jpg" data-caption="Holtherstraat 5 - foto 66" role="listitem"><img class="lazy" data-src="photos/66.jpg" src="photos/66.jpg" alt="Holtherstraat 5 - foto 66" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/67.jpg" data-caption="Holtherstraat 5 - foto 67" role="listitem"><img class="lazy" data-src="photos/67.jpg" src="photos/67.jpg" alt="Holtherstraat 5 - foto 67" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/68.jpg" data-caption="Holtherstraat 5 - foto 68" role="listitem"><img class="lazy" data-src="photos/68.jpg" src="photos/68.jpg" alt="Holtherstraat 5 - foto 68" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/69.jpg" data-caption="Holtherstraat 5 - foto 69" role="listitem"><img class="lazy" data-src="photos/69.jpg" src="photos/69.jpg" alt="Holtherstraat 5 - foto 69" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/70.jpg" data-caption="Holtherstraat 5 - foto 70" role="listitem"><img class="lazy" data-src="photos/70.jpg" src="photos/70.jpg" alt="Holtherstraat 5 - foto 70" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/71.jpg" data-caption="Holtherstraat 5 - foto 71" role="listitem"><img class="lazy" data-src="photos/71.jpg" src="photos/71.jpg" alt="Holtherstraat 5 - foto 71" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/72.jpg" data-caption="Holtherstraat 5 - foto 72" role="listitem"><img class="lazy" data-src="photos/72.jpg" src="photos/72.jpg" alt="Holtherstraat 5 - foto 72" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/73.jpg" data-caption="Holtherstraat 5 - foto 73" role="listitem"><img class="lazy" data-src="photos/73.jpg" src="photos/73.jpg" alt="Holtherstraat 5 - foto 73" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/74.jpg" data-caption="Holtherstraat 5 - foto 74" role="listitem"><img class="lazy" data-src="photos/74.jpg" src="photos/74.jpg" alt="Holtherstraat 5 - foto 74" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/75.jpg" data-caption="Holtherstraat 5 - foto 75" role="listitem"><img class="lazy" data-src="photos/75.jpg" src="photos/75.jpg" alt="Holtherstraat 5 - foto 75" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/76.jpg" data-caption="Holtherstraat 5 - foto 76" role="listitem"><img class="lazy" data-src="photos/76.jpg" src="photos/76.jpg" alt="Holtherstraat 5 - foto 76" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/77.jpg" data-caption="Holtherstraat 5 - foto 77" role="listitem"><img class="lazy" data-src="photos/77.jpg" src="photos/77.jpg" alt="Holtherstraat 5 - foto 77" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/78.jpg" data-caption="Holtherstraat 5 - foto 78" role="listitem"><img class="lazy" data-src="photos/78.jpg" src="photos/78.jpg" alt="Holtherstraat 5 - foto 78" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/79.jpg" data-caption="Holtherstraat 5 - foto 79" role="listitem"><img class="lazy" data-src="photos/79.jpg" src="photos/79.jpg" alt="Holtherstraat 5 - foto 79" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/80.jpg" data-caption="Holtherstraat 5 - foto 80" role="listitem"><img class="lazy" data-src="photos/80.jpg" src="photos/80.jpg" alt="Holtherstraat 5 - foto 80" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/81.jpg" data-caption="Holtherstraat 5 - foto 81" role="listitem"><img class="lazy" data-src="photos/81.jpg" src="photos/81.jpg" alt="Holtherstraat 5 - foto 81" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/82.jpg" data-caption="Holtherstraat 5 - foto 82" role="listitem"><img class="lazy" data-src="photos/82.jpg" src="photos/82.jpg" alt="Holtherstraat 5 - foto 82" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/83.jpg" data-caption="Holtherstraat 5 - foto 83" role="listitem"><img class="lazy" data-src="photos/83.jpg" src="photos/83.jpg" alt="Holtherstraat 5 - foto 83" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/84.jpg" data-caption="Holtherstraat 5 - foto 84" role="listitem"><img class="lazy" data-src="photos/84.jpg" src="photos/84.jpg" alt="Holtherstraat 5 - foto 84" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/85.jpg" data-caption="Holtherstraat 5 - foto 85" role="listitem"><img class="lazy" data-src="photos/85.jpg" src="photos/85.jpg" alt="Holtherstraat 5 - foto 85" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/86.jpg" data-caption="Holtherstraat 5 - foto 86" role="listitem"><img class="lazy" data-src="photos/86.jpg" src="photos/86.jpg" alt="Holtherstraat 5 - foto 86" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/87.jpg" data-caption="Holtherstraat 5 - foto 87" role="listitem"><img class="lazy" data-src="photos/87.jpg" src="photos/87.jpg" alt="Holtherstraat 5 - foto 87" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/88.jpg" data-caption="Holtherstraat 5 - foto 88" role="listitem"><img class="lazy" data-src="photos/88.jpg" src="photos/88.jpg" alt="Holtherstraat 5 - foto 88" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/89.jpg" data-caption="Holtherstraat 5 - foto 89" role="listitem"><img class="lazy" data-src="photos/89.jpg" src="photos/89.jpg" alt="Holtherstraat 5 - foto 89" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/90.jpg" data-caption="Holtherstraat 5 - foto 90" role="listitem"><img class="lazy" data-src="photos/90.jpg" src="photos/90.jpg" alt="Holtherstraat 5 - foto 90" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/91.jpg" data-caption="Holtherstraat 5 - foto 91" role="listitem"><img class="lazy" data-src="photos/91.jpg" src="photos/91.jpg" alt="Holtherstraat 5 - foto 91" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/92.jpg" data-caption="Holtherstraat 5 - foto 92" role="listitem"><img class="lazy" data-src="photos/92.jpg" src="photos/92.jpg" alt="Holtherstraat 5 - foto 92" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/93.jpg" data-caption="Holtherstraat 5 - foto 93" role="listitem"><img class="lazy" data-src="photos/93.jpg" src="photos/93.jpg" alt="Holtherstraat 5 - foto 93" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/94.jpg" data-caption="Holtherstraat 5 - foto 94" role="listitem"><img class="lazy" data-src="photos/94.jpg" src="photos/94.jpg" alt="Holtherstraat 5 - foto 94" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/95.jpg" data-caption="Holtherstraat 5 - foto 95" role="listitem"><img class="lazy" data-src="photos/95.jpg" src="photos/95.jpg" alt="Holtherstraat 5 - foto 95" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/96.jpg" data-caption="Holtherstraat 5 - foto 96" role="listitem"><img class="lazy" data-src="photos/96.jpg" src="photos/96.jpg" alt="Holtherstraat 5 - foto 96" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/97.jpg" data-caption="Holtherstraat 5 - foto 97" role="listitem"><img class="lazy" data-src="photos/97.jpg" src="photos/97.jpg" alt="Holtherstraat 5 - foto 97" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/98.jpg" data-caption="Holtherstraat 5 - foto 98" role="listitem"><img class="lazy" data-src="photos/98.jpg" src="photos/98.jpg" alt="Holtherstraat 5 - foto 98" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/99.jpg" data-caption="Ochtendnevel boven de weide met ooievaarsnest" role="listitem"><img class="lazy" data-src="photos/99.jpg" src="photos/99.jpg" alt="Ochtendnevel boven de weide met ooievaarsnest" loading="lazy"></a>
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Foto in vol scherm" aria-hidden="true">
+  <button class="lightbox__close" id="lightbox-close" aria-label="Sluiten">&times;</button>
+  <button class="lightbox__nav lightbox__nav--prev" id="lightbox-prev" aria-label="Vorige foto">&lsaquo;</button>
+  <img id="lightbox-img" src="" alt="">
+  <button class="lightbox__nav lightbox__nav--next" id="lightbox-next" aria-label="Volgende foto">&rsaquo;</button>
+  <div class="lightbox__counter" id="lightbox-counter"></div>
+</div>
+
+<!-- ============================================================
+     USPs
+     ============================================================ -->
+<section class="usps" id="kenmerken" aria-labelledby="usps-heading">
+  <div class="container reveal">
+    <span class="eyebrow">Drie redenen</span>
+    <h2 id="usps-heading">Waarom Holtherstraat 5</h2>
+    <hr class="divider">
+    <div class="usps__grid">
+      <article class="usp">
+        <div class="usp__num">I</div>
+        <h3>Ruimte en indeling voor meerdere levensfasen</h3>
+        <p>Met 543 m² woonoppervlak, 2.076 m³ inhoud en elf kamers is dit huis ontworpen voor gezinnen die ruimte nodig hebben. De L-vormige woonkamer van 40 m² in het voorhuis en de living van 65 m² in het achterhuis functioneren als twee zelfstandige leefkernen. Zeven slaapkamers, twee badkamers en een atelier maken meerdere woonscenario's mogelijk.</p>
+      </article>
+      <article class="usp">
+        <div class="usp__num">II</div>
+        <h3>Energielabel B en eigen voorzieningen</h3>
+        <p>De boerderij is geïsoleerd in dak en glas, en wordt verwarmd door een cv-ketel uit 2017, twee houtkachels en twee pelletkachels. Zestien zonnepanelen leveren een substantieel deel van het elektriciteitsverbruik, en een eigen waterput voorziet in tuin- en proceswater. De combinatie maakt het pand minder gevoelig voor energieprijzen.</p>
+      </article>
+      <article class="usp">
+        <div class="usp__num">III</div>
+        <h3>Aan het Scharreveld, met de stad binnen handbereik</h3>
+        <p>Het perceel grenst direct aan natuurgebied Het Scharreveld. Westerbork en Beilen zijn in zeven minuten te bereiken; vanaf station Beilen rijdt er een rechtstreekse verbinding naar Den Haag. Assen ligt op een kwartier rijden, Groningen op vijfendertig minuten. De Jenaplan basisschool in Balinge is via een eigen bospad bereikbaar.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     INDELING per ruimte (accordion)
+     ============================================================ -->
+<section class="rooms" id="indeling" aria-labelledby="rooms-heading">
+  <div class="container container--narrow reveal">
+    <span class="eyebrow">Indeling</span>
+    <h2 id="rooms-heading">Ruimte voor ruimte</h2>
+    <hr class="divider">
+    <p>Het hoofdvolume bestaat uit een voorhuis en een achterhuis, samen 543 m² woonoppervlak verdeeld over elf kamers. Hieronder per zone wat u kunt verwachten.</p>
+
+    <div class="accordion" id="rooms-accordion">
+      <div class="accordion__item room"><button class="accordion__btn room__head" type="button"><span class="room__title">Voorhuis - begane grond</span><span class="room__meta">40 m² L-vormig</span></button><div class="accordion__panel room__body"><div class="accordion__panel-inner"><p>Een L-vormige woonkamer van 40 m² met zicht op de tuin vormt het hart van het voorhuis. Aansluitend ligt een badkamer met ligbad. Deze kern functioneert als zelfstandige leefruimte binnen het hoofdvolume.</p></div></div></div>
+      <div class="accordion__item room"><button class="accordion__btn room__head" type="button"><span class="room__title">Voorhuis - eerste verdieping</span><span class="room__meta">30 m² slaapkamer</span></button><div class="accordion__panel room__body"><div class="accordion__panel-inner"><p>Een ruime slaapkamer van 30 m², geschikt als hoofdslaapkamer of als zelfstandig domein voor een tweede generatie. Hoge plafonds, daklicht en zicht over het erf.</p></div></div></div>
+      <div class="accordion__item room"><button class="accordion__btn room__head" type="button"><span class="room__title">Achterhuis - begane grond</span><span class="room__meta">65 m² living + 6 slaapkamers</span></button><div class="accordion__panel room__body"><div class="accordion__panel-inner"><p>Een living van 65 m² met massief houten vloer, houtkachel en openslaande deuren naar het terras vormt het tweede woonzwaartepunt. Aansluitend de open woonkeuken uit 2023. Op deze verdieping liggen zes slaapkamers (30, 15, 14, 12, 10, 9 en 6 m²), een tweede badkamer en een atelier met akoestisch behandelde ruimte voor muziek, opname of geconcentreerd werk.</p></div></div></div>
+      <div class="accordion__item room"><button class="accordion__btn room__head" type="button"><span class="room__title">Achterhuis - eerste verdieping</span><span class="room__meta">40 m² multifunctioneel</span></button><div class="accordion__panel room__body"><div class="accordion__panel-inner"><p>Een multifunctionele ruimte van 40 m², bruikbaar als slaapkamer, werkkamer of speelzolder. De ruimte biedt flexibiliteit voor wie de indeling in de loop van de tijd wil laten meegroeien met het huishouden.</p></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     PLATTEGRONDEN
+     ============================================================ -->
+<section class="floorplans" aria-labelledby="floorplans-heading">
+  <div class="container reveal">
+    <span class="eyebrow">Plattegronden</span>
+    <h2 id="floorplans-heading">De boerderij in kaart</h2>
+    <hr class="divider">
+    <div class="floorplans__grid">
+      <figure class="floorplan"><img src="photos/plattegrond-01.jpg" alt="Plattegrond Begane grond" loading="lazy"><h4>Begane grond</h4><p style="font-size:.85rem;color:var(--c-ink-soft);margin:.5rem 0 0;">Hoofdwoning met woonkamer, keuken, badkamer en de oude boerderijvleugel met slaapkamers, hobbyruimte, berging en garage.</p></figure>
+      <figure class="floorplan"><img src="photos/plattegrond-02.jpg" alt="Plattegrond Eerste verdieping" loading="lazy"><h4>Eerste verdieping</h4><p style="font-size:.85rem;color:var(--c-ink-soft);margin:.5rem 0 0;">Slaapkamer, overloop en extra slaapkamer met maatvoering.</p></figure>
+      <figure class="floorplan"><img src="photos/plattegrond-03.jpg" alt="Plattegrond Schuur en overkapping" loading="lazy"><h4>Schuur en overkapping</h4><p style="font-size:.85rem;color:var(--c-ink-soft);margin:.5rem 0 0;">Vrijstaande schuur, bergruimte en overkapping.</p></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     BUITENRUIMTE
+     ============================================================ -->
+<section class="outdoor" aria-labelledby="outdoor-heading">
+  <div class="container reveal">
+    <span class="eyebrow">Buitenruimte</span>
+    <h2 id="outdoor-heading">Een halve hectare die overloopt in natuurgebied</h2>
+    <hr class="divider">
+    <p style="max-width:620px;color:rgba(247,243,235,.78);">De tuin meet ruim een halve hectare en is in de loop van vele jaren omgevormd tot een ecologisch geheel. Wadi, vijver, kas, moestuinbedden en fruitbomen sluiten naadloos aan op het aangrenzende Scharreveld.</p>
+
+    <div class="outdoor__grid">
+      <article class="outdoor__card"><h3>Aan het Scharreveld</h3><p>Het perceel grenst direct aan het open heide- en bosgebied. Wandel- en fietsroutes beginnen aan de erfgrens.</p></article>
+      <article class="outdoor__card"><h3>Ecologische tuin</h3><p>Wadi, natuurlijke vijver, kas en moestuinbedden volgens permacultuur-principes. Fruitbomen, bessenstruiken, kruidenbedden.</p></article>
+      <article class="outdoor__card"><h3>Kapschuur uit 1935</h3><p>Ongeveer 100 m², geschikt voor opslag, werkplaats of hobbyruimte. Origineel volume, in onveranderde staat.</p></article>
+      <article class="outdoor__card"><h3>Garage voor vier auto's</h3><p>Aangebouwde stenen garage met elektra, water en dakisolatie. Geschikt voor klassiekers, werkplaats of grote bergruimte.</p></article>
+      <article class="outdoor__card"><h3>Houten berging</h3><p>Vrijstaande berging voor tuinmateriaal, fietsen en seizoensopslag.</p></article>
+      <article class="outdoor__card"><h3>Ruimte voor vee of paard</h3><p>Het perceel biedt ruimte voor paddock of weide. Hobbymatig houden van paarden of klein vee is gangbaar in de omgeving.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     DUURZAAMHEID
+     ============================================================ -->
+<section class="sustain" aria-labelledby="sustain-heading">
+  <div class="container reveal">
+    <div class="sustain__layout">
+      <div>
+        <span class="eyebrow">Duurzaam wonen</span>
+        <h2 id="sustain-heading">Geïsoleerd, eigen opwekking, eigen water</h2>
+        <hr class="divider">
+        <p>De boerderij heeft energielabel B - uitzonderlijk voor een pand uit 1937. Isolatie, zestien zonnepanelen, hout- en pelletkachels en een eigen waterput maken het pand geschikt voor wie de gevoeligheid voor energie- en waterprijzen wil verkleinen.</p>
+      </div>
+      <ul class="sustain__list">
+        <li>Energielabel B - uitzonderlijk voor een boerderij uit 1937</li>
+        <li>Dakisolatie en dubbel glas in alle ramen</li>
+        <li>Intergas cv-ketel uit 2017 (eigendom), aangevuld met twee huur-ketels</li>
+        <li>Twee houtkachels en twee pelletkachels voor bijstook</li>
+        <li>Zestien zonnepanelen op het dak</li>
+        <li>Eigen waterput voor tuin- en proceswater</li>
+        <li>Mechanische ventilatie voor een gezond binnenklimaat</li>
+        <li>Glasvezelaansluiting aanwezig</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     LIGGING / KAART
+     ============================================================ -->
+<section class="location" id="locatie" aria-labelledby="location-heading">
+  <div class="container reveal">
+    <span class="eyebrow">Ligging</span>
+    <h2 id="location-heading">Bruntinge - esdorp tussen Westerbork en Beilen</h2>
+    <hr class="divider">
+    <p style="max-width:620px;">Bruntinge is een esdorp in de gemeente Midden-Drenthe. Het perceel grenst direct aan natuurgebied Het Scharreveld. Wandel- en fietsroutes beginnen aan de erfgrens; vanaf station Beilen rijden rechtstreekse intercity's naar Zwolle, Amersfoort en Den Haag.</p>
+
+    <div class="location__map"><div id="locatie-kaart" class="hh-map" style="width:100%;height:100%;"></div></div>
+
+    <div class="location__pois">
+      <div class="poi"><span class="poi__distance">7 min</span><span class="poi__name">Station Beilen - directe IC naar Zwolle, Amersfoort, Den Haag</span></div>
+      <div class="poi"><span class="poi__distance">7 min</span><span class="poi__name">Westerbork - boodschappen, scholen, zorg</span></div>
+      <div class="poi"><span class="poi__distance">15 min</span><span class="poi__name">Assen - provinciehoofdstad</span></div>
+      <div class="poi"><span class="poi__distance">35 min</span><span class="poi__name">Groningen - universiteit en regio-hub</span></div>
+      <div class="poi"><span class="poi__distance">0 m</span><span class="poi__name">Het Scharreveld - natuurgebied aan de erfgrens</span></div>
+      <div class="poi"><span class="poi__distance">lopend</span><span class="poi__name">Jenaplanschool Balinge via eigen bospad</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     VOOR WIE
+     ============================================================ -->
+<section class="personas" aria-labelledby="personas-heading">
+  <div class="container reveal">
+    <span class="eyebrow">Voor wie</span>
+    <h2 id="personas-heading">Voor wie dit huis is bedoeld</h2>
+    <hr class="divider">
+    <div class="personas__grid">
+      <article class="persona"><div class="persona__icon" aria-hidden="true">&</div><h4>Multi-generatie families</h4><p>De indeling met een zelfstandig voorhuis en een ruim achterhuis maakt dubbele bewoning praktisch haalbaar. Ouders, volwassen kinderen en grootouders onder één dak, met behoud van eigen leefruimte en eigen badkamer.</p></article>
+      <article class="persona"><div class="persona__icon" aria-hidden="true">✎</div><h4>Kunstenaars en ondernemers</h4><p>Het atelier met akoestisch behandelde ruimte, de zolder van 40 m² en de kapschuur van 100 m² bieden samen een werkomgeving die in een stad onbetaalbaar zou zijn. Voor beeldend kunstenaars, muzikanten, schrijvers en ambachtelijke makers.</p></article>
+      <article class="persona"><div class="persona__icon" aria-hidden="true">✿</div><h4>Ecologisch-bewuste kopers</h4><p>Energielabel B, zonnepanelen, twee pelletkachels, een eigen waterput en een tuin volgens permacultuur-principes vormen een fundament om op door te bouwen - met warmtepomp, accuopslag of uitbreiding van de moestuin.</p></article>
+      <article class="persona"><div class="persona__icon" aria-hidden="true">♞</div><h4>Hobbymatige paardenhouders</h4><p>Het perceel van 5.012 m² grenst aan een natuurgebied met rijke ruiterpaden. Kapschuur en bijgebouwen lenen zich na aanpassing voor stalling van paarden, pony's of klein vee. Buitenrijden begint aan de erfgrens.</p></article>
+      <article class="persona"><div class="persona__icon" aria-hidden="true">⌂</div><h4>Doorstromers met thuiswerk</h4><p>Voor huishoudens uit de Randstad die structureel hybride werken: 543 m² wonen, 5.012 m² grond, twee leefkernen en zeven slaapkamers, op een treinverbinding met Den Haag. Een combinatie die in West-Nederland niet meer te vinden is.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FAQ
+     ============================================================ -->
+<section class="faq" id="faq" aria-labelledby="faq-heading">
+  <div class="container container--narrow reveal">
+    <span class="eyebrow">Veelgestelde vragen</span>
+    <h2 id="faq-heading">Antwoorden op uw vragen</h2>
+    <hr class="divider">
+    <div class="accordion" id="faq-accordion">
+      <div class="accordion__item faq__item"><button class="accordion__btn faq__q" type="button">Is het pand juridisch te splitsen in twee zelfstandige wooneenheden?</button><div class="accordion__panel faq__a"><div class="accordion__panel-inner"><p>De huidige indeling maakt feitelijke dubbele bewoning mogelijk, maar juridische splitsing in twee zelfstandige adressen vraagt instemming van de gemeente Midden-Drenthe en toetsing aan het bestemmingsplan. Wij adviseren geinteresseerde kopers vooraf contact op te nemen met de gemeente over de mogelijkheden voor formele splitsing, mantelzorgwoning of inwoning.</p></div></div></div>
+      <div class="accordion__item faq__item"><button class="accordion__btn faq__q" type="button">Wat is de gemiddelde onderhoudslast van een woonboerderij uit 1937?</button><div class="accordion__panel faq__a"><div class="accordion__panel-inner"><p>Het pand is consequent onderhouden, met buitenschilderwerk in 2021 en 2025 en een vernieuwde keuken in 2023. De onderhoudsbehoefte van een boerderij van bijna negentig jaar oud blijft hoger dan van een nieuwbouwwoning. Houtwerk, voegwerk en pannendak vragen periodieke aandacht. Een bouwkundige keuring vooraf is aan te raden en wordt door de verkoper gefaciliteerd.</p></div></div></div>
+      <div class="accordion__item faq__item"><button class="accordion__btn faq__q" type="button">De cv-installatie bestaat uit een eigen ketel plus twee huur-ketels. Hoe zit dat?</button><div class="accordion__panel faq__a"><div class="accordion__panel-inner"><p>De Intergas-ketel uit 2017 is eigendom en wordt bij verkoop overgedragen. De twee aanvullende ketels zijn huurketels van een externe leverancier; de lopende contracten kunnen worden overgenomen of opgezegd, afhankelijk van de wens van de koper. De combinatie is ontstaan vanuit de omvang van het pand en de wens om bij uitval terug te kunnen vallen op meerdere bronnen.</p></div></div></div>
+      <div class="accordion__item faq__item"><button class="accordion__btn faq__q" type="button">Hoe betrouwbaar is de eigen waterput?</button><div class="accordion__panel faq__a"><div class="accordion__panel-inner"><p>De waterput voorziet de tuin, de kas en het buitengebruik van water en functioneert al jaren naar tevredenheid. Het putwater wordt niet gebruikt als drinkwater; daarvoor is het pand aangesloten op het reguliere waternet. Bij interesse stellen wij een korte technische beschrijving van de put en de pomp beschikbaar.</p></div></div></div>
+      <div class="accordion__item faq__item"><button class="accordion__btn faq__q" type="button">Wat zijn de regels voor het houden van paarden of klein vee op het perceel?</button><div class="accordion__panel faq__a"><div class="accordion__panel-inner"><p>Het perceel ligt in agrarisch gebied met landschappelijke waarden. Hobbymatig houden van enkele paarden of klein vee is gangbaar in de omgeving, maar regels rond bebouwing, mestopslag en weide-inrichting verschillen per situatie. Aanstaande kopers met een serieuze paardenhouder-wens raden wij aan om voorafgaand aan de bieding bij de gemeente te toetsen wat het bestemmingsplan toelaat.</p></div></div></div>
+      <div class="accordion__item faq__item"><button class="accordion__btn faq__q" type="button">Wat valt onder energielabel B in de praktijk?</button><div class="accordion__panel faq__a"><div class="accordion__panel-inner"><p>Energielabel B betekent dat het pand qua isolatie en installaties beter presteert dan een gemiddelde woning van dit bouwjaar. Voor een boerderij van 543 m² uit 1937 is dit een uitzonderlijk niveau. Het verbruik blijft hoger dan dat van een rijtjeswoning, simpelweg door volume, maar de combinatie met zonnepanelen, hout- en pelletkachels maakt de netto energierekening goed voorspelbaar.</p></div></div></div>
+      <div class="accordion__item faq__item"><button class="accordion__btn faq__q" type="button">Is uitbreiding of nieuwbouw op het perceel mogelijk?</button><div class="accordion__panel faq__a"><div class="accordion__panel-inner"><p>Het perceel beslaat 5.012 m² en kent op dit moment al een aanzienlijke bebouwing: hoofdgebouw, kapschuur, garage en houten berging. Verdere bebouwing is in beginsel beperkt door het bestemmingsplan en de ligging tegen het natuurgebied. Voor specifieke plannen (bijvoorbeeld een tweede wooneenheid, een grotere werkplaats of een buitenrijbak) is vooroverleg met de gemeente noodzakelijk.</p></div></div></div>
+      <div class="accordion__item faq__item"><button class="accordion__btn faq__q" type="button">Hoe is de bereikbaarheid in de winter?</button><div class="accordion__panel faq__a"><div class="accordion__panel-inner"><p>De Holtherstraat is een lokale weg die door de gemeente wordt onderhouden, inclusief gladheidsbestrijding op de doorgaande routes. Beilen en Westerbork zijn jaarrond goed bereikbaar. Het eigen bospad naar de Jenaplanschool in Balinge is een onverhard pad en kan bij langdurige sneeuwval minder begaanbaar zijn; in dat geval is de schoolroute over de weg een alternatief.</p></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CTA / CONTACT FORM
+     ============================================================ -->
+<section class="cta" id="contact" aria-labelledby="cta-heading">
+  <div class="container reveal">
+    <div class="cta__layout">
+      <div>
+        <span class="eyebrow">Bezichtiging</span>
+        <h2 id="cta-heading">Plan een bezichtiging</h2>
+        <hr class="divider">
+        <p>Een woonboerderij van deze omvang vraagt om een rondleiding ter plekke - om de schaal van de tuin, de twee leefkernen en de aansluiting op het Scharreveld te ervaren. Bezichtigingen vinden plaats op afspraak.</p>
+        <p style="margin-top:2rem;">
+          <strong style="font-family:var(--f-serif);font-size:1.2rem;color:var(--c-forest);">Makelaarsland</strong><br>
+          <span style="color:var(--c-ink-soft);">Verkoopbemiddeling Holtherstraat 5</span><br>
+          <a href="tel:+31882226687">088 - 222 66 87</a><br>
+          <a href="mailto:info@makelaarsland.nl">info@makelaarsland.nl</a>
+        </p>
+      </div>
+
+      <form class="form contact-form" id="contact-form" data-mailto="info@makelaarsland.nl" action="mailto:info@makelaarsland.nl" method="post" enctype="text/plain" novalidate>
+        <div class="form__row">
+          <div class="field">
+            <label for="f-name">Naam</label>
+            <input id="f-name" name="name" type="text" required autocomplete="name">
+          </div>
+          <div class="field">
+            <label for="f-phone">Telefoon</label>
+            <input id="f-phone" name="phone" type="tel" autocomplete="tel">
+          </div>
+        </div>
+        <div class="field">
+          <label for="f-email">E-mailadres</label>
+          <input id="f-email" name="email" type="email" required autocomplete="email">
+        </div>
+        <div class="field">
+          <label for="f-date">Voorkeursdatum bezichtiging</label>
+          <input id="f-date" name="date" type="date">
+        </div>
+        <div class="field">
+          <label for="f-msg">Bericht</label>
+          <textarea id="f-msg" name="message" rows="4" placeholder="Optioneel - vertel ons waar u bijzonder benieuwd naar bent."></textarea>
+        </div>
+        <button type="submit" class="btn btn--primary">Verstuur aanvraag</button>
+        <div class="form__status contact-form__status" id="form-status" role="status" aria-live="polite"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     BROCHURE DOWNLOAD
+     ============================================================ -->
+<section class="brochure" aria-labelledby="brochure-heading">
+  <div class="container container--narrow reveal">
+    <span class="eyebrow" style="color:rgba(247,243,235,.6);">Brochure</span>
+    <h2 id="brochure-heading">De volledige brochure</h2>
+    <hr class="divider divider--center">
+    <p>Achtendertig pagina's met plattegronden, kadastrale gegevens, energielabel-rapport en uitgebreide objectbeschrijving - direct beschikbaar als PDF.</p>
+    <a href="photos/brochure.pdf" class="btn btn--light" download>Download brochure (PDF)</a>
+  </div>
+</section>
+
+</main>
+
+<div class="sticky-cta" hidden><a class="btn" href="#contact">Plan bezichtiging</a></div>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="site-footer__grid">
+      <div>
+        <h4>Holtherstraat 5</h4>
+        <p>Holtherstraat 5, 9435 TD Bruntinge<br>Woonboerderij in Midden-Drenthe</p>
+      </div>
+      <div>
+        <h4>Makelaar</h4>
+        <ul>
+          <li>Makelaarsland</li>
+          <li><a href="tel:+31882226687">088 - 222 66 87</a></li>
+          <li><a href="mailto:info@makelaarsland.nl">info@makelaarsland.nl</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Meer informatie</h4>
+        <ul>
+          <li><a href="https://www.funda.nl/detail/koop/bruntinge/huis-holtherstraat-5/43347705/" target="_blank" rel="noopener">Bekijk op Funda</a></li>
+          <li><a href="photos/brochure.pdf" download>Brochure (PDF)</a></li>
+          <li><a href="#contact">Bezichtiging aanvragen</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="site-footer__base">
+      <span>&copy; <span id="year"></span> Makelaarsland. Alle rechten voorbehouden.</span>
+      <span><a href="/privacy">Privacyverklaring</a> &middot; <a href="/disclaimer">Disclaimer</a></span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================================================
+     JAVASCRIPT - vanilla, no libraries
+     ============================================================ -->
+<script>
+(function () {
+  'use strict';
+
+  /* ---------- Header scroll state ---------- */
+  const header = document.getElementById('site-header');
+  const onScroll = () => {
+    if (window.scrollY > 40) header.classList.add('is-scrolled');
+    else header.classList.remove('is-scrolled');
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  /* ---------- Smooth scroll for in-page anchors ---------- */
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const id = a.getAttribute('href');
+      if (id.length > 1) {
+        const target = document.querySelector(id);
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+    });
+  });
+
+  /* ---------- Reveal on scroll ---------- */
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(en => {
+        if (en.isIntersecting) {
+          en.target.classList.add('is-visible');
+          io.unobserve(en.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  } else {
+    document.querySelectorAll('.reveal').forEach(el => el.classList.add('is-visible'));
+  }
+
+  /* ---------- Accordions (FAQ + rooms) ---------- */
+  document.querySelectorAll('.accordion').forEach(acc => {
+    acc.querySelectorAll('.accordion__btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.parentElement;
+        const panel = item.querySelector('.accordion__panel');
+        const isOpen = item.classList.contains('is-open');
+
+        if (isOpen) {
+          item.classList.remove('is-open');
+          panel.style.maxHeight = '0px';
+          btn.setAttribute('aria-expanded', 'false');
+        } else {
+          item.classList.add('is-open');
+          panel.style.maxHeight = panel.scrollHeight + 'px';
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      });
+      btn.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  /* ---------- Lightbox ---------- */
+  const lightbox = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lightbox-img');
+  const lbCounter = document.getElementById('lightbox-counter');
+  const lbClose = document.getElementById('lightbox-close');
+  const lbPrev = document.getElementById('lightbox-prev');
+  const lbNext = document.getElementById('lightbox-next');
+  const galleryGrid = document.getElementById('gallery-grid');
+
+  let images = [];
+  let currentIdx = 0;
+
+  const collectImages = () => {
+    images = Array.from(document.querySelectorAll('.gallery__item img, .floorplan img')).map(img => ({
+      src: img.dataset.full || img.src,
+      alt: img.alt || ''
+    }));
+  };
+
+  const openLightbox = (idx) => {
+    if (!images.length) collectImages();
+    currentIdx = idx;
+    showImage();
+    lightbox.classList.add('is-open');
+    lightbox.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeLightbox = () => {
+    lightbox.classList.remove('is-open');
+    lightbox.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  };
+
+  const showImage = () => {
+    const img = images[currentIdx];
+    if (!img) return;
+    lbImg.src = img.src;
+    lbImg.alt = img.alt;
+    lbCounter.textContent = (currentIdx + 1) + ' / ' + images.length;
+  };
+
+  const next = () => { currentIdx = (currentIdx + 1) % images.length; showImage(); };
+  const prev = () => { currentIdx = (currentIdx - 1 + images.length) % images.length; showImage(); };
+
+  if (galleryGrid) {
+    galleryGrid.addEventListener('click', (e) => {
+      const item = e.target.closest('.gallery__item');
+      if (!item) return;
+      collectImages();
+      const allItems = Array.from(document.querySelectorAll('.gallery__item'));
+      const idx = allItems.indexOf(item);
+      openLightbox(idx >= 0 ? idx : 0);
+    });
+  }
+  document.querySelectorAll('.floorplan img').forEach(img => {
+    img.addEventListener('click', () => {
+      collectImages();
+      const allImgs = Array.from(document.querySelectorAll('.gallery__item img, .floorplan img'));
+      const idx = allImgs.indexOf(img);
+      openLightbox(idx >= 0 ? idx : 0);
+    });
+  });
+
+  lbClose && lbClose.addEventListener('click', closeLightbox);
+  lbNext && lbNext.addEventListener('click', next);
+  lbPrev && lbPrev.addEventListener('click', prev);
+  lightbox && lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (!lightbox.classList.contains('is-open')) return;
+    if (e.key === 'Escape') closeLightbox();
+    else if (e.key === 'ArrowRight') next();
+    else if (e.key === 'ArrowLeft') prev();
+  });
+
+  /* ---------- Contact form ---------- */
+  const form = document.getElementById('contact-form');
+  const status = document.getElementById('form-status');
+  if (form) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const data = new FormData(form);
+      const name = (data.get('name') || '').toString().trim();
+      const email = (data.get('email') || '').toString().trim();
+
+      if (!name || !email) {
+        status.textContent = 'Vul uw naam en e-mailadres in om de aanvraag te versturen.';
+        status.style.color = 'var(--c-clay)';
+        return;
+      }
+
+      // Mailto fallback (vervang door echte endpoint in productie)
+      const subject = encodeURIComponent('Aanvraag bezichtiging Holtherstraat 5');
+      const body = encodeURIComponent(
+        'Naam: ' + name + '\n' +
+        'Telefoon: ' + (data.get('phone') || '') + '\n' +
+        'E-mail: ' + email + '\n' +
+        'Voorkeursdatum: ' + (data.get('date') || '') + '\n\n' +
+        'Bericht:\n' + (data.get('message') || '')
+      );
+      window.location.href = 'mailto:info@makelaarsland.nl?subject=' + subject + '&body=' + body;
+
+      status.textContent = 'Hartelijk dank - uw e-mailprogramma wordt geopend. Wij nemen binnen een werkdag contact met u op.';
+      status.style.color = 'var(--c-forest)';
+      form.reset();
+    });
+  }
+
+  /* ---------- Year in footer ---------- */
+  const yearEl = document.getElementById('year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+})();
+</script>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script>
+/* =============================================================================
+   Holtherstraat 5 - interactive components
+   Vanilla JS, no build step. Loaded with <script defer src="components.js">
+   Optional: Leaflet via CDN before this script for the map component.
+   ============================================================================= */
+(function () {
+  'use strict';
+
+  // ---------- helpers ---------------------------------------------------------
+  const $ = (sel, ctx = document) => ctx.querySelector(sel);
+  const $$ = (sel, ctx = document) => Array.from(ctx.querySelectorAll(sel));
+  const on = (el, ev, fn, opts) => el && el.addEventListener(ev, fn, opts);
+  const ready = (fn) =>
+    document.readyState === 'loading'
+      ? document.addEventListener('DOMContentLoaded', fn, { once: true })
+      : fn();
+
+  const prefersReducedMotion =
+    window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const safe = (fn, label) => {
+    try { fn(); } catch (err) { console.error('[components] ' + label + ' failed:', err); }
+  };
+
+  // ===========================================================================
+  // 1. PHOTO LIGHTBOX
+  // Markup expected: <a class="gallery-item" href="big.jpg" data-caption="...">
+  // <img src="thumb.jpg" alt="..."> </a>
+  // All .gallery-item elements on the page form one navigable gallery.
+  // ===========================================================================
+  function initLightbox() {
+    const items = $$('.gallery-item');
+    if (!items.length) return;
+
+    let index = 0;
+    let lastFocus = null;
+
+    // build modal once
+    const modal = document.createElement('div');
+    modal.className = 'hh-lightbox';
+    modal.setAttribute('role', 'dialog');
+    modal.setAttribute('aria-modal', 'true');
+    modal.setAttribute('aria-label', 'Foto vergroot weergeven');
+    modal.hidden = true;
+    modal.innerHTML = `
+      <button class="hh-lb__close" type="button" aria-label="Sluiten">&times;</button>
+      <button class="hh-lb__nav hh-lb__prev" type="button" aria-label="Vorige foto">&#10094;</button>
+      <figure class="hh-lb__figure">
+        <img class="hh-lb__img" alt="">
+        <figcaption class="hh-lb__caption"></figcaption>
+      </figure>
+      <button class="hh-lb__nav hh-lb__next" type="button" aria-label="Volgende foto">&#10095;</button>
+      <div class="hh-lb__counter" aria-live="polite"></div>
+      <div class="hh-lb__sr" aria-live="polite" aria-atomic="true"></div>
+    `;
+    document.body.appendChild(modal);
+
+    const imgEl = $('.hh-lb__img', modal);
+    const capEl = $('.hh-lb__caption', modal);
+    const counterEl = $('.hh-lb__counter', modal);
+    const srEl = $('.hh-lb__sr', modal);
+
+    const preload = (src) => { if (src) { const i = new Image(); i.src = src; } };
+
+    function show(i) {
+      index = (i + items.length) % items.length;
+      const a = items[index];
+      const src = a.getAttribute('href') || a.dataset.full || a.querySelector('img')?.src;
+      const cap = a.dataset.caption || a.querySelector('img')?.alt || '';
+      imgEl.src = src;
+      imgEl.alt = cap;
+      capEl.textContent = cap;
+      capEl.hidden = !cap;
+      counterEl.textContent = `Foto ${index + 1} van ${items.length}`;
+      srEl.textContent = `Foto ${index + 1} van ${items.length}. ${cap}`;
+      // preload neighbours
+      const nxt = items[(index + 1) % items.length];
+      const prv = items[(index - 1 + items.length) % items.length];
+      preload(nxt?.getAttribute('href'));
+      preload(prv?.getAttribute('href'));
+    }
+
+    function open(i) {
+      lastFocus = document.activeElement;
+      show(i);
+      modal.hidden = false;
+      document.body.classList.add('hh-lb-open');
+      requestAnimationFrame(() => modal.classList.add('is-open'));
+      $('.hh-lb__close', modal).focus();
+      document.addEventListener('keydown', onKey);
+    }
+
+    function close() {
+      modal.classList.remove('is-open');
+      document.removeEventListener('keydown', onKey);
+      const finish = () => {
+        modal.hidden = true;
+        document.body.classList.remove('hh-lb-open');
+        if (lastFocus && lastFocus.focus) lastFocus.focus();
+      };
+      if (prefersReducedMotion) finish();
+      else setTimeout(finish, 220);
+    }
+
+    function onKey(e) {
+      if (e.key === 'Escape') { e.preventDefault(); close(); }
+      if (e.key === 'ArrowRight') { e.preventDefault(); show(index + 1); }
+      if (e.key === 'ArrowLeft') { e.preventDefault(); show(index - 1); }
+      if (e.key === 'Tab') {
+        // simple focus trap
+        const focusables = $$('button', modal);
+        const first = focusables[0], last = focusables[focusables.length - 1];
+        if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+        else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+      }
+    }
+
+    items.forEach((a, i) => {
+      on(a, 'click', (e) => { e.preventDefault(); open(i); });
+    });
+    on($('.hh-lb__close', modal), 'click', close);
+    on($('.hh-lb__prev', modal), 'click', () => show(index - 1));
+    on($('.hh-lb__next', modal), 'click', () => show(index + 1));
+    on(modal, 'click', (e) => { if (e.target === modal) close(); });
+  }
+
+  // ===========================================================================
+  // 2. IMAGE GALLERY - lazy loading
+  // Markup: <img data-src="real.jpg" class="lazy" alt="...">
+  // Adds native loading="lazy" fallback + skeleton shimmer.
+  // ===========================================================================
+  function initLazyImages() {
+    const imgs = $$('img.lazy[data-src]');
+    if (!imgs.length) return;
+
+    const load = (img) => {
+      img.src = img.dataset.src;
+      if (img.dataset.srcset) img.srcset = img.dataset.srcset;
+      img.addEventListener('load', () => img.classList.add('is-loaded'), { once: true });
+      img.classList.add('is-loading');
+    };
+
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            load(entry.target);
+            io.unobserve(entry.target);
+          }
+        });
+      }, { rootMargin: '200px 0px' });
+      imgs.forEach((img) => {
+        img.loading = 'lazy';
+        io.observe(img);
+      });
+    } else {
+      imgs.forEach(load);
+    }
+  }
+
+  // ===========================================================================
+  // 3. FAQ ACCORDION (multi-open) + keyboard navigation
+  // Markup: <div class="faq"> <div class="faq__item">
+  // <button class="faq__q" aria-expanded="false">Vraag</button>
+  // <div class="faq__a"><p>Antwoord</p></div>
+  // </div> ... </div>
+  // ===========================================================================
+  function initFaq() {
+    $$('.faq').forEach((root) => {
+      const buttons = $$('.faq__q', root);
+      buttons.forEach((btn, i) => {
+        const panel = btn.nextElementSibling;
+        if (!panel) return;
+        const id = panel.id || `faq-panel-${Math.random().toString(36).slice(2, 8)}`;
+        panel.id = id;
+        btn.setAttribute('aria-controls', id);
+        btn.setAttribute('aria-expanded', btn.getAttribute('aria-expanded') === 'true' ? 'true' : 'false');
+        panel.setAttribute('role', 'region');
+        panel.setAttribute('aria-labelledby', btn.id || (btn.id = id + '-btn'));
+
+        // initial collapsed state
+        if (btn.getAttribute('aria-expanded') !== 'true') panel.style.maxHeight = '0px';
+        else panel.style.maxHeight = panel.scrollHeight + 'px';
+
+        on(btn, 'click', () => toggle(btn, panel));
+        on(btn, 'keydown', (e) => {
+          if (e.key === 'ArrowDown') { e.preventDefault(); buttons[(i + 1) % buttons.length].focus(); }
+          if (e.key === 'ArrowUp') { e.preventDefault(); buttons[(i - 1 + buttons.length) % buttons.length].focus(); }
+          if (e.key === 'Home') { e.preventDefault(); buttons[0].focus(); }
+          if (e.key === 'End') { e.preventDefault(); buttons[buttons.length - 1].focus(); }
+        });
+      });
+
+      function toggle(btn, panel) {
+        const isOpen = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!isOpen));
+        if (isOpen) panel.style.maxHeight = '0px';
+        else panel.style.maxHeight = panel.scrollHeight + 'px';
+      }
+
+      // recompute on resize (content may reflow)
+      window.addEventListener('resize', () => {
+        buttons.forEach((btn) => {
+          if (btn.getAttribute('aria-expanded') === 'true') {
+            const panel = btn.nextElementSibling;
+            if (panel) panel.style.maxHeight = panel.scrollHeight + 'px';
+          }
+        });
+      });
+    });
+  }
+
+  // ===========================================================================
+  // 4. INDELING / ROOMS ACCORDION (vertical timeline)
+  // Markup: <ol class="rooms">
+  // <li class="room">
+  // <button class="room__head" aria-expanded="false">
+  // <span class="room__title">Woonkamer</span>
+  // <span class="room__meta">42 m²</span>
+  // </button>
+  // <div class="room__body"><p>...</p></div>
+  // </li> ...
+  // </ol>
+  // ===========================================================================
+  function initRooms() {
+    $$('.rooms').forEach((root) => {
+      $$('.room', root).forEach((room) => {
+        const head = $('.room__head', room);
+        const body = $('.room__body', room);
+        if (!head || !body) return;
+        head.setAttribute('aria-expanded', head.getAttribute('aria-expanded') === 'true' ? 'true' : 'false');
+        body.style.maxHeight = head.getAttribute('aria-expanded') === 'true' ? body.scrollHeight + 'px' : '0px';
+        on(head, 'click', () => {
+          const open = head.getAttribute('aria-expanded') === 'true';
+          head.setAttribute('aria-expanded', String(!open));
+          room.classList.toggle('is-open', !open);
+          body.style.maxHeight = open ? '0px' : body.scrollHeight + 'px';
+        });
+      });
+    });
+  }
+
+  // ===========================================================================
+  // 5. SMOOTH ANCHOR SCROLLING + SCROLLSPY
+  // Markup: <a class="nav-link" href="#section-id">...</a>
+  // <section id="section-id" class="spy-section">...</section>
+  // ===========================================================================
+  function initSmoothNav() {
+    const links = $$('a.nav-link[href^="#"]');
+    links.forEach((link) => {
+      on(link, 'click', (e) => {
+        const id = link.getAttribute('href').slice(1);
+        const target = document.getElementById(id);
+        if (!target) return;
+        e.preventDefault();
+        target.scrollIntoView({
+          behavior: prefersReducedMotion ? 'auto' : 'smooth',
+          block: 'start'
+        });
+        history.replaceState(null, '', '#' + id);
+      });
+    });
+
+    const sections = $$('.spy-section');
+    if (!sections.length || !('IntersectionObserver' in window)) return;
+
+    const byId = new Map(links.map((l) => [l.getAttribute('href').slice(1), l]));
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        const link = byId.get(entry.target.id);
+        if (!link) return;
+        if (entry.isIntersecting) {
+          links.forEach((l) => l.classList.remove('is-active'));
+          link.classList.add('is-active');
+        }
+      });
+    }, { rootMargin: '-40% 0px -55% 0px' });
+    sections.forEach((s) => io.observe(s));
+  }
+
+  // ===========================================================================
+  // 6. REVEAL ON SCROLL
+  // Markup: any element with class .reveal (optional data-reveal-delay="200" in ms)
+  // ===========================================================================
+  function initReveal() {
+    const els = $$('.reveal');
+    if (!els.length) return;
+    if (prefersReducedMotion || !('IntersectionObserver' in window)) {
+      els.forEach((el) => el.classList.add('is-visible'));
+      return;
+    }
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const delay = parseInt(entry.target.dataset.revealDelay || '0', 10);
+          setTimeout(() => entry.target.classList.add('is-visible'), delay);
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    els.forEach((el) => io.observe(el));
+  }
+
+  // ===========================================================================
+  // 7. CONTACT FORM
+  // Markup: <form class="contact-form" data-mailto="info@example.nl">
+  // <input name="naam" required>
+  // <input name="email" type="email" required>
+  // <input name="telefoon">
+  // <input name="datum" type="date">
+  // <textarea name="bericht" required></textarea>
+  // <input name="website" class="hh-honey" tabindex="-1" autocomplete="off">
+  // <button type="submit">Verstuur</button>
+  // <div class="contact-form__status" role="status" aria-live="polite"></div>
+  // </form>
+  // ===========================================================================
+  function initContactForm() {
+    const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+    $$('form.contact-form').forEach((form) => {
+      const status = $('.contact-form__status', form);
+      const fields = $$('input, textarea', form).filter((f) => f.name && !f.classList.contains('hh-honey'));
+
+      const setError = (field, msg) => {
+        field.classList.toggle('has-error', !!msg);
+        field.setAttribute('aria-invalid', msg ? 'true' : 'false');
+        let err = field.parentElement.querySelector('.field-error');
+        if (msg) {
+          if (!err) {
+            err = document.createElement('span');
+            err.className = 'field-error';
+            field.parentElement.appendChild(err);
+          }
+          err.textContent = msg;
+        } else if (err) {
+          err.remove();
+        }
+      };
+
+      const validate = (field) => {
+        const v = (field.value || '').trim();
+        if (field.required && !v) { setError(field, 'Dit veld is verplicht.'); return false; }
+        if (field.type === 'email' && v && !EMAIL_RE.test(v)) {
+          setError(field, 'Vul een geldig e-mailadres in.'); return false;
+        }
+        setError(field, '');
+        return true;
+      };
+
+      fields.forEach((f) => on(f, 'blur', () => validate(f)));
+
+      on(form, 'submit', (e) => {
+        e.preventDefault();
+
+        // honeypot
+        const honey = $('.hh-honey', form);
+        if (honey && honey.value) { return; /* silent drop */ }
+
+        const ok = fields.map(validate).every(Boolean);
+        if (!ok) {
+          const first = fields.find((f) => f.classList.contains('has-error'));
+          if (first) first.focus();
+          return;
+        }
+
+        const data = {};
+        fields.forEach((f) => { data[f.name] = (f.value || '').trim(); });
+
+        // mailto fallback (serverless)
+        const mailto = form.dataset.mailto;
+        if (mailto) {
+          const subject = encodeURIComponent('Interesse Holtherstraat 5 - ' + (data.naam || ''));
+          const body = encodeURIComponent(
+            `Naam: ${data.naam || ''}\n` +
+            `E-mail: ${data.email || ''}\n` +
+            `Telefoon: ${data.telefoon || ''}\n` +
+            `Voorkeursdatum: ${data.datum || ''}\n\n` +
+            `Bericht:\n${data.bericht || ''}\n`
+          );
+          // open mail client in a new tab to avoid losing the page
+          window.location.href = `mailto:${mailto}?subject=${subject}&body=${body}`;
+        }
+
+        form.classList.add('is-submitted');
+        if (status) {
+          status.textContent = 'Bedankt voor uw bericht. We nemen binnen 24 uur contact met u op.';
+          status.classList.add('is-success');
+        }
+        form.reset();
+      });
+    });
+  }
+
+  // ===========================================================================
+  // 8. LOCATION MAP (Leaflet, optional)
+  // Markup: <div id="locatie-kaart" class="hh-map"></div>
+  // Requires: Leaflet CSS+JS via CDN before this script. Falls back silently if absent.
+  // ===========================================================================
+  function initMap() {
+    const el = document.getElementById('locatie-kaart');
+    if (!el || typeof window.L === 'undefined') return;
+
+    const LAT = 52.842, LON = 6.601;
+    const accent = getComputedStyle(document.documentElement).getPropertyValue('--accent').trim() || '#8a6a3d';
+
+    const map = L.map(el, {
+      scrollWheelZoom: false,
+      zoomControl: true
+    }).setView([LAT, LON], 14);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '&copy; OpenStreetMap'
+    }).addTo(map);
+
+    // custom marker
+    const pin = L.divIcon({
+      className: 'hh-map__pin-wrap',
+      html: `<span class="hh-map__pin" style="--pin:${accent}"></span>`,
+      iconSize: [28, 36],
+      iconAnchor: [14, 34]
+    });
+    L.marker([LAT, LON], { icon: pin })
+      .addTo(map)
+      .bindPopup('Holtherstraat 5<br>9435 TD Bruntinge');
+
+    // Scharreveld nature area (approx centre slightly NW)
+    L.circle([52.848, 6.585], {
+      radius: 900,
+      color: accent,
+      weight: 1.5,
+      fillColor: accent,
+      fillOpacity: 0.12
+    }).addTo(map).bindTooltip('Natuurgebied Het Scharreveld');
+
+    // re-enable scroll-zoom on click, disable on mouseout
+    map.on('click', () => map.scrollWheelZoom.enable());
+    map.on('mouseout', () => map.scrollWheelZoom.disable());
+  }
+
+  // ===========================================================================
+  // 9. STICKY CTA STRIP (mobile)
+  // Markup: <div class="sticky-cta" hidden> <a class="btn" href="#contact">Plan bezichtiging</a> </div>
+  // <section class="hero" id="hero">...</section>
+  // ===========================================================================
+  function initStickyCta() {
+    const cta = $('.sticky-cta');
+    const hero = $('.hero') || $('#hero');
+    if (!cta || !hero) return;
+    if (!('IntersectionObserver' in window)) { cta.hidden = false; return; }
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        const show = !entry.isIntersecting;
+        cta.hidden = false;
+        cta.classList.toggle('is-visible', show);
+      });
+    }, { threshold: 0.05 });
+    io.observe(hero);
+  }
+
+  // ===========================================================================
+  // 10. STICKY HEADER (compact on scroll)
+  // Markup: <header class="site-header">...</header>
+  // ===========================================================================
+  function initStickyHeader() {
+    const header = $('.site-header');
+    if (!header) return;
+    const onScroll = () => {
+      header.classList.toggle('is-compact', window.scrollY > 60);
+    };
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+  }
+
+  // ---------- boot ------------------------------------------------------------
+  ready(() => {
+    safe(initLightbox, 'lightbox');
+    safe(initLazyImages, 'lazy-images');
+    safe(initFaq, 'faq');
+    safe(initRooms, 'rooms');
+    safe(initSmoothNav, 'smooth-nav');
+    safe(initReveal, 'reveal');
+    safe(initContactForm, 'contact-form');
+    safe(initMap, 'map');
+    safe(initStickyCta, 'sticky-cta');
+    safe(initStickyHeader, 'sticky-header');
+  });
+})();
+
+</script>
+
+</body>
+</html>
