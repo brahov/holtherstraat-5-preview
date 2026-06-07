@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://brahov.github.io/holtherstraat-5-preview/</loc>
+    <lastmod>2026-06-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://brahov.github.io/holtherstraat-5-preview/photos/01.jpg</image:loc>
+      <image:title>Luchtfoto Holtherstraat 5, Bruntinge</image:title>
+      <image:caption>Luchtfoto vanuit zuidoost met hoofdwoning, bijgebouw, vijver en het aangrenzende Scharreveld</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://brahov.github.io/holtherstraat-5-preview/photos/02.jpg</image:loc>
+      <image:title>Voorgevel woonboerderij Holtherstraat 5</image:title>
+      <image:caption>Voorgevel van de boerderij met rood pannendak, sierschoorsteen en zonnige oprit</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://brahov.github.io/holtherstraat-5-preview/photos/18.jpg</image:loc>
+      <image:title>Grote woonruimte met balkenplafond</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://brahov.github.io/holtherstraat-5-preview/photos/19.jpg</image:loc>
+      <image:title>Eetkamer met grote ramen</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://brahov.github.io/holtherstraat-5-preview/photos/23.jpg</image:loc>
+      <image:title>Ruime badkamer met ligbad</image:title>
+    </image:image>
+  </url>
+</urlset>

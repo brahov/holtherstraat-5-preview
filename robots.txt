@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://brahov.github.io/holtherstraat-5-preview/sitemap.xml
