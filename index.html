@@ -14,6 +14,85 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
+<!-- ==== TRACKING STACK (zie 20 - Tracking stack/tracker.html voor losse versie) ==== -->
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js"
+        data-cf-beacon='{"token": "CLOUDFLARE_TOKEN_HIER"}'></script>
+<script>
+(function () {
+  'use strict';
+  var SHEETS_WEBHOOK = '';
+  var STORAGE_KEY = 'hh5_session';
+  var session = {};
+  try { var raw = sessionStorage.getItem(STORAGE_KEY); session = raw ? JSON.parse(raw) : {}; } catch (e) { session = {}; }
+  (function captureUtm() {
+    var qs = new URLSearchParams(window.location.search);
+    ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'].forEach(function (k) {
+      var v = qs.get(k); if (v) session[k] = v;
+    });
+    if (!session.first_referrer) session.first_referrer = document.referrer || 'direct';
+    if (!session.landing) session.landing = window.location.pathname;
+    if (!session.started_at) session.started_at = new Date().toISOString();
+    if (!session.session_id) session.session_id = 'hh5_' + Date.now() + '_' + Math.random().toString(36).slice(2,8);
+    try { sessionStorage.setItem(STORAGE_KEY, JSON.stringify(session)); } catch (e) {}
+  })();
+  function detectChannel() {
+    if (session.utm_source) return session.utm_source + '/' + (session.utm_medium || '');
+    var ref = session.first_referrer || '';
+    if (!ref || ref === 'direct') return 'direct';
+    if (/instagram\.com/i.test(ref)) return 'instagram/organic';
+    if (/facebook\.com|fb\.com/i.test(ref)) return 'facebook/organic';
+    if (/google\./i.test(ref)) return 'google/organic';
+    if (/funda\.nl/i.test(ref)) return 'funda/referral';
+    if (/bing\./i.test(ref)) return 'bing/organic';
+    return 'referral/' + ref.replace(/^https?:\/\//,'').split('/')[0];
+  }
+  function sendEvent(name, payload) {
+    var body = Object.assign({
+      event: name, session_id: session.session_id, channel: detectChannel(),
+      utm_source: session.utm_source||'', utm_medium: session.utm_medium||'',
+      utm_campaign: session.utm_campaign||'', utm_content: session.utm_content||'',
+      utm_term: session.utm_term||'', first_referrer: session.first_referrer||'',
+      landing: session.landing||'', path: window.location.pathname,
+      ts: new Date().toISOString(), ua: navigator.userAgent.slice(0,200)
+    }, payload || {});
+    try { console.debug('[hh5-track]', name, body); } catch (e) {}
+    if (!SHEETS_WEBHOOK) return;
+    try {
+      fetch(SHEETS_WEBHOOK, { method:'POST', mode:'no-cors',
+        headers:{'Content-Type':'text/plain;charset=utf-8'},
+        body: JSON.stringify(body), keepalive: true });
+    } catch (e) {}
+  }
+  window.addEventListener('DOMContentLoaded', function () { sendEvent('pageview', { title: document.title }); });
+  var maxDepth = 0, depthMarks = {25:false,50:false,75:false,100:false}, startTime = Date.now();
+  window.addEventListener('scroll', function () {
+    var doc = document.documentElement;
+    var sh = doc.scrollHeight - doc.clientHeight; if (sh <= 0) return;
+    var pct = Math.round((doc.scrollTop/sh)*100);
+    if (pct > maxDepth) maxDepth = pct;
+    [25,50,75,100].forEach(function (m) {
+      if (!depthMarks[m] && pct >= m) { depthMarks[m] = true; sendEvent('scroll_depth', { depth: m }); }
+    });
+  }, { passive: true });
+  window.addEventListener('pagehide', function () {
+    sendEvent('engagement', { seconds: Math.round((Date.now()-startTime)/1000), max_depth: maxDepth });
+  });
+  document.addEventListener('click', function (e) {
+    var t = e.target.closest('a, button'); if (!t) return;
+    var href = (t.getAttribute('href')||'').toLowerCase();
+    var txt = (t.textContent||'').trim().toLowerCase();
+    if (href === '#contact' || /bezichtiging|plan/i.test(txt)) sendEvent('cta_click_bezichtiging', { label: txt.slice(0,80) });
+    if (/brochure\.pdf/i.test(href) || /brochure/i.test(txt)) sendEvent('brochure_download', { href: href });
+    if (href.indexOf('tel:') === 0) sendEvent('phone_click', { number: href.replace('tel:','') });
+    if (href.indexOf('mailto:') === 0) sendEvent('mail_click', { to: href.replace('mailto:','').split('?')[0] });
+    if (t.classList && t.classList.contains('gallery-item')) sendEvent('gallery_open', { src: t.getAttribute('href')||'' });
+  });
+  window.hh5Track = sendEvent;
+  window.hh5Session = function () { return session; };
+})();
+</script>
+<!-- ==== /TRACKING STACK ==== -->
+
 <style>
 /* ============================================================
    Holtherstraat 5 - sales-website
@@ -1886,7 +1965,15 @@ a.nav-link.is-active { color: var(--hh-accent); }
         </p>
       </div>
 
-      <form class="form contact-form" id="contact-form" data-mailto="info@makelaarsland.nl" action="mailto:info@makelaarsland.nl" method="post" enctype="text/plain" novalidate>
+      <form class="form contact-form" id="contact-form" data-mailto="info@makelaarsland.nl" action="https://formsubmit.co/B.vdHoven@empretech.nl" method="POST" novalidate>
+        <input type="hidden" name="_subject" value="Aanvraag bezichtiging Holtherstraat 5">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://brahov.github.io/holtherstraat-5-preview/?lead=ok">
+        <input type="hidden" name="herkomst_kanaal" id="f-channel" value="">
+        <input type="hidden" name="utm_campaign" id="f-utm-campaign" value="">
+        <input type="hidden" name="utm_content" id="f-utm-content" value="">
+        <input type="hidden" name="session_id" id="f-session" value="">
         <div class="form__row">
           <div class="field">
             <label for="f-name">Naam</label>
@@ -2066,32 +2153,47 @@ a.nav-link.is-active { color: var(--hh-accent); }
   const form = document.getElementById('contact-form');
   const status = document.getElementById('form-status');
   if (form) {
+    // Vul verborgen tracking-velden vanuit hh5Session (zie tracker snippet)
+    try {
+      const sess = (typeof window.hh5Session === 'function') ? window.hh5Session() : {};
+      const ch = document.getElementById('f-channel');
+      const uc = document.getElementById('f-utm-campaign');
+      const uct = document.getElementById('f-utm-content');
+      const sid = document.getElementById('f-session');
+      if (ch) ch.value = (sess.utm_source ? sess.utm_source + '/' + (sess.utm_medium || '') : (sess.first_referrer || 'direct'));
+      if (uc) uc.value = sess.utm_campaign || '';
+      if (uct) uct.value = sess.utm_content || '';
+      if (sid) sid.value = sess.session_id || '';
+    } catch (e) {}
+
     form.addEventListener('submit', (e) => {
-      e.preventDefault();
       const data = new FormData(form);
       const name = (data.get('name') || '').toString().trim();
       const email = (data.get('email') || '').toString().trim();
 
       if (!name || !email) {
+        e.preventDefault();
         status.textContent = 'Vul uw naam en e-mailadres in om de aanvraag te versturen.';
         status.style.color = 'var(--c-clay)';
         return;
       }
 
-      // Mailto fallback (vervang door echte endpoint in productie)
-      const subject = encodeURIComponent('Aanvraag bezichtiging Holtherstraat 5');
-      const body = encodeURIComponent(
-        'Naam: ' + name + '\n' +
-        'Telefoon: ' + (data.get('phone') || '') + '\n' +
-        'E-mail: ' + email + '\n' +
-        'Voorkeursdatum: ' + (data.get('date') || '') + '\n\n' +
-        'Bericht:\n' + (data.get('message') || '')
-      );
-      window.location.href = 'mailto:info@makelaarsland.nl?subject=' + subject + '&body=' + body;
+      // Track conversie naar eigen analytics (Sheets webhook)
+      try {
+        if (typeof window.hh5Track === 'function') {
+          window.hh5Track('form_submit', {
+            naam: name,
+            email: email,
+            telefoon: (data.get('phone') || '').toString(),
+            voorkeursdatum: (data.get('date') || '').toString(),
+            bericht: (data.get('message') || '').toString()
+          });
+        }
+      } catch (err) {}
 
-      status.textContent = 'Hartelijk dank - uw e-mailprogramma wordt geopend. Wij nemen binnen een werkdag contact met u op.';
+      status.textContent = 'Hartelijk dank, uw aanvraag wordt verzonden. Wij nemen binnen een werkdag contact met u op.';
       status.style.color = 'var(--c-forest)';
-      form.reset();
+      // Geen e.preventDefault: laat browser POST naar FormSubmit.co
     });
   }
 
