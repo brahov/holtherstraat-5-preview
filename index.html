@@ -48,10 +48,11 @@
 
 * { box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
 
 body {
   margin: 0;
+  overflow-x: hidden;
   background: var(--c-bg);
   color: var(--c-ink);
   font-family: var(--f-sans);
@@ -1465,8 +1466,8 @@ a.nav-link.is-active { color: var(--hh-accent); }
   <div class="hero__overlay" aria-hidden="true"></div>
   <div class="hero__content">
     <span class="hero__eyebrow">Drenthe - Bruntinge</span>
-    <h1 id="hero-heading">Woonboerderij uit 1937, vijfduizend vierkante meter grond, grenzend aan Het Scharreveld.</h1>
-    <p class="hero__sub">Een gerenoveerde woonboerderij van 543 m² op ruim een halve hectare, met ecologische tuin, kapschuur en garage voor vier auto's, op zeven minuten van station Beilen.</p>
+    <h1 id="hero-heading">Hier eindigt de straat. En begint de heide.</h1>
+    <p class="hero__sub">Een gerenoveerde woonboerderij uit 1937, 543 m² op ruim een halve hectare, met ecologische tuin, kapschuur en garage voor vier auto's. Het perceel grenst direct aan natuurgebied Het Scharreveld; station Beilen ligt op zeven minuten.</p>
     <a href="#intro" class="btn btn--light">Ontdek de boerderij</a>
   </div>
   <div class="scroll-indicator" aria-hidden="true">Scroll</div>
@@ -1514,28 +1515,26 @@ a.nav-link.is-active { color: var(--hh-accent); }
     <span class="eyebrow">Introductie</span>
     <h2 id="intro-heading">Een huis voor twee generaties, een atelier en een tuin die zichzelf voedt</h2>
     <hr class="divider divider--center">
-    <p class="lead">Aan de rand van Bruntinge, op een perceel van 5.012 m² dat direct overloopt in natuurgebied Het Scharreveld, ligt deze vrijstaande woonboerderij uit 1937.</p>
+    <p class="lead">Aan de rand van Bruntinge ligt een woonboerderij die door dezelfde familie in stappen is herbouwd: van een Drentse keuterij uit 1937 naar een huis voor twee generaties, een atelier en een tuin die zichzelf voedt. Het perceel van 5.012 m² loopt direct over in natuurgebied Het Scharreveld.</p>
     <p>Het pand combineert het karakter van een Drentse keuterij met een doordachte indeling voor hedendaags gezinsleven: 543 m² woonoppervlakte, elf kamers waaronder zeven slaapkamers, twee badkamers, een atelier met akoestische ruimte en een woonkeuken uit 2023. Het hoofdvolume is geschikt voor dubbele bewoning of mantelzorg. Bijgebouwen bestaan uit een stenen garage voor vier auto's, een houten berging en een kapschuur uit 1935. Energielabel B, zestien zonnepanelen en een eigen waterput maken (deels) zelfvoorzienend wonen mogelijk.</p>
   </div>
 </section>
 
 <!-- ============================================================
-     GALLERY
+     GALLERY 1 - Het huis van buiten
      ============================================================ -->
-<section class="gallery" id="gallery" aria-labelledby="gallery-heading">
+<section class="gallery" id="gallery-1" aria-labelledby="gallery-1-heading">
   <div class="container reveal">
-    <span class="eyebrow">Beelden</span>
-    <h2 id="gallery-heading">In foto's</h2>
+    <span class="eyebrow">Beelden 1</span>
+    <h2 id="gallery-1-heading">Het huis van buiten</h2>
     <hr class="divider">
-    <p style="max-width:560px;color:var(--c-ink-soft);">Negenennegentig beelden van binnen, buiten en het aangrenzende Scharreveld - klik om te vergroten en door de set te navigeren.</p>
+    <p style="max-width:620px;color:var(--c-ink-soft);">Voorgevel, achtergevel, oprit en luchtfoto's: hoe de boerderij in het landschap staat.</p>
 
-    <div class="gallery__grid" id="gallery-grid" role="list">
+    <div class="gallery__grid" role="list">
       <a class="gallery__item gallery-item" href="photos/01.jpg" data-caption="Luchtfoto vanuit zuidoost met hoofdwoning, bijgebouw, vijver en het aangrenzende Scharreveld" role="listitem"><img class="lazy" data-src="photos/01.jpg" src="photos/01.jpg" alt="Luchtfoto vanuit zuidoost met hoofdwoning, bijgebouw, vijver en het aangrenzende Scharreveld" loading="lazy"></a>
       <a class="gallery__item gallery-item" href="photos/02.jpg" data-caption="Voorgevel van de boerderij met rood pannendak, sierschoorsteen en zonnige oprit" role="listitem"><img class="lazy" data-src="photos/02.jpg" src="photos/02.jpg" alt="Voorgevel van de boerderij met rood pannendak, sierschoorsteen en zonnige oprit" loading="lazy"></a>
       <a class="gallery__item gallery-item" href="photos/03.jpg" data-caption="Uitzicht vanaf het terras over weiland en bos, met houten tuintafel op de voorgrond" role="listitem"><img class="lazy" data-src="photos/03.jpg" src="photos/03.jpg" alt="Uitzicht vanaf het terras over weiland en bos, met houten tuintafel op de voorgrond" loading="lazy"></a>
-      <a class="gallery__item gallery-item" href="photos/04.jpg" data-caption="Zonsopgang vanaf het terras met roze hemel boven mistig weiland" role="listitem"><img class="lazy" data-src="photos/04.jpg" src="photos/04.jpg" alt="Zonsopgang vanaf het terras met roze hemel boven mistig weiland" loading="lazy"></a>
       <a class="gallery__item gallery-item" href="photos/05.jpg" data-caption="De boerderij gezien vanaf de Holtherstraat tussen lentegroene bomen" role="listitem"><img class="lazy" data-src="photos/05.jpg" src="photos/05.jpg" alt="De boerderij gezien vanaf de Holtherstraat tussen lentegroene bomen" loading="lazy"></a>
-      <a class="gallery__item gallery-item" href="photos/06.jpg" data-caption="Roze avondhemel met silhouet van takken boven het weiland aan de overkant" role="listitem"><img class="lazy" data-src="photos/06.jpg" src="photos/06.jpg" alt="Roze avondhemel met silhouet van takken boven het weiland aan de overkant" loading="lazy"></a>
       <a class="gallery__item gallery-item" href="photos/07.jpg" data-caption="Voorgevel van de boerderij vanaf de Holtherstraat, achter een lage haag tussen volwassen bomen" role="listitem"><img class="lazy" data-src="photos/07.jpg" src="photos/07.jpg" alt="Voorgevel van de boerderij vanaf de Holtherstraat, achter een lage haag tussen volwassen bomen" loading="lazy"></a>
       <a class="gallery__item gallery-item" href="photos/08.jpg" data-caption="Klinkeroprit en bijgebouw met houten gevel, omzoomd door beplanting" role="listitem"><img class="lazy" data-src="photos/08.jpg" src="photos/08.jpg" alt="Klinkeroprit en bijgebouw met houten gevel, omzoomd door beplanting" loading="lazy"></a>
       <a class="gallery__item gallery-item" href="photos/09.jpg" data-caption="Achtergevel met serre en grote ramen, terras met potten en bloembakken" role="listitem"><img class="lazy" data-src="photos/09.jpg" src="photos/09.jpg" alt="Achtergevel met serre en grote ramen, terras met potten en bloembakken" loading="lazy"></a>
@@ -1544,103 +1543,11 @@ a.nav-link.is-active { color: var(--hh-accent); }
       <a class="gallery__item gallery-item" href="photos/12.jpg" data-caption="Tweede parkeerplek met houtopslag en uitzicht over het weiland" role="listitem"><img class="lazy" data-src="photos/12.jpg" src="photos/12.jpg" alt="Tweede parkeerplek met houtopslag en uitzicht over het weiland" loading="lazy"></a>
       <a class="gallery__item gallery-item" href="photos/13.jpg" data-caption="Beschut terras met houten eettafel, omzoomd door geschoren hagen" role="listitem"><img class="lazy" data-src="photos/13.jpg" src="photos/13.jpg" alt="Beschut terras met houten eettafel, omzoomd door geschoren hagen" loading="lazy"></a>
       <a class="gallery__item gallery-item" href="photos/14.jpg" data-caption="Boerderijvleugel met groene moestuinbedden langs het pad" role="listitem"><img class="lazy" data-src="photos/14.jpg" src="photos/14.jpg" alt="Boerderijvleugel met groene moestuinbedden langs het pad" loading="lazy"></a>
-      <a class="gallery__item gallery-item" href="photos/15.jpg" data-caption="Lichte entree met openslaande tuindeuren en houten trap naar boven" role="listitem"><img class="lazy" data-src="photos/15.jpg" src="photos/15.jpg" alt="Lichte entree met openslaande tuindeuren en houten trap naar boven" loading="lazy"></a>
-      <a class="gallery__item gallery-item" href="photos/16.jpg" data-caption="Doorkijk via klassieke openslaande deuren met glas-in-lood naar de gang met houten vloer" role="listitem"><img class="lazy" data-src="photos/16.jpg" src="photos/16.jpg" alt="Doorkijk via klassieke openslaande deuren met glas-in-lood naar de gang met houten vloer" loading="lazy"></a>
       <a class="gallery__item gallery-item" href="photos/17.jpg" data-caption="Multifunctionele ruimte met openslaande deuren, houten vloer, piano en zithoek" role="listitem"><img class="lazy" data-src="photos/17.jpg" src="photos/17.jpg" alt="Multifunctionele ruimte met openslaande deuren, houten vloer, piano en zithoek" loading="lazy"></a>
-      <a class="gallery__item gallery-item" href="photos/18.jpg" data-caption="Grote woonruimte met balkenplafond, schuifdeuren naar de keuken en piano in de hoek" role="listitem"><img class="lazy" data-src="photos/18.jpg" src="photos/18.jpg" alt="Grote woonruimte met balkenplafond, schuifdeuren naar de keuken en piano in de hoek" loading="lazy"></a>
-      <a class="gallery__item gallery-item" href="photos/19.jpg" data-caption="Eetkamer met grote ramen, houten eettafel en piano onder het balkenplafond" role="listitem"><img class="lazy" data-src="photos/19.jpg" src="photos/19.jpg" alt="Eetkamer met grote ramen, houten eettafel en piano onder het balkenplafond" loading="lazy"></a>
-      <a class="gallery__item gallery-item" href="photos/20.jpg" data-caption="Speelse zit- en eethoek met piano, biljart en uitzicht door de boerderijramen" role="listitem"><img class="lazy" data-src="photos/20.jpg" src="photos/20.jpg" alt="Speelse zit- en eethoek met piano, biljart en uitzicht door de boerderijramen" loading="lazy"></a>
-      <a class="gallery__item gallery-item" href="photos/21.jpg" data-caption="Sfeervolle eethoek met houten tafel, blauwe fauteuil en weids uitzicht door de ramen" role="listitem"><img class="lazy" data-src="photos/21.jpg" src="photos/21.jpg" alt="Sfeervolle eethoek met houten tafel, blauwe fauteuil en weids uitzicht door de ramen" loading="lazy"></a>
-      <a class="gallery__item gallery-item" href="photos/22.jpg" data-caption="Bibliotheek met hoge boekenkast, blauwe fauteuils en sfeervolle leeshoek" role="listitem"><img class="lazy" data-src="photos/22.jpg" src="photos/22.jpg" alt="Bibliotheek met hoge boekenkast, blauwe fauteuils en sfeervolle leeshoek" loading="lazy"></a>
-      <a class="gallery__item gallery-item" href="photos/23.jpg" data-caption="Ruime badkamer met ligbad, regendouche en originele houten draagbalk" role="listitem"><img class="lazy" data-src="photos/23.jpg" src="photos/23.jpg" alt="Ruime badkamer met ligbad, regendouche en originele houten draagbalk" loading="lazy"></a>
-      <a class="gallery__item gallery-item" href="photos/24.jpg" data-caption="Tweede badkamer met buitendeur, marmeren wastafelmeubel en wit betegelde wanden" role="listitem"><img class="lazy" data-src="photos/24.jpg" src="photos/24.jpg" alt="Tweede badkamer met buitendeur, marmeren wastafelmeubel en wit betegelde wanden" loading="lazy"></a>
-      <a class="gallery__item gallery-item" href="photos/25.jpg" data-caption="Badkamer met wastafel, ingebouwde kasten en zicht op originele houten staander" role="listitem"><img class="lazy" data-src="photos/25.jpg" src="photos/25.jpg" alt="Badkamer met wastafel, ingebouwde kasten en zicht op originele houten staander" loading="lazy"></a>
-      <a class="gallery__item gallery-item" href="photos/26.jpg" data-caption="Holtherstraat 5 - foto 26" role="listitem"><img class="lazy" data-src="photos/26.jpg" src="photos/26.jpg" alt="Holtherstraat 5 - foto 26" loading="lazy"></a>
-      <a class="gallery__item gallery-item" href="photos/27.jpg" data-caption="Holtherstraat 5 - foto 27" role="listitem"><img class="lazy" data-src="photos/27.jpg" src="photos/27.jpg" alt="Holtherstraat 5 - foto 27" loading="lazy"></a>
-      <a class="gallery__item gallery-item" href="photos/28.jpg" data-caption="Holtherstraat 5 - foto 28" role="listitem"><img class="lazy" data-src="photos/28.jpg" src="photos/28.jpg" alt="Holtherstraat 5 - foto 28" loading="lazy"></a>
-      <a class="gallery__item gallery-item" href="photos/29.jpg" data-caption="Holtherstraat 5 - foto 29" role="listitem"><img class="lazy" data-src="photos/29.jpg" src="photos/29.jpg" alt="Holtherstraat 5 - foto 29" loading="lazy"></a>
-      <a class="gallery__item gallery-item" href="photos/30.jpg" data-caption="Holtherstraat 5 - foto 30" role="listitem"><img class="lazy" data-src="photos/30.jpg" src="photos/30.jpg" alt="Holtherstraat 5 - foto 30" loading="lazy"></a>
-      <a class="gallery__item gallery-item" href="photos/31.jpg" data-caption="Holtherstraat 5 - foto 31" role="listitem"><img class="lazy" data-src="photos/31.jpg" src="photos/31.jpg" alt="Holtherstraat 5 - foto 31" loading="lazy"></a>
-      <a class="gallery__item gallery-item" href="photos/32.jpg" data-caption="Holtherstraat 5 - foto 32" role="listitem"><img class="lazy" data-src="photos/32.jpg" src="photos/32.jpg" alt="Holtherstraat 5 - foto 32" loading="lazy"></a>
-      <a class="gallery__item gallery-item" href="photos/33.jpg" data-caption="Holtherstraat 5 - foto 33" role="listitem"><img class="lazy" data-src="photos/33.jpg" src="photos/33.jpg" alt="Holtherstraat 5 - foto 33" loading="lazy"></a>
-      <a class="gallery__item gallery-item" href="photos/34.jpg" data-caption="Holtherstraat 5 - foto 34" role="listitem"><img class="lazy" data-src="photos/34.jpg" src="photos/34.jpg" alt="Holtherstraat 5 - foto 34" loading="lazy"></a>
-      <a class="gallery__item gallery-item" href="photos/35.jpg" data-caption="Holtherstraat 5 - foto 35" role="listitem"><img class="lazy" data-src="photos/35.jpg" src="photos/35.jpg" alt="Holtherstraat 5 - foto 35" loading="lazy"></a>
-      <a class="gallery__item gallery-item" href="photos/36.jpg" data-caption="Holtherstraat 5 - foto 36" role="listitem"><img class="lazy" data-src="photos/36.jpg" src="photos/36.jpg" alt="Holtherstraat 5 - foto 36" loading="lazy"></a>
-      <a class="gallery__item gallery-item" href="photos/37.jpg" data-caption="Holtherstraat 5 - foto 37" role="listitem"><img class="lazy" data-src="photos/37.jpg" src="photos/37.jpg" alt="Holtherstraat 5 - foto 37" loading="lazy"></a>
-      <a class="gallery__item gallery-item" href="photos/38.jpg" data-caption="Holtherstraat 5 - foto 38" role="listitem"><img class="lazy" data-src="photos/38.jpg" src="photos/38.jpg" alt="Holtherstraat 5 - foto 38" loading="lazy"></a>
-      <a class="gallery__item gallery-item" href="photos/39.jpg" data-caption="Holtherstraat 5 - foto 39" role="listitem"><img class="lazy" data-src="photos/39.jpg" src="photos/39.jpg" alt="Holtherstraat 5 - foto 39" loading="lazy"></a>
-      <a class="gallery__item gallery-item" href="photos/40.jpg" data-caption="Holtherstraat 5 - foto 40" role="listitem"><img class="lazy" data-src="photos/40.jpg" src="photos/40.jpg" alt="Holtherstraat 5 - foto 40" loading="lazy"></a>
-      <a class="gallery__item gallery-item" href="photos/41.jpg" data-caption="Holtherstraat 5 - foto 41" role="listitem"><img class="lazy" data-src="photos/41.jpg" src="photos/41.jpg" alt="Holtherstraat 5 - foto 41" loading="lazy"></a>
-      <a class="gallery__item gallery-item" href="photos/42.jpg" data-caption="Holtherstraat 5 - foto 42" role="listitem"><img class="lazy" data-src="photos/42.jpg" src="photos/42.jpg" alt="Holtherstraat 5 - foto 42" loading="lazy"></a>
-      <a class="gallery__item gallery-item" href="photos/43.jpg" data-caption="Holtherstraat 5 - foto 43" role="listitem"><img class="lazy" data-src="photos/43.jpg" src="photos/43.jpg" alt="Holtherstraat 5 - foto 43" loading="lazy"></a>
-      <a class="gallery__item gallery-item" href="photos/44.jpg" data-caption="Holtherstraat 5 - foto 44" role="listitem"><img class="lazy" data-src="photos/44.jpg" src="photos/44.jpg" alt="Holtherstraat 5 - foto 44" loading="lazy"></a>
-      <a class="gallery__item gallery-item" href="photos/45.jpg" data-caption="Holtherstraat 5 - foto 45" role="listitem"><img class="lazy" data-src="photos/45.jpg" src="photos/45.jpg" alt="Holtherstraat 5 - foto 45" loading="lazy"></a>
-      <a class="gallery__item gallery-item" href="photos/46.jpg" data-caption="Holtherstraat 5 - foto 46" role="listitem"><img class="lazy" data-src="photos/46.jpg" src="photos/46.jpg" alt="Holtherstraat 5 - foto 46" loading="lazy"></a>
-      <a class="gallery__item gallery-item" href="photos/47.jpg" data-caption="Holtherstraat 5 - foto 47" role="listitem"><img class="lazy" data-src="photos/47.jpg" src="photos/47.jpg" alt="Holtherstraat 5 - foto 47" loading="lazy"></a>
-      <a class="gallery__item gallery-item" href="photos/48.jpg" data-caption="Holtherstraat 5 - foto 48" role="listitem"><img class="lazy" data-src="photos/48.jpg" src="photos/48.jpg" alt="Holtherstraat 5 - foto 48" loading="lazy"></a>
-      <a class="gallery__item gallery-item" href="photos/49.jpg" data-caption="Holtherstraat 5 - foto 49" role="listitem"><img class="lazy" data-src="photos/49.jpg" src="photos/49.jpg" alt="Holtherstraat 5 - foto 49" loading="lazy"></a>
-      <a class="gallery__item gallery-item" href="photos/50.jpg" data-caption="Holtherstraat 5 - foto 50" role="listitem"><img class="lazy" data-src="photos/50.jpg" src="photos/50.jpg" alt="Holtherstraat 5 - foto 50" loading="lazy"></a>
-      <a class="gallery__item gallery-item" href="photos/51.jpg" data-caption="Holtherstraat 5 - foto 51" role="listitem"><img class="lazy" data-src="photos/51.jpg" src="photos/51.jpg" alt="Holtherstraat 5 - foto 51" loading="lazy"></a>
-      <a class="gallery__item gallery-item" href="photos/52.jpg" data-caption="Holtherstraat 5 - foto 52" role="listitem"><img class="lazy" data-src="photos/52.jpg" src="photos/52.jpg" alt="Holtherstraat 5 - foto 52" loading="lazy"></a>
-      <a class="gallery__item gallery-item" href="photos/53.jpg" data-caption="Holtherstraat 5 - foto 53" role="listitem"><img class="lazy" data-src="photos/53.jpg" src="photos/53.jpg" alt="Holtherstraat 5 - foto 53" loading="lazy"></a>
-      <a class="gallery__item gallery-item" href="photos/54.jpg" data-caption="Holtherstraat 5 - foto 54" role="listitem"><img class="lazy" data-src="photos/54.jpg" src="photos/54.jpg" alt="Holtherstraat 5 - foto 54" loading="lazy"></a>
-      <a class="gallery__item gallery-item" href="photos/55.jpg" data-caption="Holtherstraat 5 - foto 55" role="listitem"><img class="lazy" data-src="photos/55.jpg" src="photos/55.jpg" alt="Holtherstraat 5 - foto 55" loading="lazy"></a>
-      <a class="gallery__item gallery-item" href="photos/56.jpg" data-caption="Holtherstraat 5 - foto 56" role="listitem"><img class="lazy" data-src="photos/56.jpg" src="photos/56.jpg" alt="Holtherstraat 5 - foto 56" loading="lazy"></a>
-      <a class="gallery__item gallery-item" href="photos/57.jpg" data-caption="Holtherstraat 5 - foto 57" role="listitem"><img class="lazy" data-src="photos/57.jpg" src="photos/57.jpg" alt="Holtherstraat 5 - foto 57" loading="lazy"></a>
-      <a class="gallery__item gallery-item" href="photos/58.jpg" data-caption="Holtherstraat 5 - foto 58" role="listitem"><img class="lazy" data-src="photos/58.jpg" src="photos/58.jpg" alt="Holtherstraat 5 - foto 58" loading="lazy"></a>
-      <a class="gallery__item gallery-item" href="photos/59.jpg" data-caption="Holtherstraat 5 - foto 59" role="listitem"><img class="lazy" data-src="photos/59.jpg" src="photos/59.jpg" alt="Holtherstraat 5 - foto 59" loading="lazy"></a>
-      <a class="gallery__item gallery-item" href="photos/60.jpg" data-caption="Holtherstraat 5 - foto 60" role="listitem"><img class="lazy" data-src="photos/60.jpg" src="photos/60.jpg" alt="Holtherstraat 5 - foto 60" loading="lazy"></a>
-      <a class="gallery__item gallery-item" href="photos/61.jpg" data-caption="Holtherstraat 5 - foto 61" role="listitem"><img class="lazy" data-src="photos/61.jpg" src="photos/61.jpg" alt="Holtherstraat 5 - foto 61" loading="lazy"></a>
-      <a class="gallery__item gallery-item" href="photos/62.jpg" data-caption="Holtherstraat 5 - foto 62" role="listitem"><img class="lazy" data-src="photos/62.jpg" src="photos/62.jpg" alt="Holtherstraat 5 - foto 62" loading="lazy"></a>
-      <a class="gallery__item gallery-item" href="photos/63.jpg" data-caption="Holtherstraat 5 - foto 63" role="listitem"><img class="lazy" data-src="photos/63.jpg" src="photos/63.jpg" alt="Holtherstraat 5 - foto 63" loading="lazy"></a>
-      <a class="gallery__item gallery-item" href="photos/64.jpg" data-caption="Holtherstraat 5 - foto 64" role="listitem"><img class="lazy" data-src="photos/64.jpg" src="photos/64.jpg" alt="Holtherstraat 5 - foto 64" loading="lazy"></a>
-      <a class="gallery__item gallery-item" href="photos/65.jpg" data-caption="Holtherstraat 5 - foto 65" role="listitem"><img class="lazy" data-src="photos/65.jpg" src="photos/65.jpg" alt="Holtherstraat 5 - foto 65" loading="lazy"></a>
-      <a class="gallery__item gallery-item" href="photos/66.jpg" data-caption="Holtherstraat 5 - foto 66" role="listitem"><img class="lazy" data-src="photos/66.jpg" src="photos/66.jpg" alt="Holtherstraat 5 - foto 66" loading="lazy"></a>
-      <a class="gallery__item gallery-item" href="photos/67.jpg" data-caption="Holtherstraat 5 - foto 67" role="listitem"><img class="lazy" data-src="photos/67.jpg" src="photos/67.jpg" alt="Holtherstraat 5 - foto 67" loading="lazy"></a>
-      <a class="gallery__item gallery-item" href="photos/68.jpg" data-caption="Holtherstraat 5 - foto 68" role="listitem"><img class="lazy" data-src="photos/68.jpg" src="photos/68.jpg" alt="Holtherstraat 5 - foto 68" loading="lazy"></a>
-      <a class="gallery__item gallery-item" href="photos/69.jpg" data-caption="Holtherstraat 5 - foto 69" role="listitem"><img class="lazy" data-src="photos/69.jpg" src="photos/69.jpg" alt="Holtherstraat 5 - foto 69" loading="lazy"></a>
-      <a class="gallery__item gallery-item" href="photos/70.jpg" data-caption="Holtherstraat 5 - foto 70" role="listitem"><img class="lazy" data-src="photos/70.jpg" src="photos/70.jpg" alt="Holtherstraat 5 - foto 70" loading="lazy"></a>
-      <a class="gallery__item gallery-item" href="photos/71.jpg" data-caption="Holtherstraat 5 - foto 71" role="listitem"><img class="lazy" data-src="photos/71.jpg" src="photos/71.jpg" alt="Holtherstraat 5 - foto 71" loading="lazy"></a>
-      <a class="gallery__item gallery-item" href="photos/72.jpg" data-caption="Holtherstraat 5 - foto 72" role="listitem"><img class="lazy" data-src="photos/72.jpg" src="photos/72.jpg" alt="Holtherstraat 5 - foto 72" loading="lazy"></a>
-      <a class="gallery__item gallery-item" href="photos/73.jpg" data-caption="Holtherstraat 5 - foto 73" role="listitem"><img class="lazy" data-src="photos/73.jpg" src="photos/73.jpg" alt="Holtherstraat 5 - foto 73" loading="lazy"></a>
-      <a class="gallery__item gallery-item" href="photos/74.jpg" data-caption="Holtherstraat 5 - foto 74" role="listitem"><img class="lazy" data-src="photos/74.jpg" src="photos/74.jpg" alt="Holtherstraat 5 - foto 74" loading="lazy"></a>
-      <a class="gallery__item gallery-item" href="photos/75.jpg" data-caption="Holtherstraat 5 - foto 75" role="listitem"><img class="lazy" data-src="photos/75.jpg" src="photos/75.jpg" alt="Holtherstraat 5 - foto 75" loading="lazy"></a>
-      <a class="gallery__item gallery-item" href="photos/76.jpg" data-caption="Holtherstraat 5 - foto 76" role="listitem"><img class="lazy" data-src="photos/76.jpg" src="photos/76.jpg" alt="Holtherstraat 5 - foto 76" loading="lazy"></a>
-      <a class="gallery__item gallery-item" href="photos/77.jpg" data-caption="Holtherstraat 5 - foto 77" role="listitem"><img class="lazy" data-src="photos/77.jpg" src="photos/77.jpg" alt="Holtherstraat 5 - foto 77" loading="lazy"></a>
-      <a class="gallery__item gallery-item" href="photos/78.jpg" data-caption="Holtherstraat 5 - foto 78" role="listitem"><img class="lazy" data-src="photos/78.jpg" src="photos/78.jpg" alt="Holtherstraat 5 - foto 78" loading="lazy"></a>
-      <a class="gallery__item gallery-item" href="photos/79.jpg" data-caption="Holtherstraat 5 - foto 79" role="listitem"><img class="lazy" data-src="photos/79.jpg" src="photos/79.jpg" alt="Holtherstraat 5 - foto 79" loading="lazy"></a>
-      <a class="gallery__item gallery-item" href="photos/80.jpg" data-caption="Holtherstraat 5 - foto 80" role="listitem"><img class="lazy" data-src="photos/80.jpg" src="photos/80.jpg" alt="Holtherstraat 5 - foto 80" loading="lazy"></a>
-      <a class="gallery__item gallery-item" href="photos/81.jpg" data-caption="Holtherstraat 5 - foto 81" role="listitem"><img class="lazy" data-src="photos/81.jpg" src="photos/81.jpg" alt="Holtherstraat 5 - foto 81" loading="lazy"></a>
-      <a class="gallery__item gallery-item" href="photos/82.jpg" data-caption="Holtherstraat 5 - foto 82" role="listitem"><img class="lazy" data-src="photos/82.jpg" src="photos/82.jpg" alt="Holtherstraat 5 - foto 82" loading="lazy"></a>
-      <a class="gallery__item gallery-item" href="photos/83.jpg" data-caption="Holtherstraat 5 - foto 83" role="listitem"><img class="lazy" data-src="photos/83.jpg" src="photos/83.jpg" alt="Holtherstraat 5 - foto 83" loading="lazy"></a>
-      <a class="gallery__item gallery-item" href="photos/84.jpg" data-caption="Holtherstraat 5 - foto 84" role="listitem"><img class="lazy" data-src="photos/84.jpg" src="photos/84.jpg" alt="Holtherstraat 5 - foto 84" loading="lazy"></a>
-      <a class="gallery__item gallery-item" href="photos/85.jpg" data-caption="Holtherstraat 5 - foto 85" role="listitem"><img class="lazy" data-src="photos/85.jpg" src="photos/85.jpg" alt="Holtherstraat 5 - foto 85" loading="lazy"></a>
-      <a class="gallery__item gallery-item" href="photos/86.jpg" data-caption="Holtherstraat 5 - foto 86" role="listitem"><img class="lazy" data-src="photos/86.jpg" src="photos/86.jpg" alt="Holtherstraat 5 - foto 86" loading="lazy"></a>
-      <a class="gallery__item gallery-item" href="photos/87.jpg" data-caption="Holtherstraat 5 - foto 87" role="listitem"><img class="lazy" data-src="photos/87.jpg" src="photos/87.jpg" alt="Holtherstraat 5 - foto 87" loading="lazy"></a>
-      <a class="gallery__item gallery-item" href="photos/88.jpg" data-caption="Holtherstraat 5 - foto 88" role="listitem"><img class="lazy" data-src="photos/88.jpg" src="photos/88.jpg" alt="Holtherstraat 5 - foto 88" loading="lazy"></a>
-      <a class="gallery__item gallery-item" href="photos/89.jpg" data-caption="Holtherstraat 5 - foto 89" role="listitem"><img class="lazy" data-src="photos/89.jpg" src="photos/89.jpg" alt="Holtherstraat 5 - foto 89" loading="lazy"></a>
-      <a class="gallery__item gallery-item" href="photos/90.jpg" data-caption="Holtherstraat 5 - foto 90" role="listitem"><img class="lazy" data-src="photos/90.jpg" src="photos/90.jpg" alt="Holtherstraat 5 - foto 90" loading="lazy"></a>
-      <a class="gallery__item gallery-item" href="photos/91.jpg" data-caption="Holtherstraat 5 - foto 91" role="listitem"><img class="lazy" data-src="photos/91.jpg" src="photos/91.jpg" alt="Holtherstraat 5 - foto 91" loading="lazy"></a>
-      <a class="gallery__item gallery-item" href="photos/92.jpg" data-caption="Holtherstraat 5 - foto 92" role="listitem"><img class="lazy" data-src="photos/92.jpg" src="photos/92.jpg" alt="Holtherstraat 5 - foto 92" loading="lazy"></a>
-      <a class="gallery__item gallery-item" href="photos/93.jpg" data-caption="Holtherstraat 5 - foto 93" role="listitem"><img class="lazy" data-src="photos/93.jpg" src="photos/93.jpg" alt="Holtherstraat 5 - foto 93" loading="lazy"></a>
-      <a class="gallery__item gallery-item" href="photos/94.jpg" data-caption="Holtherstraat 5 - foto 94" role="listitem"><img class="lazy" data-src="photos/94.jpg" src="photos/94.jpg" alt="Holtherstraat 5 - foto 94" loading="lazy"></a>
-      <a class="gallery__item gallery-item" href="photos/95.jpg" data-caption="Holtherstraat 5 - foto 95" role="listitem"><img class="lazy" data-src="photos/95.jpg" src="photos/95.jpg" alt="Holtherstraat 5 - foto 95" loading="lazy"></a>
-      <a class="gallery__item gallery-item" href="photos/96.jpg" data-caption="Holtherstraat 5 - foto 96" role="listitem"><img class="lazy" data-src="photos/96.jpg" src="photos/96.jpg" alt="Holtherstraat 5 - foto 96" loading="lazy"></a>
-      <a class="gallery__item gallery-item" href="photos/97.jpg" data-caption="Holtherstraat 5 - foto 97" role="listitem"><img class="lazy" data-src="photos/97.jpg" src="photos/97.jpg" alt="Holtherstraat 5 - foto 97" loading="lazy"></a>
-      <a class="gallery__item gallery-item" href="photos/98.jpg" data-caption="Holtherstraat 5 - foto 98" role="listitem"><img class="lazy" data-src="photos/98.jpg" src="photos/98.jpg" alt="Holtherstraat 5 - foto 98" loading="lazy"></a>
-      <a class="gallery__item gallery-item" href="photos/99.jpg" data-caption="Ochtendnevel boven de weide met ooievaarsnest" role="listitem"><img class="lazy" data-src="photos/99.jpg" src="photos/99.jpg" alt="Ochtendnevel boven de weide met ooievaarsnest" loading="lazy"></a>
     </div>
   </div>
 </section>
 
-<!-- Lightbox -->
-<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Foto in vol scherm" aria-hidden="true">
-  <button class="lightbox__close" id="lightbox-close" aria-label="Sluiten">&times;</button>
-  <button class="lightbox__nav lightbox__nav--prev" id="lightbox-prev" aria-label="Vorige foto">&lsaquo;</button>
-  <img id="lightbox-img" src="" alt="">
-  <button class="lightbox__nav lightbox__nav--next" id="lightbox-next" aria-label="Volgende foto">&rsaquo;</button>
-  <div class="lightbox__counter" id="lightbox-counter"></div>
-</div>
 
 <!-- ============================================================
      USPs
@@ -1653,8 +1560,8 @@ a.nav-link.is-active { color: var(--hh-accent); }
     <div class="usps__grid">
       <article class="usp">
         <div class="usp__num">I</div>
-        <h3>Ruimte en indeling voor meerdere levensfasen</h3>
-        <p>Met 543 m² woonoppervlak, 2.076 m³ inhoud en elf kamers is dit huis ontworpen voor gezinnen die ruimte nodig hebben. De L-vormige woonkamer van 40 m² in het voorhuis en de living van 65 m² in het achterhuis functioneren als twee zelfstandige leefkernen. Zeven slaapkamers, twee badkamers en een atelier maken meerdere woonscenario's mogelijk.</p>
+        <h3>Twee leefkernen onder één dak</h3>
+        <p>Voorhuis en achterhuis vormen twee zelfstandige leefzones binnen hetzelfde volume: een L-vormige woonkamer van 40 m² in het voorhuis en een living van 65 m² in het achterhuis, elk met eigen badkamer. Met zeven slaapkamers, een atelier en een multifunctionele ruimte op de eerste verdieping is er ruimte voor twee generaties, mantelzorg, thuiswerken of een gezin met logees. 543 m² woonoppervlak, 2.076 m³ inhoud, elf kamers in totaal.</p>
       </article>
       <article class="usp">
         <div class="usp__num">II</div>
@@ -1664,7 +1571,7 @@ a.nav-link.is-active { color: var(--hh-accent); }
       <article class="usp">
         <div class="usp__num">III</div>
         <h3>Aan het Scharreveld, met de stad binnen handbereik</h3>
-        <p>Het perceel grenst direct aan natuurgebied Het Scharreveld. Westerbork en Beilen zijn in zeven minuten te bereiken; vanaf station Beilen rijdt er een rechtstreekse verbinding naar Den Haag. Assen ligt op een kwartier rijden, Groningen op vijfendertig minuten. De Jenaplan basisschool in Balinge is via een eigen bospad bereikbaar.</p>
+        <p>Het perceel grenst direct aan natuurgebied Het Scharreveld. Westerbork en Beilen zijn in zeven minuten te bereiken; vanaf station Beilen rijdt in de spits een rechtstreekse intercity naar Zwolle, Amersfoort en Den Haag. Assen ligt op een kwartier rijden, Groningen op vijfendertig minuten. De Jenaplan basisschool in Balinge is via een eigen bospad bereikbaar.</p>
       </article>
     </div>
   </div>
@@ -1688,6 +1595,34 @@ a.nav-link.is-active { color: var(--hh-accent); }
     </div>
   </div>
 </section>
+
+<!-- ============================================================
+     GALLERY 2 - Woonkamer en gemeenschappelijke ruimtes
+     ============================================================ -->
+<section class="gallery" id="gallery-2" aria-labelledby="gallery-2-heading">
+  <div class="container reveal">
+    <span class="eyebrow">Beelden 2</span>
+    <h2 id="gallery-2-heading">Woonkamer en gemeenschappelijke ruimtes</h2>
+    <hr class="divider">
+    <p style="max-width:620px;color:var(--c-ink-soft);">Living, eetkamer, woonkeuken uit 2023 en bibliotheek: het hart van het huishouden.</p>
+
+    <div class="gallery__grid" role="list">
+      <a class="gallery__item gallery-item" href="photos/15.jpg" data-caption="Lichte entree met openslaande tuindeuren en houten trap naar boven" role="listitem"><img class="lazy" data-src="photos/15.jpg" src="photos/15.jpg" alt="Lichte entree met openslaande tuindeuren en houten trap naar boven" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/16.jpg" data-caption="Doorkijk via klassieke openslaande deuren met glas-in-lood naar de gang met houten vloer" role="listitem"><img class="lazy" data-src="photos/16.jpg" src="photos/16.jpg" alt="Doorkijk via klassieke openslaande deuren met glas-in-lood naar de gang met houten vloer" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/18.jpg" data-caption="Grote woonruimte met balkenplafond, schuifdeuren naar de keuken en piano in de hoek" role="listitem"><img class="lazy" data-src="photos/18.jpg" src="photos/18.jpg" alt="Grote woonruimte met balkenplafond, schuifdeuren naar de keuken en piano in de hoek" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/19.jpg" data-caption="Eetkamer met grote ramen, houten eettafel en piano onder het balkenplafond" role="listitem"><img class="lazy" data-src="photos/19.jpg" src="photos/19.jpg" alt="Eetkamer met grote ramen, houten eettafel en piano onder het balkenplafond" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/20.jpg" data-caption="Speelse zit- en eethoek met piano, biljart en uitzicht door de boerderijramen" role="listitem"><img class="lazy" data-src="photos/20.jpg" src="photos/20.jpg" alt="Speelse zit- en eethoek met piano, biljart en uitzicht door de boerderijramen" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/21.jpg" data-caption="Sfeervolle eethoek met houten tafel, blauwe fauteuil en weids uitzicht door de ramen" role="listitem"><img class="lazy" data-src="photos/21.jpg" src="photos/21.jpg" alt="Sfeervolle eethoek met houten tafel, blauwe fauteuil en weids uitzicht door de ramen" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/22.jpg" data-caption="Bibliotheek met hoge boekenkast, blauwe fauteuils en sfeervolle leeshoek" role="listitem"><img class="lazy" data-src="photos/22.jpg" src="photos/22.jpg" alt="Bibliotheek met hoge boekenkast, blauwe fauteuils en sfeervolle leeshoek" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/26.jpg" data-caption="Holtherstraat 5 - foto 26" role="listitem"><img class="lazy" data-src="photos/26.jpg" src="photos/26.jpg" alt="Holtherstraat 5 - foto 26" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/27.jpg" data-caption="Holtherstraat 5 - foto 27" role="listitem"><img class="lazy" data-src="photos/27.jpg" src="photos/27.jpg" alt="Holtherstraat 5 - foto 27" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/28.jpg" data-caption="Holtherstraat 5 - foto 28" role="listitem"><img class="lazy" data-src="photos/28.jpg" src="photos/28.jpg" alt="Holtherstraat 5 - foto 28" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/29.jpg" data-caption="Holtherstraat 5 - foto 29" role="listitem"><img class="lazy" data-src="photos/29.jpg" src="photos/29.jpg" alt="Holtherstraat 5 - foto 29" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/30.jpg" data-caption="Holtherstraat 5 - foto 30" role="listitem"><img class="lazy" data-src="photos/30.jpg" src="photos/30.jpg" alt="Holtherstraat 5 - foto 30" loading="lazy"></a>
+    </div>
+  </div>
+</section>
+
 
 <!-- ============================================================
      PLATTEGRONDEN
@@ -1753,6 +1688,37 @@ a.nav-link.is-active { color: var(--hh-accent); }
 </section>
 
 <!-- ============================================================
+     GALLERY 4 - Tuin, vijver en permacultuur
+     ============================================================ -->
+<section class="gallery" id="gallery-4" aria-labelledby="gallery-4-heading">
+  <div class="container reveal">
+    <span class="eyebrow">Beelden 4</span>
+    <h2 id="gallery-4-heading">Tuin, vijver en permacultuur</h2>
+    <hr class="divider">
+    <p style="max-width:620px;color:var(--c-ink-soft);">Wadi, vijver, kas, fruitbomen en moestuinbedden: de tuin van ruim een halve hectare.</p>
+
+    <div class="gallery__grid" role="list">
+      <a class="gallery__item gallery-item" href="photos/40.jpg" data-caption="Holtherstraat 5 - foto 40" role="listitem"><img class="lazy" data-src="photos/40.jpg" src="photos/40.jpg" alt="Holtherstraat 5 - foto 40" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/41.jpg" data-caption="Holtherstraat 5 - foto 41" role="listitem"><img class="lazy" data-src="photos/41.jpg" src="photos/41.jpg" alt="Holtherstraat 5 - foto 41" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/42.jpg" data-caption="Holtherstraat 5 - foto 42" role="listitem"><img class="lazy" data-src="photos/42.jpg" src="photos/42.jpg" alt="Holtherstraat 5 - foto 42" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/43.jpg" data-caption="Holtherstraat 5 - foto 43" role="listitem"><img class="lazy" data-src="photos/43.jpg" src="photos/43.jpg" alt="Holtherstraat 5 - foto 43" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/44.jpg" data-caption="Holtherstraat 5 - foto 44" role="listitem"><img class="lazy" data-src="photos/44.jpg" src="photos/44.jpg" alt="Holtherstraat 5 - foto 44" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/45.jpg" data-caption="Holtherstraat 5 - foto 45" role="listitem"><img class="lazy" data-src="photos/45.jpg" src="photos/45.jpg" alt="Holtherstraat 5 - foto 45" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/46.jpg" data-caption="Holtherstraat 5 - foto 46" role="listitem"><img class="lazy" data-src="photos/46.jpg" src="photos/46.jpg" alt="Holtherstraat 5 - foto 46" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/47.jpg" data-caption="Holtherstraat 5 - foto 47" role="listitem"><img class="lazy" data-src="photos/47.jpg" src="photos/47.jpg" alt="Holtherstraat 5 - foto 47" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/48.jpg" data-caption="Holtherstraat 5 - foto 48" role="listitem"><img class="lazy" data-src="photos/48.jpg" src="photos/48.jpg" alt="Holtherstraat 5 - foto 48" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/49.jpg" data-caption="Holtherstraat 5 - foto 49" role="listitem"><img class="lazy" data-src="photos/49.jpg" src="photos/49.jpg" alt="Holtherstraat 5 - foto 49" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/50.jpg" data-caption="Holtherstraat 5 - foto 50" role="listitem"><img class="lazy" data-src="photos/50.jpg" src="photos/50.jpg" alt="Holtherstraat 5 - foto 50" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/51.jpg" data-caption="Holtherstraat 5 - foto 51" role="listitem"><img class="lazy" data-src="photos/51.jpg" src="photos/51.jpg" alt="Holtherstraat 5 - foto 51" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/52.jpg" data-caption="Holtherstraat 5 - foto 52" role="listitem"><img class="lazy" data-src="photos/52.jpg" src="photos/52.jpg" alt="Holtherstraat 5 - foto 52" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/53.jpg" data-caption="Holtherstraat 5 - foto 53" role="listitem"><img class="lazy" data-src="photos/53.jpg" src="photos/53.jpg" alt="Holtherstraat 5 - foto 53" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/54.jpg" data-caption="Holtherstraat 5 - foto 54" role="listitem"><img class="lazy" data-src="photos/54.jpg" src="photos/54.jpg" alt="Holtherstraat 5 - foto 54" loading="lazy"></a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
      LIGGING / KAART
      ============================================================ -->
 <section class="location" id="locatie" aria-labelledby="location-heading">
@@ -1776,6 +1742,59 @@ a.nav-link.is-active { color: var(--hh-accent); }
 </section>
 
 <!-- ============================================================
+     GALLERY 6 - Omgeving en het Scharreveld
+     ============================================================ -->
+<section class="gallery" id="gallery-6" aria-labelledby="gallery-6-heading">
+  <div class="container reveal">
+    <span class="eyebrow">Beelden 6</span>
+    <h2 id="gallery-6-heading">Omgeving en het Scharreveld</h2>
+    <hr class="divider">
+    <p style="max-width:620px;color:var(--c-ink-soft);">Heide, bos, weiden en de zonsop- en zonsondergangen die de erfgrens dagelijks tekenen.</p>
+
+    <div class="gallery__grid" role="list">
+      <a class="gallery__item gallery-item" href="photos/04.jpg" data-caption="Zonsopgang vanaf het terras met roze hemel boven mistig weiland" role="listitem"><img class="lazy" data-src="photos/04.jpg" src="photos/04.jpg" alt="Zonsopgang vanaf het terras met roze hemel boven mistig weiland" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/06.jpg" data-caption="Roze avondhemel met silhouet van takken boven het weiland aan de overkant" role="listitem"><img class="lazy" data-src="photos/06.jpg" src="photos/06.jpg" alt="Roze avondhemel met silhouet van takken boven het weiland aan de overkant" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/65.jpg" data-caption="Holtherstraat 5 - foto 65" role="listitem"><img class="lazy" data-src="photos/65.jpg" src="photos/65.jpg" alt="Holtherstraat 5 - foto 65" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/66.jpg" data-caption="Holtherstraat 5 - foto 66" role="listitem"><img class="lazy" data-src="photos/66.jpg" src="photos/66.jpg" alt="Holtherstraat 5 - foto 66" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/67.jpg" data-caption="Holtherstraat 5 - foto 67" role="listitem"><img class="lazy" data-src="photos/67.jpg" src="photos/67.jpg" alt="Holtherstraat 5 - foto 67" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/68.jpg" data-caption="Holtherstraat 5 - foto 68" role="listitem"><img class="lazy" data-src="photos/68.jpg" src="photos/68.jpg" alt="Holtherstraat 5 - foto 68" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/69.jpg" data-caption="Holtherstraat 5 - foto 69" role="listitem"><img class="lazy" data-src="photos/69.jpg" src="photos/69.jpg" alt="Holtherstraat 5 - foto 69" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/70.jpg" data-caption="Holtherstraat 5 - foto 70" role="listitem"><img class="lazy" data-src="photos/70.jpg" src="photos/70.jpg" alt="Holtherstraat 5 - foto 70" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/71.jpg" data-caption="Holtherstraat 5 - foto 71" role="listitem"><img class="lazy" data-src="photos/71.jpg" src="photos/71.jpg" alt="Holtherstraat 5 - foto 71" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/72.jpg" data-caption="Holtherstraat 5 - foto 72" role="listitem"><img class="lazy" data-src="photos/72.jpg" src="photos/72.jpg" alt="Holtherstraat 5 - foto 72" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/73.jpg" data-caption="Holtherstraat 5 - foto 73" role="listitem"><img class="lazy" data-src="photos/73.jpg" src="photos/73.jpg" alt="Holtherstraat 5 - foto 73" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/74.jpg" data-caption="Holtherstraat 5 - foto 74" role="listitem"><img class="lazy" data-src="photos/74.jpg" src="photos/74.jpg" alt="Holtherstraat 5 - foto 74" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/75.jpg" data-caption="Holtherstraat 5 - foto 75" role="listitem"><img class="lazy" data-src="photos/75.jpg" src="photos/75.jpg" alt="Holtherstraat 5 - foto 75" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/76.jpg" data-caption="Holtherstraat 5 - foto 76" role="listitem"><img class="lazy" data-src="photos/76.jpg" src="photos/76.jpg" alt="Holtherstraat 5 - foto 76" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/77.jpg" data-caption="Holtherstraat 5 - foto 77" role="listitem"><img class="lazy" data-src="photos/77.jpg" src="photos/77.jpg" alt="Holtherstraat 5 - foto 77" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/78.jpg" data-caption="Holtherstraat 5 - foto 78" role="listitem"><img class="lazy" data-src="photos/78.jpg" src="photos/78.jpg" alt="Holtherstraat 5 - foto 78" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/79.jpg" data-caption="Holtherstraat 5 - foto 79" role="listitem"><img class="lazy" data-src="photos/79.jpg" src="photos/79.jpg" alt="Holtherstraat 5 - foto 79" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/80.jpg" data-caption="Holtherstraat 5 - foto 80" role="listitem"><img class="lazy" data-src="photos/80.jpg" src="photos/80.jpg" alt="Holtherstraat 5 - foto 80" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/81.jpg" data-caption="Holtherstraat 5 - foto 81" role="listitem"><img class="lazy" data-src="photos/81.jpg" src="photos/81.jpg" alt="Holtherstraat 5 - foto 81" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/82.jpg" data-caption="Holtherstraat 5 - foto 82" role="listitem"><img class="lazy" data-src="photos/82.jpg" src="photos/82.jpg" alt="Holtherstraat 5 - foto 82" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/83.jpg" data-caption="Holtherstraat 5 - foto 83" role="listitem"><img class="lazy" data-src="photos/83.jpg" src="photos/83.jpg" alt="Holtherstraat 5 - foto 83" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/84.jpg" data-caption="Holtherstraat 5 - foto 84" role="listitem"><img class="lazy" data-src="photos/84.jpg" src="photos/84.jpg" alt="Holtherstraat 5 - foto 84" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/85.jpg" data-caption="Holtherstraat 5 - foto 85" role="listitem"><img class="lazy" data-src="photos/85.jpg" src="photos/85.jpg" alt="Holtherstraat 5 - foto 85" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/86.jpg" data-caption="Holtherstraat 5 - foto 86" role="listitem"><img class="lazy" data-src="photos/86.jpg" src="photos/86.jpg" alt="Holtherstraat 5 - foto 86" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/87.jpg" data-caption="Holtherstraat 5 - foto 87" role="listitem"><img class="lazy" data-src="photos/87.jpg" src="photos/87.jpg" alt="Holtherstraat 5 - foto 87" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/88.jpg" data-caption="Holtherstraat 5 - foto 88" role="listitem"><img class="lazy" data-src="photos/88.jpg" src="photos/88.jpg" alt="Holtherstraat 5 - foto 88" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/89.jpg" data-caption="Holtherstraat 5 - foto 89" role="listitem"><img class="lazy" data-src="photos/89.jpg" src="photos/89.jpg" alt="Holtherstraat 5 - foto 89" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/90.jpg" data-caption="Holtherstraat 5 - foto 90" role="listitem"><img class="lazy" data-src="photos/90.jpg" src="photos/90.jpg" alt="Holtherstraat 5 - foto 90" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/91.jpg" data-caption="Holtherstraat 5 - foto 91" role="listitem"><img class="lazy" data-src="photos/91.jpg" src="photos/91.jpg" alt="Holtherstraat 5 - foto 91" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/92.jpg" data-caption="Holtherstraat 5 - foto 92" role="listitem"><img class="lazy" data-src="photos/92.jpg" src="photos/92.jpg" alt="Holtherstraat 5 - foto 92" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/93.jpg" data-caption="Holtherstraat 5 - foto 93" role="listitem"><img class="lazy" data-src="photos/93.jpg" src="photos/93.jpg" alt="Holtherstraat 5 - foto 93" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/94.jpg" data-caption="Holtherstraat 5 - foto 94" role="listitem"><img class="lazy" data-src="photos/94.jpg" src="photos/94.jpg" alt="Holtherstraat 5 - foto 94" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/95.jpg" data-caption="Holtherstraat 5 - foto 95" role="listitem"><img class="lazy" data-src="photos/95.jpg" src="photos/95.jpg" alt="Holtherstraat 5 - foto 95" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/96.jpg" data-caption="Holtherstraat 5 - foto 96" role="listitem"><img class="lazy" data-src="photos/96.jpg" src="photos/96.jpg" alt="Holtherstraat 5 - foto 96" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/97.jpg" data-caption="Holtherstraat 5 - foto 97" role="listitem"><img class="lazy" data-src="photos/97.jpg" src="photos/97.jpg" alt="Holtherstraat 5 - foto 97" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/98.jpg" data-caption="Holtherstraat 5 - foto 98" role="listitem"><img class="lazy" data-src="photos/98.jpg" src="photos/98.jpg" alt="Holtherstraat 5 - foto 98" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/99.jpg" data-caption="Ochtendnevel boven de weide met ooievaarsnest" role="listitem"><img class="lazy" data-src="photos/99.jpg" src="photos/99.jpg" alt="Ochtendnevel boven de weide met ooievaarsnest" loading="lazy"></a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
      VOOR WIE
      ============================================================ -->
 <section class="personas" aria-labelledby="personas-heading">
@@ -1792,6 +1811,34 @@ a.nav-link.is-active { color: var(--hh-accent); }
     </div>
   </div>
 </section>
+
+<!-- ============================================================
+     GALLERY 3 - Slaapkamers, badkamers en atelier
+     ============================================================ -->
+<section class="gallery" id="gallery-3" aria-labelledby="gallery-3-heading">
+  <div class="container reveal">
+    <span class="eyebrow">Beelden 3</span>
+    <h2 id="gallery-3-heading">Slaapkamers, badkamers en atelier</h2>
+    <hr class="divider">
+    <p style="max-width:620px;color:var(--c-ink-soft);">De zeven slaapkamers, twee badkamers en het atelier met akoestisch behandelde ruimte.</p>
+
+    <div class="gallery__grid" role="list">
+      <a class="gallery__item gallery-item" href="photos/23.jpg" data-caption="Ruime badkamer met ligbad, regendouche en originele houten draagbalk" role="listitem"><img class="lazy" data-src="photos/23.jpg" src="photos/23.jpg" alt="Ruime badkamer met ligbad, regendouche en originele houten draagbalk" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/24.jpg" data-caption="Tweede badkamer met buitendeur, marmeren wastafelmeubel en wit betegelde wanden" role="listitem"><img class="lazy" data-src="photos/24.jpg" src="photos/24.jpg" alt="Tweede badkamer met buitendeur, marmeren wastafelmeubel en wit betegelde wanden" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/25.jpg" data-caption="Badkamer met wastafel, ingebouwde kasten en zicht op originele houten staander" role="listitem"><img class="lazy" data-src="photos/25.jpg" src="photos/25.jpg" alt="Badkamer met wastafel, ingebouwde kasten en zicht op originele houten staander" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/31.jpg" data-caption="Holtherstraat 5 - foto 31" role="listitem"><img class="lazy" data-src="photos/31.jpg" src="photos/31.jpg" alt="Holtherstraat 5 - foto 31" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/32.jpg" data-caption="Holtherstraat 5 - foto 32" role="listitem"><img class="lazy" data-src="photos/32.jpg" src="photos/32.jpg" alt="Holtherstraat 5 - foto 32" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/33.jpg" data-caption="Holtherstraat 5 - foto 33" role="listitem"><img class="lazy" data-src="photos/33.jpg" src="photos/33.jpg" alt="Holtherstraat 5 - foto 33" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/34.jpg" data-caption="Holtherstraat 5 - foto 34" role="listitem"><img class="lazy" data-src="photos/34.jpg" src="photos/34.jpg" alt="Holtherstraat 5 - foto 34" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/35.jpg" data-caption="Holtherstraat 5 - foto 35" role="listitem"><img class="lazy" data-src="photos/35.jpg" src="photos/35.jpg" alt="Holtherstraat 5 - foto 35" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/36.jpg" data-caption="Holtherstraat 5 - foto 36" role="listitem"><img class="lazy" data-src="photos/36.jpg" src="photos/36.jpg" alt="Holtherstraat 5 - foto 36" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/37.jpg" data-caption="Holtherstraat 5 - foto 37" role="listitem"><img class="lazy" data-src="photos/37.jpg" src="photos/37.jpg" alt="Holtherstraat 5 - foto 37" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/38.jpg" data-caption="Holtherstraat 5 - foto 38" role="listitem"><img class="lazy" data-src="photos/38.jpg" src="photos/38.jpg" alt="Holtherstraat 5 - foto 38" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/39.jpg" data-caption="Holtherstraat 5 - foto 39" role="listitem"><img class="lazy" data-src="photos/39.jpg" src="photos/39.jpg" alt="Holtherstraat 5 - foto 39" loading="lazy"></a>
+    </div>
+  </div>
+</section>
+
 
 <!-- ============================================================
      FAQ
@@ -1875,6 +1922,32 @@ a.nav-link.is-active { color: var(--hh-accent); }
     <a href="photos/brochure.pdf" class="btn btn--light" download>Download brochure (PDF)</a>
   </div>
 </section>
+
+<!-- ============================================================
+     GALLERY 5 - Kapschuur, bijgebouwen en garage
+     ============================================================ -->
+<section class="gallery" id="gallery-5" aria-labelledby="gallery-5-heading">
+  <div class="container reveal">
+    <span class="eyebrow">Beelden 5</span>
+    <h2 id="gallery-5-heading">Kapschuur, bijgebouwen en garage</h2>
+    <hr class="divider">
+    <p style="max-width:620px;color:var(--c-ink-soft);">Kapschuur uit 1935, houten berging en stenen garage voor vier auto's.</p>
+
+    <div class="gallery__grid" role="list">
+      <a class="gallery__item gallery-item" href="photos/55.jpg" data-caption="Holtherstraat 5 - foto 55" role="listitem"><img class="lazy" data-src="photos/55.jpg" src="photos/55.jpg" alt="Holtherstraat 5 - foto 55" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/56.jpg" data-caption="Holtherstraat 5 - foto 56" role="listitem"><img class="lazy" data-src="photos/56.jpg" src="photos/56.jpg" alt="Holtherstraat 5 - foto 56" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/57.jpg" data-caption="Holtherstraat 5 - foto 57" role="listitem"><img class="lazy" data-src="photos/57.jpg" src="photos/57.jpg" alt="Holtherstraat 5 - foto 57" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/58.jpg" data-caption="Holtherstraat 5 - foto 58" role="listitem"><img class="lazy" data-src="photos/58.jpg" src="photos/58.jpg" alt="Holtherstraat 5 - foto 58" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/59.jpg" data-caption="Holtherstraat 5 - foto 59" role="listitem"><img class="lazy" data-src="photos/59.jpg" src="photos/59.jpg" alt="Holtherstraat 5 - foto 59" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/60.jpg" data-caption="Holtherstraat 5 - foto 60" role="listitem"><img class="lazy" data-src="photos/60.jpg" src="photos/60.jpg" alt="Holtherstraat 5 - foto 60" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/61.jpg" data-caption="Holtherstraat 5 - foto 61" role="listitem"><img class="lazy" data-src="photos/61.jpg" src="photos/61.jpg" alt="Holtherstraat 5 - foto 61" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/62.jpg" data-caption="Holtherstraat 5 - foto 62" role="listitem"><img class="lazy" data-src="photos/62.jpg" src="photos/62.jpg" alt="Holtherstraat 5 - foto 62" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/63.jpg" data-caption="Holtherstraat 5 - foto 63" role="listitem"><img class="lazy" data-src="photos/63.jpg" src="photos/63.jpg" alt="Holtherstraat 5 - foto 63" loading="lazy"></a>
+      <a class="gallery__item gallery-item" href="photos/64.jpg" data-caption="Holtherstraat 5 - foto 64" role="listitem"><img class="lazy" data-src="photos/64.jpg" src="photos/64.jpg" alt="Holtherstraat 5 - foto 64" loading="lazy"></a>
+    </div>
+  </div>
+</section>
+
 
 </main>
 
@@ -1981,82 +2054,7 @@ a.nav-link.is-active { color: var(--hh-accent); }
     });
   });
 
-  /* ---------- Lightbox ---------- */
-  const lightbox = document.getElementById('lightbox');
-  const lbImg = document.getElementById('lightbox-img');
-  const lbCounter = document.getElementById('lightbox-counter');
-  const lbClose = document.getElementById('lightbox-close');
-  const lbPrev = document.getElementById('lightbox-prev');
-  const lbNext = document.getElementById('lightbox-next');
-  const galleryGrid = document.getElementById('gallery-grid');
-
-  let images = [];
-  let currentIdx = 0;
-
-  const collectImages = () => {
-    images = Array.from(document.querySelectorAll('.gallery__item img, .floorplan img')).map(img => ({
-      src: img.dataset.full || img.src,
-      alt: img.alt || ''
-    }));
-  };
-
-  const openLightbox = (idx) => {
-    if (!images.length) collectImages();
-    currentIdx = idx;
-    showImage();
-    lightbox.classList.add('is-open');
-    lightbox.setAttribute('aria-hidden', 'false');
-    document.body.style.overflow = 'hidden';
-  };
-
-  const closeLightbox = () => {
-    lightbox.classList.remove('is-open');
-    lightbox.setAttribute('aria-hidden', 'true');
-    document.body.style.overflow = '';
-  };
-
-  const showImage = () => {
-    const img = images[currentIdx];
-    if (!img) return;
-    lbImg.src = img.src;
-    lbImg.alt = img.alt;
-    lbCounter.textContent = (currentIdx + 1) + ' / ' + images.length;
-  };
-
-  const next = () => { currentIdx = (currentIdx + 1) % images.length; showImage(); };
-  const prev = () => { currentIdx = (currentIdx - 1 + images.length) % images.length; showImage(); };
-
-  if (galleryGrid) {
-    galleryGrid.addEventListener('click', (e) => {
-      const item = e.target.closest('.gallery__item');
-      if (!item) return;
-      collectImages();
-      const allItems = Array.from(document.querySelectorAll('.gallery__item'));
-      const idx = allItems.indexOf(item);
-      openLightbox(idx >= 0 ? idx : 0);
-    });
-  }
-  document.querySelectorAll('.floorplan img').forEach(img => {
-    img.addEventListener('click', () => {
-      collectImages();
-      const allImgs = Array.from(document.querySelectorAll('.gallery__item img, .floorplan img'));
-      const idx = allImgs.indexOf(img);
-      openLightbox(idx >= 0 ? idx : 0);
-    });
-  });
-
-  lbClose && lbClose.addEventListener('click', closeLightbox);
-  lbNext && lbNext.addEventListener('click', next);
-  lbPrev && lbPrev.addEventListener('click', prev);
-  lightbox && lightbox.addEventListener('click', (e) => {
-    if (e.target === lightbox) closeLightbox();
-  });
-  document.addEventListener('keydown', (e) => {
-    if (!lightbox.classList.contains('is-open')) return;
-    if (e.key === 'Escape') closeLightbox();
-    else if (e.key === 'ArrowRight') next();
-    else if (e.key === 'ArrowLeft') prev();
-  });
+  /* ---------- Lightbox: handled by hh-lightbox module below ---------- */
 
   /* ---------- Contact form ---------- */
   const form = document.getElementById('contact-form');
