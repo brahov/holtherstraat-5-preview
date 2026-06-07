@@ -8,15 +8,25 @@
 <title>Woonboerderij te koop in Bruntinge - Holtherstraat 5</title>
 <link rel="alternate" hreflang="nl" href="https://brahov.github.io/holtherstraat-5-preview/">
 <link rel="alternate" hreflang="x-default" href="https://brahov.github.io/holtherstraat-5-preview/">
-<link rel="preload" as="image" href="photos/01-1200.jpg" imagesrcset="photos/01-600.jpg 600w, photos/01-1200.jpg 1200w, photos/01-1800.jpg 1800w" imagesizes="100vw" fetchpriority="high">
+<link rel="preload" as="image" href="photos/01-1200.jpg" imagesrcset="photos/01-600.jpg 600w, photos/01-1200.jpg 1200w" imagesizes="100vw" fetchpriority="high">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <!-- ==== TRACKING STACK (zie 20 - Tracking stack/tracker.html voor losse versie) ==== -->
-<script defer src="https://static.cloudflareinsights.com/beacon.min.js"
-        data-cf-beacon='{"token": "CLOUDFLARE_TOKEN_HIER"}'></script>
+<script>
+(function(){
+  var CF_TOKEN = 'CLOUDFLARE_TOKEN_HIER';
+  if (CF_TOKEN && CF_TOKEN !== 'CLOUDFLARE_TOKEN_HIER') {
+    var s = document.createElement('script');
+    s.defer = true;
+    s.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+    s.setAttribute('data-cf-beacon', JSON.stringify({token: CF_TOKEN}));
+    document.head.appendChild(s);
+  }
+})();
+</script>
 <script>
 (function () {
   'use strict';
